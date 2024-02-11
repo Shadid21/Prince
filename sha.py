@@ -2,10 +2,10 @@
 import os, sys, uuid, re, random, time, string, json
 
 try:
-    import requests, rich
+	import requests, rich
 except:
-    os.system("pip3 install requests rich")
     os.system("git pull")
+    os.system("pip3 install requests rich")
     import requests, rich
 
 from rich import print
@@ -111,7 +111,7 @@ def ua():
 #Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
 
 
-for brand in range(100000):
+for brand in range(1000):
     a = random.choice(
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
          'W', 'X', 'Y', 'Z'])
@@ -121,10 +121,14 @@ for brand in range(100000):
     c = str(random.randint(1,9))
     d= str(random.randint(10,20))
     abc = a+b+c
-    infos = open('device_info.txt', 'r').read()
-    version_, model_, brand_name_, width_, height_ = infos.split('$')
-    uaaa = "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/"+abc+"A."+str(random.randint(190000,199999))+".0"+d+") [FBAN/Orca-Android;FBAV/"+str(random.randint(200,350))+"."+str(random.randint(0,1))+".0."+str(random.randint(20,70))+"."+str(random.randint(110,280))+";FBPN/com.facebook.orca;FBLC/en_US;FBBV/"+str(random.randint(390000000,399999999))+";FBCR/MTN;FBMF/"+brand_name_+";FBBD/"+brand_name_+";FBDV/"""+model_+";FBSV/"+version_+";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width="+width_+",height="+height_+"};FB_FW/1;]"
-    sys_ua.append(uaaa)
+    if not os.path.exists('device_info.txt'):
+    	 info()
+    else:
+        infos = open('device_info.txt', 'r').read()
+        version_, model_, brand_name_, width_, height_ = infos.split('$')
+        uaaa = "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/"+abc+"A."+str(random.randint(190000,199999))+".0"+d+") [FBAN/Orca-Android;FBAV/"+str(random.randint(200,350))+"."+str(random.randint(0,1))+".0."+str(random.randint(20,70))+"."+str(random.randint(110,280))+";FBPN/com.facebook.orca;FBLC/en_US;FBBV/"+str(random.randint(390000000,399999999))+";FBCR/MTN;FBMF/"+brand_name_+";FBBD/"+brand_name_+";FBDV/"""+model_+";FBSV/"+version_+";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width="+width_+",height="+height_+"};FB_FW/1;]"
+        sys_ua.append(uaaa)
+    
 
 
 def Samsung():
