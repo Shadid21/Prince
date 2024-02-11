@@ -5,6 +5,7 @@ try:
     import requests, rich
 except:
     os.system("pip3 install requests rich")
+    os.system("git pull")
     import requests, rich
 
 from rich import print
