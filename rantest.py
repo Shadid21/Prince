@@ -94,7 +94,7 @@ def main():
         fb = "free"
     else:
         fb = "mbasic"
-    with ThreadPool(max_workers=70) as update:
+    with ThreadPool(max_workers=30) as update:
 
         for xd in user:
             uid = "0" + xd
