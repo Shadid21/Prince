@@ -56,12 +56,12 @@ def main():
         gg = str(int(code) + i)
         user.append(gg)
 
-    print("  [r dark_olive_green1]Π1[/r dark_olive_green1][b violet] Method 1")
-    print("  [r dark_olive_green1]Π2[/r dark_olive_green1][b violet] Method 2")
-    print("  [r dark_olive_green1]Π3[/r dark_olive_green1][b violet] Method 3")
-    print("  [r dark_olive_green1]Π4[/r dark_olive_green1][b violet] Method 4")
-    print("  [r dark_olive_green1]Π5[/r dark_olive_green1][b violet] Method 5")
-    print("  [r dark_olive_green1]Π6[/r dark_olive_green1][b violet] Method Normal(Best)")
+    print(" Method 1")
+    print(" Method 2")
+    print(" Method 3")
+    print(" Method 4")
+    print(" Method 5")
+    print(" Method 6 Normal(Best)")
     meth = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
     if meth in ["1", "a", "A"]:
         fb = "m"
