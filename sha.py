@@ -1,4 +1,3 @@
-
 import os, sys, uuid, re, random, time, string, json
 
 try:
@@ -469,7 +468,11 @@ def ran():
         fb = "free"
     else:
         fb = "m"
-    with ThreadPool(max_workers=30) as heron:
+    if meth in "1", "a", "A"]:
+    	mw = 10
+    else:
+    	mw = 50
+    with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
