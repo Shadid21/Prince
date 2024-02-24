@@ -490,7 +490,7 @@ def ren_sub(uid, pwx, meth, user, fb):
     custom_agent = ""
     session = requests.Session()
     sys.stdout.write(
-        f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop}⟩\x1b[38;5;155m{str(len(user))}\r ")
+        f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}")
     sys.stdout.flush()
     try:
         for ps in pwx:
