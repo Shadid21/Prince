@@ -438,7 +438,7 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]017, 018, 019")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01718702440")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -471,7 +471,7 @@ def ran():
     if meth in ["1", "a", "A"]:
     	mw = 30
     else:
-    	mw = 70
+    	mw = 90
     with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
