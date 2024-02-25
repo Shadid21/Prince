@@ -116,7 +116,7 @@ def main():
         fb = "free"
     else:
         fb = "m"
-    if meth in "1", "a", "A"]:
+    if meth in ["1", "a", "A"]:
     	mw = 10
     else:
     	mw = 50
