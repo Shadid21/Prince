@@ -117,9 +117,9 @@ def main():
     else:
         fb = "m"
     if meth in ["1", "a", "A"]:
-    	mw = 10
+    	mw = 30
     else:
-    	mw = 50
+    	mw = 70
     with ThreadPool(max_workers=mw) as update:
     	
     	
