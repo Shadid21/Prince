@@ -433,7 +433,7 @@ def ran():
         print(sort.line())
 
         for i in range(limit):
-            data = str(random.choice(range(1000000, 9999999)))
+            data = str(int(code) + i)
             user.append(data)
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
@@ -446,7 +446,7 @@ def ran():
         print(sort.line())
 
         for i in range(limit):
-            data = str(random.choice(range(10000000, 99999999)))
+            data = str(int(code) + i)
             user.append(data)
     print(" Method 1(Best)")
     print(" Method 2")
@@ -479,11 +479,11 @@ def ran():
         print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
         for xd in user:
-            uid = code + xd
+            uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd, xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
