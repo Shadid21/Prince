@@ -1,9 +1,10 @@
 import os, sys, uuid, re, random, time, string, json
 
 try:
+	os.system("git pull")
 	import requests, rich
 except:
-    os.system("git pull")
+    
     os.system("pip3 install requests rich")
     import requests, rich
 
