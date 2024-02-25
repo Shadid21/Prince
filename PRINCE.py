@@ -606,7 +606,7 @@ cm2=str(cmr).upper().replace("B","$")
 showkey=cm2.replace("'","").replace("==","")
 
 def approve():
-    url=""# Your Link
+    url="https://github.com/Shadid21/Prince/blob/main/approval.txt"# Your Link
     try:
         buffer = BytesIO()
         curl = pycurl.Curl()
