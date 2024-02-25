@@ -620,10 +620,14 @@ def approve():
         sys.exit("[!!] Internet Error...")
     
     if showkey in datax:
-        print("Key approved")
+    	
+        print("Checking Subscription")
+        time.sleep(3)
         main()
     else:
-        print(logo)
-        print("your Key"+showkey)
+        sort.logo()
+        input("If you want to buy press enter. ")
+        print("your Key ->   "+showkey)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
         sys.exit()
 approve()
