@@ -23,13 +23,13 @@ version = "  v1"
 
 
 class sort:
-    def line(self):
+    def line():
         return "[b dark_sea_green2]━" * 37
 
-    def clear(self):
+    def clear():
         os.system("clear")
 
-    def logo(self):
+    def logo():
         aci = f'''    //   ) )                                      
    //___/ /  __     ( )   __      ___      ___    
   / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
@@ -37,7 +37,7 @@ class sort:
 //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Paid[/r]\n{sort.line()}'''
         print(aci)
 
-    def color(self):
+    def color():
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
         return cx
