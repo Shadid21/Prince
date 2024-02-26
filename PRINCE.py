@@ -474,7 +474,7 @@ def ran():
     else:
         fb = "mbasic"
     
-    with ThreadPool(max_workers=50) as heron:
+    with ThreadPool(max_workers=70) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
