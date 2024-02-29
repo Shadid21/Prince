@@ -438,6 +438,22 @@ def file_sub(uid, pwx, name, meth, file):
     global oks, loop, sys_ua
     Session = requests.session()
     custom_agent = ""
+    if meth in ["a", "A", "1"]:
+        uax = ua[0]
+    elif meth in ["b", "B", "2"]:
+        uax = ua[1]
+    elif meth in ["c", "C", "3"]:
+        uax = ua[2]
+    elif meth in ["d", "D", "4"]:
+        uax = ua[3]
+    elif meth in ["e", "E", "5"]:
+        uax = ua[4]
+    elif meth in ["f", "F", "6"]:
+        uax = ua[5]
+    elif meth in ["g", "G", "7"]:
+        uax = ua[6]
+    else:
+        uax = ua[7]
     try:
         sys.stdout.write(
             f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}PRINCE-M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
@@ -452,23 +468,6 @@ def file_sub(uid, pwx, name, meth, file):
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
-
-            if meth in ["a", "A", "1"]:
-                uax = ua[0]
-            elif meth in ["b", "B", "2"]:
-                uax = ua[1]
-            elif meth in ["c", "C", "3"]:
-                uax = ua[2]
-            elif meth in ["d", "D", "4"]:
-                uax = ua[3]
-            elif meth in ["e", "E", "5"]:
-                uax = ua[4]
-            elif meth in ["f", "F", "6"]:
-                uax = ua[5]
-            elif meth in ["g", "G", "7"]:
-                uax = ua[6]
-            else:
-                uax = ua[7]
             try:
                 rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
                 device = uax.split("FBDV/")[1].split(";")[0]
