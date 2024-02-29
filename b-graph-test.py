@@ -2,9 +2,9 @@
 
 import json, requests ,uuid,random,base64
 #ff
-uid="61551405557379"
-ps="her777on4200"
-user_agent="Dalvik/2.1.0 (Linux; U; Android 10; SM-N960F Build/QP1A.190711.020) [FBAN/Orca-Android;FBAV/257.1.0.21.120;FBPN/com.facebook.orca;FBLC/en_US;FBBV/205865103;FBCR/null;FBMF/samsung;FBBD/samsung;FBDV/SM-N960F;FBSV/10;FBCA/arm64-v8a:null;FBDM/{density=2.625,width=1080,height=2094};FB_FW/1;] FBBK/1"
+uid="61556637603800"
+ps="Dighi21@@.."
+user_agent="Dalvik/2.1.0 (Linux; U; Android 8.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/483.0.0.16.537;FBPN/com.facebook.orca;FBLC/en_US;FBBV/346852117;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/8.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920)"
             
 adid = str(uuid.uuid4())
 deviceid= str(uuid.uuid4())
@@ -30,7 +30,7 @@ data = {
 "method": "auth.login",
 "fb_api_req_friendly_name": "authenticate",
 "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
-"api_key": "882a8490361da98702bf97a021ddc14d"}
+"api_key": "882a8490361da98704bf97a021ddc14d"}
 head = {
 'User-Agent': user_agent,
 'Content-Type': 'application/x-www-form-urlencoded',
@@ -46,7 +46,7 @@ head = {
 'X-FB-HTTP-Engine': 'Liger',
 'X-FB-Client-IP': 'True',
 'X-FB-Server-Cluster': 'True',
-'X-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62',}
+'X-fb-connection-token': 'd29d67d38eca387482a8a5b740f84f62',}
 url1= 'https://b-graph.facebook.com/auth/login'
 po = requests.post(url=url1,data=data,headers=head,allow_redirects=False).json()
 #coki=";".join(i["name"]+"="+i["value"] for i in po["session_cookies"])
