@@ -504,7 +504,7 @@ def ran():
 def ren_sub(uid, pwx, meth, user, fb):
     global oks, loop
     shadid = random.choice(sys_ua)
-    custom_agent = "Dalvik/2.1.0 (Linux; U; Android 9.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/493.0.0.16.524;FBPN/com.facebook.orca;FBLC/en_US;FBBV/230951215;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/9.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920"
+    custom_agent = ""
     session = requests.Session()
     sys.stdout.write(
         f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(user))}  • {str(len(oks))}\r\r"),
