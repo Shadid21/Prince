@@ -794,14 +794,8 @@ def approve():
 
 
 
-def free():
-    sort.clear()
-    sort.logo()
-    approve()
 
-
-if __name__ == "__main__":
-    free()
+approve()
 
 
 
