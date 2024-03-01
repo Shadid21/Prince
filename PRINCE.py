@@ -522,7 +522,7 @@ def file_sub(uid, pwx, name, meth, fl):
             else:
                 continue
     except Exception as e:
-        pass
+        print(e)
     finally:
         loop += 1
 
