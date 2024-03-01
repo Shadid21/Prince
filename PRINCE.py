@@ -547,8 +547,6 @@ def filee():
 
 
 def free():
-    sort.clear()
-    sort.logo()
     filee()
 
 
