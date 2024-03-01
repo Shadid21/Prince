@@ -508,9 +508,9 @@ def filee():
     except Exception as e:
         print("Error:", e)
         filee()
-    limit = int(input("[b]    [red1]✗ [chartreuse1] [spring_green1]Password Limit -> "))
+    limit = input("[b]    [red1]✗ [chartreuse1] [spring_green1]Password Limit -> ")
     print(sort.line())
-    for i in range(limit):
+    for i in range(int(limit)):
         print(
             " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
         passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
@@ -528,7 +528,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=70) as sub:
+    with ThreadPool(max_workers=60) as sub:
         sort.clear()
         print(sort.logo())
         print(
