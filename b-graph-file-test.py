@@ -138,7 +138,7 @@ def file_sub(uid, pwx, name, meth, fl):
             uax = ua[7]
 
         sys.stdout.write(
-            f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(fl))}  • {str(len(oks))}"),
+            f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(fl))}  • {str(len(oks))}\r\r"),
         sys.stdout.flush()
         First = name.split(" ")[0]
         try:
@@ -273,6 +273,7 @@ def filee():
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
     print(Sort.line())
     with ThreadPool(max_workers=40) as sub:
+        Sort.clear()
         print(Sort.logo())
         print(
             f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
