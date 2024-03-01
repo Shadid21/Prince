@@ -793,13 +793,10 @@ def approve():
 
 
 
-def free():
-    live_update()
-    sort.clear()
-    sort.logo()
-    approve()
+
+live_update()
+
+approve()
 
 
-if __name__ == "__main__":
-    free()
 
