@@ -47,17 +47,41 @@ def Samsung():
 
 def dd(fbbd, device):
     if fbbd.lower() == "samsung":
-        return random.choice(["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F",
-                              "SM-A326B", "SM-A125F", "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN",
-                              "SM-A205GN", "SM-A505GN", "SM-G930F", "SM-J210F", "SM-N9005", "SM-J210F"])
+        return random.choice(
+            ["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F", "SM-A326B", "SM-A125F",
+             "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN", "SM-A205GN", "SM-A505GN", "SM-G930F",
+             "SM-J210F", "SM-N9005", "SM-J210F"])
     elif fbbd.lower() == "vivo":
         return random.choice(["vivo 1935", "V3Max"])
     elif fbbd.lower() == "motorola":
-        return random.choice(['Moto E2 (4G LTE)', 'Moto E3 Power', 'Moto E4', 'Moto E4 Plus', 'Moto E5',
-                              'Moto E5 Plus', 'Moto G', 'Moto G 2nd Gen', 'Moto G Play', 'Moto G3',
-                              'Moto G3 Turbo Edition', 'Moto G4', 'Moto G5 Plus', 'Moto G5s', 'Moto G5s Plus',
-                              'Moto G6', 'Moto X', 'moto g power (2021)'])
-    # Add other brands if needed
+        return random.choice(
+            ['Moto E2 (4G LTE)', 'Moto E3 Power', 'Moto E4', 'Moto E4 Plus', 'Moto E5', 'Moto E5 Plus', 'Moto G',
+             'Moto G 2nd Gen', 'Moto G Play', 'Moto G3', 'Moto G3 Turbo Edition', 'Moto G4', 'Moto G5 Plus', 'Moto G5s',
+             'Moto G5s Plus', 'Moto G6', 'Moto X', 'moto g power (2021)'])
+    elif fbbd.lower() == "oppo":
+        return random.choice(["CPH" + str(random.choice(range(1000, 2000))), "oppo r7sm"])
+    elif fbbd.lower() == "oneplus":
+        return random.choice(["A0001", "OnePlus 11R", "OnePlus 10T", "OnePlus Nord 3 5G"])
+    elif fbbd.lower() == "google":
+        return random.choice(["Pixel 6a", "Pixel 3"])
+    elif fbbd.lower() == "asus":
+        return random.choice(["ASUS_X01BDA", "ASUS_Z01QD", "ASUS_I005DC", "NX55", "MXB48T"])
+    elif fbbd.lower() == "huawei":
+        return random.choice(
+            ["DUB-LX1", "AGS2-L09", "POT-LX1", "DRA-LX2", "POT-LX3", "VOG-L29", "EVR-N29", "FIG-LX1", "Kirin Treble",
+             "HUAWEI LUA-L21", "ATU-L31", "COL-L29", "NAM-LX9", "VOG-L29", "JKM-LX1", "RNE-L22"])
+    elif fbbd.lower() == "lenovo":
+        return random.choice(
+            ["Lenovo TB-X505F", "Lenovo A6020a46", 'PAFR0026IN', 'PAFR0026', 'PAFR0033IN', 'PAFR0033', 'PAFR0013IN',
+             'PAFR0013', 'PAGW0015IN', 'L39051', 'XT2091-8'])
+    elif fbbd.lower() == "sony":
+        return random.choice(
+            ["C2105", "C2104", "G3312", "G3311", "G3313", "LT29i", "D6503", "D6502", "SO-03F", "Xperia Z2", "D6503",
+             "D6502", "SO-03F", "Xperia Z2", "D6563", "D6603", "D6653", "D6616", "D6643", "SO-01G", "SOL26", "D6646",
+             "D5803", "D5833", "SO-02G", "D6633", "D6603", "D6643", "D6653", "D6616", "D6683", "SGP621", "SGP611",
+             "E6533", "D6708"])
+    elif fbbd.lower() == "tecno":
+        return random.choice(["CG8", "CG8h", "LB8", "LB8a", "CH7n", "CH7", "LH6n"])
     else:
         return device
 def generate_random_string(lowercase_count, numeric_count):
@@ -88,7 +112,7 @@ shuffled_cid = shuffle_string(ran_string)
 random_string = generate_random_string(lowercase_count, numeric_count)
 shuffled_connection_token = shuffle_string(random_string)
 
-class Sort:
+class sort:
     @staticmethod
     def line():
         return "[b dark_sea_green2]━" * 37
@@ -100,10 +124,10 @@ class Sort:
     @staticmethod
     def logo():
         aci = f'''    //   ) )                                      
-   //___/ /  __     ( )   __      ___      ___    
-  / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
- //       //      / / //   / / //       //        
-//       //      / / //   / / ((____   ((____{version}\n{Sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{Sort.line()}'''
+       //___/ /  __     ( )   __      ___      ___    
+      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
+     //       //      / / //   / / //       //        
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
         print(aci)
 
     @staticmethod
@@ -238,14 +262,13 @@ def file_sub(uid, pwx, name, meth, fl):
 def filee():
     global oks, loop
     pwx = []
-    Sort.clear()
-    Sort.logo()
+    sort.logo()
     print("[b]    [red1][B] [spring_green1]BD/IND FILE Clone")
-    print(Sort.line())
+    print(sort.line())
     print("[b] Π[chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
           "/sdcard/id.txt")
     path = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    print(Sort.line())
+    print(sort.line())
     try:
         with open(path, "r") as file:
             fl = file.read().splitlines()
@@ -253,14 +276,14 @@ def filee():
         print("Error:", e)
         filee()
     limit = int(input("   Password Limit -> "))
-    print(Sort.line())
+    print(sort.line())
     for i in range(limit):
         print(
             " [b] Π[chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
         passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
         if passw not in pwx:
             pwx.append(passw)
-        print(Sort.line())
+        print(sort.line())
     print("  [r dark_olive_green1]Π1[/r dark_olive_green1][b violet] Method 1")
     print("  [r dark_olive_green1]Π2[/r dark_olive_green1][b violet] Method 2")
     print("  [r dark_olive_green1]Π3[/r dark_olive_green1][b violet] Method 3")
@@ -269,15 +292,15 @@ def filee():
     print("  [r dark_olive_green1]Π6[/r dark_olive_green1][b violet] Method 6")
     print("  [r dark_olive_green1]Π7[/r dark_olive_green1][b violet] Method 7")
     print("  [r dark_olive_green1]Π8[/r dark_olive_green1][b violet] Method 8")
-    print(Sort.line())
+    print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    print(Sort.line())
+    print(sort.line())
     with ThreadPool(max_workers=40) as sub:
-        Sort.clear()
-        print(Sort.logo())
+        sort.clear()
+        print(sort.logo())
         print(
             f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
-        print(Sort.line())
+        print(sort.line())
         try:
             for xd in fl:
                 uid, name = xd.split("|")
@@ -285,19 +308,19 @@ def filee():
 
         except:
             pass
-    print("\r\r" + Sort.line())
+    print("\r\r" + sort.line())
     print(f"  Π! Total OK id : {str(len(oks))}")
     print(f"  Π! Save  /sdcard/pot.txt ")
-    print(Sort.line())
+    print(sort.line())
     sys.exit()
 
 
 def free():
     live_update()
-    Sort.clear()
-    Sort.logo()
+    sort.clear()
+    sort.logo()
     filee()
-
 
 if __name__ == "__main__":
     free()
+
