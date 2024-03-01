@@ -53,16 +53,16 @@ ua = []
 
 
 
-def live_update():
-    try:
-        url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
-        response = requests.get(url, verify=certifi.where())
-        datax = response.text.splitlines()[0]
-        for u in datax.split("|"):
-            ua.append(u)
-    except Exception as e:
-        print("[!!] Internet Error:", e)
-        sys.exit()
+
+try:
+    url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
+    response = requests.get(url, verify=certifi.where())
+    datax = response.text.splitlines()[0]
+    for u in datax.split("|"):
+        ua.append(u)
+except Exception as e:
+    print("[!!] Internet Error:", e)
+    sys.exit()
 
 
 
@@ -792,15 +792,11 @@ def approve():
         sys.exit()
 
 
-def free():
-    live_update()
-    sort.clear()
-    sort.logo()
-    approve()
+
+approve()
 
 
-if __name__ == "__main__":
-    free()
+
 
 
 
