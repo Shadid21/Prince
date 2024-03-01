@@ -207,7 +207,7 @@ def file_sub(uid, pwx, name, meth, fl):
             else:
                 continue
     except Exception as e:
-        print("Error in file_sub:", e)
+        pass
     finally:
         loop += 1
 
