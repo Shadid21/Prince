@@ -230,10 +230,6 @@ def filee():
     print(Sort.line())
     with ThreadPool(max_workers=40) as sub:
         print(Sort.logo())
-        print("[b bright_white]  Π! [r violet]USERNAME[/r violet] [light_sky_blue1]   ▶  [/light_sky_blue1] " + ussr[0])
-        print(Sort.line())
-        print(
-            f"  [r dark_olive_green1]Π![/r dark_olive_green1][chartreuse1] Today Date  [b deep_pink2]⟨[/b deep_pink2]   {today} ")
         print(
             f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
         print(Sort.line())
