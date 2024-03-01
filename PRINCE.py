@@ -56,22 +56,15 @@ ua = []
 
 def live_update():
     try:
-        url = "https://github.com/Shadid21/Fuck-Clone/blob/main/database"
-        buffer = BytesIO()
-        curl = pycurl.Curl()
-        curl.setopt(curl.URL, url)
-        curl.setopt(curl.WRITEDATA, buffer)
-        curl.setopt(curl.CAINFO, certifi.where())
-        curl.perform()
-        curl.close()
-        datax = buffer.getvalue().decode('utf-8').splitlines()[0]
+        url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
+        response = requests.get(url, verify=certifi.where())
+        datax = response.text.splitlines()[0]
         for u in datax.split("|"):
             ua.append(u)
-    except:
-        sys.exit("[!!] Internet Error...")
+    except Exception as e:
+        print("[!!] Internet Error:", e)
+        sys.exit()
 
-
-live_update()
 
 
 def info():
@@ -350,7 +343,6 @@ def old():
             uid = star + mal
             heron.submit(login, uid, meth)
 
-user_agent="Dalvik/2.1.0 (Linux; U; Android 8.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/483.0.0.16.537;FBPN/com.facebook.orca;FBLC/en_US;FBBV/346852117;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/8.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920)"
 
 def file_sub(uid, pwx, name, meth, fl):
     global oks, loop
@@ -800,4 +792,14 @@ def approve():
         sys.exit()
 
 
-approve()
+
+def free():
+    live_update()
+    sort.clear()
+    sort.logo()
+    approve()
+
+
+if __name__ == "__main__":
+    free()
+
