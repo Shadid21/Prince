@@ -246,15 +246,13 @@ def old():
             heron.submit(login, uid, meth)
 
 
-try:
-    url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
-    response = requests.get(url, verify=certifi.where())
-    datax = response.text.splitlines()[0]
-    for u in datax.split("|"):
-        ua.append(u)
-except Exception as e:
-    print("[!!] Internet Error:", e)
-    sys.exit()
+
+url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
+response = requests.get(url, verify=certifi.where())
+datax = response.text.splitlines()[0]
+for u in datax.split("|"):
+    ua.append(u)
+
 
 
 def Samsung():
@@ -546,8 +544,6 @@ def filee():
     sys.exit()
 
 
-def free():
-    filee()
 
 
 def ran():
