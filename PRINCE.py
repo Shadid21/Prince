@@ -1,11 +1,4 @@
-import base64
-import os
-import random
-import re
-import string
-import sys
-import time
-import uuid
+import os, sys, uuid, re, random, time, string, json, base64
 from io import BytesIO
 
 try:
@@ -24,6 +17,7 @@ from rich import print
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
+
 version = "  v1"
 
 
@@ -31,20 +25,24 @@ version = "  v1"
 
 
 class sort:
+    @staticmethod
     def line():
         return "[b dark_sea_green2]━" * 37
 
+    @staticmethod
     def clear():
         os.system("clear")
 
+    @staticmethod
     def logo():
         aci = f'''    //   ) )                                      
-   //___/ /  __     ( )   __      ___      ___    
-  / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
- //       //      / / //   / / //       //        
-//       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Paid[/r]\n{sort.line()}'''
+       //___/ /  __     ( )   __      ___      ___    
+      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
+     //       //      / / //   / / //       //        
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
         print(aci)
 
+    @staticmethod
     def color():
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
@@ -467,11 +465,11 @@ def filee():
     pwx = []
     sort.clear()
     sort.logo()
-    print("[b]    [red1]✗ [chartreuse1] [spring_green1]BD/IND FILE Clone")
+    print("[b]    [red1][B] [spring_green1]BD/IND FILE Clone")
     print(sort.line())
-    print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
+    print("[b] Π[chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]⟨[/b deep_pink2]  [chartreuse1] "
           "/sdcard/id.txt")
-    path = str(input(" \x1b[38;1;198m  \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    path = str(input(" \x1b[38;1;198m Π \x1b[38;5;155mCHOICE      \x1b[38;5;196m⟩ \x1b[1;97m   "))
     print(sort.line())
     try:
         with open(path, "r") as file:
@@ -479,7 +477,7 @@ def filee():
     except Exception as e:
         print("Error:", e)
         filee()
-    limit = int(input("   [spring_green1]Password Limit -> "))
+    limit = int(input("   Password Limit -> "))
     print(sort.line())
     for i in range(limit):
         print(
@@ -499,7 +497,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=50) as sub:
+    with ThreadPool(max_workers=40) as sub:
         sort.clear()
         print(sort.logo())
         print(
@@ -514,9 +512,10 @@ def filee():
             pass
     print("\r\r" + sort.line())
     print(f"  Π! Total OK id : {str(len(oks))}")
-    print(f"  Π! Save  /sdcard/PRINCEFILE-OK.txt ")
+    print(f"  Π! Save  /sdcard/pot.txt ")
     print(sort.line())
     sys.exit()
+
 
 
 def ran():
