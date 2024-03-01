@@ -1,5 +1,18 @@
 import os, sys, uuid, re, random, time, string, json, base64
 from io import BytesIO
+import os
+import random
+import string
+import sys
+import threading
+import time
+import uuid
+import rich
+from datetime import datetime
+from rich import print
+import requests
+import certifi
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
 try:
 
@@ -17,53 +30,10 @@ from rich import print
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
-
 version = "  v1"
 
 
 # get system data
-
-
-class sort:
-    @staticmethod
-    def line():
-        return "[b dark_sea_green2]━" * 37
-
-    @staticmethod
-    def clear():
-        os.system("clear")
-
-    @staticmethod
-    def logo():
-        aci = f'''    //   ) )                                      
-       //___/ /  __     ( )   __      ___      ___    
-      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
-     //       //      / / //   / / //       //        
-    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
-        print(aci)
-
-    @staticmethod
-    def color():
-        co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
-        cx = random.choice(co)
-        return cx
-
-
-ua = []
-
-
-
-
-try:
-    url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
-    response = requests.get(url, verify=certifi.where())
-    datax = response.text.splitlines()[0]
-    for u in datax.split("|"):
-        ua.append(u)
-except Exception as e:
-    print("[!!] Internet Error:", e)
-    sys.exit()
-
 
 
 def info():
@@ -181,47 +151,6 @@ def Samsung():
     return ua
 
 
-def dd(fbbd, device):
-    if fbbd.lower() == "samsung":
-        return random.choice(
-            ["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F", "SM-A326B", "SM-A125F",
-             "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN", "SM-A205GN", "SM-A505GN", "SM-G930F",
-             "SM-J210F", "SM-N9005", "SM-J210F"])
-    elif fbbd.lower() == "vivo":
-        return random.choice(["vivo 1935", "V3Max"])
-    elif fbbd.lower() == "motorola":
-        return random.choice(
-            ['Moto E2 (4G LTE)', 'Moto E3 Power', 'Moto E4', 'Moto E4 Plus', 'Moto E5', 'Moto E5 Plus', 'Moto G',
-             'Moto G 2nd Gen', 'Moto G Play', 'Moto G3', 'Moto G3 Turbo Edition', 'Moto G4', 'Moto G5 Plus', 'Moto G5s',
-             'Moto G5s Plus', 'Moto G6', 'Moto X', 'moto g power (2021)'])
-    elif fbbd.lower() == "oppo":
-        return random.choice(["CPH" + str(random.choice(range(1000, 2000))), "oppo r7sm"])
-    elif fbbd.lower() == "oneplus":
-        return random.choice(["A0001", "OnePlus 11R", "OnePlus 10T", "OnePlus Nord 3 5G"])
-    elif fbbd.lower() == "google":
-        return random.choice(["Pixel 6a", "Pixel 3"])
-    elif fbbd.lower() == "asus":
-        return random.choice(["ASUS_X01BDA", "ASUS_Z01QD", "ASUS_I005DC", "NX55", "MXB48T"])
-    elif fbbd.lower() == "huawei":
-        return random.choice(
-            ["DUB-LX1", "AGS2-L09", "POT-LX1", "DRA-LX2", "POT-LX3", "VOG-L29", "EVR-N29", "FIG-LX1", "Kirin Treble",
-             "HUAWEI LUA-L21", "ATU-L31", "COL-L29", "NAM-LX9", "VOG-L29", "JKM-LX1", "RNE-L22"])
-    elif fbbd.lower() == "lenovo":
-        return random.choice(
-            ["Lenovo TB-X505F", "Lenovo A6020a46", 'PAFR0026IN', 'PAFR0026', 'PAFR0033IN', 'PAFR0033', 'PAFR0013IN',
-             'PAFR0013', 'PAGW0015IN', 'L39051', 'XT2091-8'])
-    elif fbbd.lower() == "sony":
-        return random.choice(
-            ["C2105", "C2104", "G3312", "G3311", "G3313", "LT29i", "D6503", "D6502", "SO-03F", "Xperia Z2", "D6503",
-             "D6502", "SO-03F", "Xperia Z2", "D6563", "D6603", "D6653", "D6616", "D6643", "SO-01G", "SOL26", "D6646",
-             "D5803", "D5833", "SO-02G", "D6633", "D6603", "D6643", "D6653", "D6616", "D6683", "SGP621", "SGP611",
-             "E6533", "D6708"])
-    elif fbbd.lower() == "tecno":
-        return random.choice(["CG8", "CG8h", "LB8", "LB8a", "CH7n", "CH7", "LH6n"])
-    else:
-        return device
-
-
 # -----------#
 def Motorola():
     fb_v1 = str(random.choice(range(111, 555)))  # "+fb_v1+"
@@ -268,33 +197,6 @@ def referer():
 
 
 # -----------#
-def generate_random_string(lowercase_count, numeric_count):
-    lowercase_chars = string.ascii_lowercase
-    numeric_chars = string.digits
-
-    lowercase_part = ''.join(random.choices(lowercase_chars, k=lowercase_count))
-    numeric_part = ''.join(random.choices(numeric_chars, k=numeric_count))
-
-    return lowercase_part + numeric_part
-
-
-def shuffle_string(s):
-    shuffled_list = list(s)
-    random.shuffle(shuffled_list)
-    return ''.join(shuffled_list)
-
-
-lowercase_count = 16
-numeric_count = 18
-
-low = 10
-num = 22
-
-ran_string = generate_random_string(low, num)
-shuffled_cid = shuffle_string(ran_string)
-
-random_string = generate_random_string(lowercase_count, numeric_count)
-shuffled_connection_token = shuffle_string(random_string)
 
 
 def old():
@@ -341,6 +243,133 @@ def old():
         for mal in user:
             uid = star + mal
             heron.submit(login, uid, meth)
+
+
+def live_update():
+    try:
+        url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
+        response = requests.get(url, verify=certifi.where())
+        datax = response.text.splitlines()[0]
+        for u in datax.split("|"):
+            ua.append(u)
+    except Exception as e:
+        print("[!!] Internet Error:", e)
+        sys.exit()
+
+
+def Samsung():
+    Anderson = random.choice(["10", "13", "7.0.0", "7.1.1", "9", "12", "11", "9.0", "8.0.0", "7.1.2", "7.0", "4", "5",
+                              "4.4.2", "5.1.1", "6.0.1", "9.0.1"])
+    model = random.choice(["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F",
+                           "SM-A326B", "SM-A125F", "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN",
+                           "SM-A205GN", "SM-A505GN", "SM-G930F", "SM-J210F", "SM-N9005", "SM-J210F"])
+    vir = str(random.choice(range(111111111, 999999999)))
+    cho = str(random.choice(range(43, 447)))
+    fb = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+                        "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+    FBAN = fb.split("|")[1]
+    platform = fb.split("|")[0]
+    ua = f"Dalvik/2.1.0 (Linux; U; Android {Anderson}; {model} Build/LRX22C) [FBAN/{FBAN};FBAV/{cho}.0.0.15.89;FBPN/{platform};FBLC/sv_SE;FBBV/{vir};FBCR/S COMVIQ;FBMF/samsung;FBBD/samsung;FBDV/{model};FBSV/5.0.1;FBCA/armeabi-v7a:armeabi;FBDM/{{density={random.choice(range(1, 4))}.0,width={random.choice(range(720, 1500))},height={random.choice(range(1500, 2000))};FB_FW/1;]"
+    return ua
+
+
+def dd(fbbd, device):
+    if fbbd.lower() == "samsung":
+        return random.choice(
+            ["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F", "SM-A326B", "SM-A125F",
+             "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN", "SM-A205GN", "SM-A505GN", "SM-G930F",
+             "SM-J210F", "SM-N9005", "SM-J210F"])
+    elif fbbd.lower() == "vivo":
+        return random.choice(["vivo 1935", "V3Max"])
+    elif fbbd.lower() == "motorola":
+        return random.choice(
+            ['Moto E2 (4G LTE)', 'Moto E3 Power', 'Moto E4', 'Moto E4 Plus', 'Moto E5', 'Moto E5 Plus', 'Moto G',
+             'Moto G 2nd Gen', 'Moto G Play', 'Moto G3', 'Moto G3 Turbo Edition', 'Moto G4', 'Moto G5 Plus', 'Moto G5s',
+             'Moto G5s Plus', 'Moto G6', 'Moto X', 'moto g power (2021)'])
+    elif fbbd.lower() == "oppo":
+        return random.choice(["CPH" + str(random.choice(range(1000, 2000))), "oppo r7sm"])
+    elif fbbd.lower() == "oneplus":
+        return random.choice(["A0001", "OnePlus 11R", "OnePlus 10T", "OnePlus Nord 3 5G"])
+    elif fbbd.lower() == "google":
+        return random.choice(["Pixel 6a", "Pixel 3"])
+    elif fbbd.lower() == "asus":
+        return random.choice(["ASUS_X01BDA", "ASUS_Z01QD", "ASUS_I005DC", "NX55", "MXB48T"])
+    elif fbbd.lower() == "huawei":
+        return random.choice(
+            ["DUB-LX1", "AGS2-L09", "POT-LX1", "DRA-LX2", "POT-LX3", "VOG-L29", "EVR-N29", "FIG-LX1", "Kirin Treble",
+             "HUAWEI LUA-L21", "ATU-L31", "COL-L29", "NAM-LX9", "VOG-L29", "JKM-LX1", "RNE-L22"])
+    elif fbbd.lower() == "lenovo":
+        return random.choice(
+            ["Lenovo TB-X505F", "Lenovo A6020a46", 'PAFR0026IN', 'PAFR0026', 'PAFR0033IN', 'PAFR0033', 'PAFR0013IN',
+             'PAFR0013', 'PAGW0015IN', 'L39051', 'XT2091-8'])
+    elif fbbd.lower() == "sony":
+        return random.choice(
+            ["C2105", "C2104", "G3312", "G3311", "G3313", "LT29i", "D6503", "D6502", "SO-03F", "Xperia Z2", "D6503",
+             "D6502", "SO-03F", "Xperia Z2", "D6563", "D6603", "D6653", "D6616", "D6643", "SO-01G", "SOL26", "D6646",
+             "D5803", "D5833", "SO-02G", "D6633", "D6603", "D6643", "D6653", "D6616", "D6683", "SGP621", "SGP611",
+             "E6533", "D6708"])
+    elif fbbd.lower() == "tecno":
+        return random.choice(["CG8", "CG8h", "LB8", "LB8a", "CH7n", "CH7", "LH6n"])
+    else:
+        return device
+
+
+def generate_random_string(lowercase_count, numeric_count):
+    lowercase_chars = string.ascii_lowercase
+    numeric_chars = string.digits
+
+    lowercase_part = ''.join(random.choices(lowercase_chars, k=lowercase_count))
+    numeric_part = ''.join(random.choices(numeric_chars, k=numeric_count))
+
+    return lowercase_part + numeric_part
+
+
+def shuffle_string(s):
+    shuffled_list = list(s)
+    random.shuffle(shuffled_list)
+    return ''.join(shuffled_list)
+
+
+lowercase_count = 16
+numeric_count = 18
+
+low = 10
+num = 22
+
+ran_string = generate_random_string(low, num)
+shuffled_cid = shuffle_string(ran_string)
+
+random_string = generate_random_string(lowercase_count, numeric_count)
+shuffled_connection_token = shuffle_string(random_string)
+
+
+class sort:
+    @staticmethod
+    def line():
+        return "[b dark_sea_green2]━" * 37
+
+    @staticmethod
+    def clear():
+        os.system("clear")
+
+    @staticmethod
+    def logo():
+        aci = f'''    //   ) )                                      
+       //___/ /  __     ( )   __      ___      ___    
+      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
+     //       //      / / //   / / //       //        
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
+        print(aci)
+
+    @staticmethod
+    def color():
+        co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
+        cx = random.choice(co)
+        return cx
+
+
+oks = []
+loop = 0
 
 
 def file_sub(uid, pwx, name, meth, fl):
@@ -464,7 +493,6 @@ def file_sub(uid, pwx, name, meth, fl):
 def filee():
     global oks, loop
     pwx = []
-    sort.clear()
     sort.logo()
     print("[b]    [red1][B] [spring_green1]BD/IND FILE Clone")
     print(sort.line())
@@ -517,6 +545,12 @@ def filee():
     print(sort.line())
     sys.exit()
 
+
+def free():
+    live_update()
+    sort.clear()
+    sort.logo()
+    filee()
 
 
 def ran():
@@ -690,7 +724,7 @@ def main():
         print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]File Clone")
         print(sort.line())
         time.sleep(2)
-        filee()
+        free()
     elif fast_choice in ["2", "02", "b", "B"]:
         print("     [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Old Uid Crack")
         print(sort.line())
@@ -792,11 +826,5 @@ def approve():
         sys.exit()
 
 
-
-approve()
-
-
-
-
-
-
+if __name__ == "__main__":
+    approve()
