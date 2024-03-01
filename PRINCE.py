@@ -91,7 +91,7 @@ today = today_data[2] + "\x1b[1;97m." + month.get(today_data[1])
 
 
 # ---------#Old Date
-def ua():
+def uaxxxx():
     rr = random.randint
     aZ = random.choice(
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
@@ -246,12 +246,15 @@ def old():
             heron.submit(login, uid, meth)
 
 
-
-url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
-response = requests.get(url, verify=certifi.where())
-datax = response.text.splitlines()[0]
-for u in datax.split("|"):
-    ua.append(u)
+try:
+    url = "https://raw.githubusercontent.com/TEAM-ELITE1/database/main/XYA.txt"
+    response = requests.get(url, verify=certifi.where())
+    datax = response.text.splitlines()[0]
+    for u in datax.split("|"):
+        ua.append(u)
+except Exception as e:
+    print("[!!] Internet Error:", e)
+    sys.exit()
 
 
 
