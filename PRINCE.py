@@ -73,7 +73,7 @@ def info():
 oks = []
 loop = 0
 sys_ua = []
-
+ua = []
 
 def cont(li):
     if li < 10:
@@ -547,7 +547,6 @@ def filee():
 
 
 def free():
-    live_update()
     sort.clear()
     sort.logo()
     filee()
