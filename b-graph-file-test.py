@@ -6,7 +6,6 @@ import threading
 import time
 import uuid
 import rich
-import charset_normalizer
 from datetime import datetime
 from rich import print
 import requests
