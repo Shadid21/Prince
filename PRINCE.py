@@ -359,7 +359,7 @@ class sort:
        //___/ /  __     ( )   __      ___      ___    
       / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
      //       //      / / //   / / //       //        
-    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
         print(aci)
 
     @staticmethod
@@ -494,6 +494,7 @@ def file_sub(uid, pwx, name, meth, fl):
 def filee():
     global oks, loop
     pwx = []
+    sort.clear()
     sort.logo()
     print("[b]    [red1]✗ [chartreuse1] [spring_green1]BD/IND FILE Clone")
     print(sort.line())
