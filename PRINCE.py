@@ -431,8 +431,6 @@ def file_sub(uid, pwx, name, meth, fl):
                 useragent = uax
                 model = uax.split("FBDV/")[1].split(";")[0]
             data = {
-                "adid": adi,
-                "data = {
             "adid": adi,
             "format": "json",
             "device_id": adi,
