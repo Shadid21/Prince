@@ -126,6 +126,27 @@ def file_sub(uid, pwx, name, meth, fl):
 
             token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
             adi = str(uuid.uuid4())
+            try:
+                rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
+                device = uax.split("FBDV/")[1].split(";")[0]
+                plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+                                      "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+                fban = uax.split("FBAN/")[1].split(";")[0]
+                fbpn = uax.split("FBPN/")[1].split(";")[0]
+                fbav = uax.split("FBAV/")[1].split(";")[0]
+                fbbd = uax.split("FBBD/")[1].split(";")[0]
+                model = dd(fbbd, device)
+                fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
+                    random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
+                androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
+                    random.choice(["2", "1", "0"]))
+                nowandroidv = uax.split("Android ")[1].split(";")[0]
+                useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
+                    nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
+                    fbav, fbverson).replace(device, model)
+            except:
+                useragent = uax
+                model = uax.split("FBDV/")[1].split(";")[0]
             data = {
                 "adid": adi,
                 "format": "json",
@@ -149,7 +170,7 @@ def file_sub(uid, pwx, name, meth, fl):
                 "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
                 "api_key": "882a8490361da98702bf97a021ddc14d"}
             head = {
-                'User-Agent': uax,
+                'User-Agent': useragent,
                 'Accept': '*/*',
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Host': 'graph.facebook.com',
