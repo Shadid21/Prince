@@ -5,12 +5,13 @@ import sys
 import threading
 import time
 import uuid
-from concurrent.futures import ThreadPoolExecutor
+import rich
+import charset_normalizer
 from datetime import datetime
-
+from rich import print
 import requests
 import certifi
-
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
 version = "  v1"
 
 ua = []
@@ -228,35 +229,27 @@ def filee():
     print(Sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m⟩ \x1b[1;97m   "))
     print(Sort.line())
-    th = int(input(" \x1b[38;1;198m Π \x1b[38;5;155mTHREAD  \x1b[38;5;196m⟩ \x1b[1;97m   "))
+    with ThreadPool(max_workers=40) as sub:
+        print(Sort.logo())
+        print("[b bright_white]  Π! [r violet]USERNAME[/r violet] [light_sky_blue1]   ▶  [/light_sky_blue1] " + ussr[0])
+        print(Sort.line())
+        print(
+            f"  [r dark_olive_green1]Π![/r dark_olive_green1][chartreuse1] Today Date  [b deep_pink2]⟨[/b deep_pink2]   {today} ")
+        print(
+            f"  [r dark_sea_green1]Π![/r dark_sea_green1] [light_green]Total Pas[b red1]  ⟩ [/b red1]  [light_green] +{str(len(pwx))}")
+        print(Sort.line())
+        try:
+            for xd in fl:
+                uid, name = xd.split("|")
+                sub.submit(file_sub, uid, pwx, name, meth, fl)
+
+        except:
+            pass
+    print("\r\r" + Sort.line())
+    print(f"  Π! Total OK id : {str(len(oks))}")
+    print(f"  Π! Save  /sdcard/pot.txt ")
     print(Sort.line())
-    if meth in ["a", "A", "1"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["b", "B", "2"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["c", "C", "3"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["d", "D", "4"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["e", "E", "5"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["f", "F", "6"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["g", "G", "7"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    elif meth in ["h", "H", "8"]:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
-    else:
-        for i in range(th):
-            threading.Thread(target=file_sub, args=(fl[loop], pwx, "", meth, fl)).start()
+    sys.exit()
 
 
 def free():
