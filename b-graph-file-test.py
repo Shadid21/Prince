@@ -35,11 +35,28 @@ def live_update():
         for u in datax.split("|"):
             ua.append(u)
     except:
-        
+
         sys.exit("[!!] Internet Error...")
-
-
 live_update()
+def Samsung():
+    Anderson = random.choice(
+        ["10", "13", "7.0.0", "7.1.1", "9", "12", "11", "9.0", "8.0.0", "7.1.2", "7.0", "4", "5", "4.4.2", "5.1.1",
+         "6.0.1", "9.0.1"])
+    model = random.choice(
+        ["GT-I9505", "SM-T835", "SM-S901U", "MMB29K", "SM-S134DL", "SM-J250F", "SM-A217F", "SM-A326B", "SM-A125F",
+         "SM-A720F", "SM-A326U", "SM-G532M", "SM-J410G", "SM-A205GN", "SM-A205GN", "SM-A505GN", "SM-G930F", "SM-J210F",
+         "SM-N9005", "SM-J210F"])
+    vir = str(random.choice(range(111111111, 999999999)))
+    cho = str(random.choice(range(43, 447)))
+    fb = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+                        "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+    FBAN = fb.split("|")[1]
+    platform = fb.split("|")[0]
+    ua = f"Dalvik/2.1.0 (Linux; U; Android " + Anderson + "; " + model + " Build/LRX22C) [FBAN/" + FBAN + ";FBAV/" + cho + ".0.0.15.89;FBPN/" + platform + ";FBLC/sv_SE;FBBV/" + vir + ";FBCR/S COMVIQ;FBMF/samsung;FBBD/samsung;FBDV/" + model + ";FBSV/5.0.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=" + str(
+        random.choice(range(1, 4))) + ".0,width=" + str(random.choice(range(720, 1500))) + ",height=" + str(
+        random.choice(range(1500, 2000))) + "};FB_FW/1;]"
+    return ua
+
 
 class sort:
     def line():
@@ -147,7 +164,7 @@ def filee():
             uid = xd.split("|")[0]
             name = xd.split("|")[1]
             prince.submit(file_sub, uid, pwx, name, meth, fl)
-
+useragent = Samsung()
 
 def file_sub(uid, pwx, name, meth, fl):
     global oks, loop
@@ -181,27 +198,27 @@ def file_sub(uid, pwx, name, meth, fl):
                                                                                       First.upper()).replace("LAST",
                                                                                                              Last.upper())
 
-        try:
-            rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
-            device = uax.split("FBDV/")[1].split(";")[0]
-            plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
-                                  "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
-            fban = uax.split("FBAN/")[1].split(";")[0]
-            fbpn = uax.split("FBPN/")[1].split(";")[0]
-            fbav = uax.split("FBAV/")[1].split(";")[0]
-            fbbd = uax.split("FBBD/")[1].split(";")[0]
-            model = dd(fbbd, device)
-            fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
-                random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
-            androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
-                random.choice(["2", "1", "0"]))
-            nowandroidv = uax.split("Android ")[1].split(";")[0]
-            useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
-                nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
-                fbav, fbverson).replace(device, model)
-        except:
-            useragent = uax
-            model = uax.split("FBDV/")[1].split(";")[0]
+        # try:
+        #     rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
+        #     device = uax.split("FBDV/")[1].split(";")[0]
+        #     plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+        #                           "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+        #     fban = uax.split("FBAN/")[1].split(";")[0]
+        #     fbpn = uax.split("FBPN/")[1].split(";")[0]
+        #     fbav = uax.split("FBAV/")[1].split(";")[0]
+        #     fbbd = uax.split("FBBD/")[1].split(";")[0]
+        #     model = dd(fbbd, device)
+        #     fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
+        #         random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
+        #     androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
+        #         random.choice(["2", "1", "0"]))
+        #     nowandroidv = uax.split("Android ")[1].split(";")[0]
+        #     useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
+        #         nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
+        #         fbav, fbverson).replace(device, model)
+        # except:
+        #     useragent = uax
+        #     model = uax.split("FBDV/")[1].split(";")[0]
         token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
         adi = str(uuid.uuid4())
         data = {
