@@ -83,7 +83,7 @@ class sort:
 
 
 oks = []
-loop = []
+loop = 0
 
 
 def old():
