@@ -656,7 +656,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=40) as sub:
+    with ThreadPool(max_workers=60) as sub:
         sort.clear()
         print(sort.logo())
         print(
