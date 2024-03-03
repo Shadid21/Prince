@@ -656,7 +656,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=60) as sub:
+    with ThreadPool(max_workers=30) as sub:
         sort.clear()
         print(sort.logo())
         print(
@@ -738,7 +738,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=33) as heron:
+    with ThreadPool(max_workers=50) as heron:
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
