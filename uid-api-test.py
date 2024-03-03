@@ -84,10 +84,10 @@ class sort:
 
 oks = []
 loop = 0
-
+user = []
 
 def old():
-    user = []
+    global user
     sort.clear()
     sort.logo()
     print("[b]    [red1][A] [sea_green2]Crack 10001-10009 Id")
