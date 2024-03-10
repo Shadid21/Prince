@@ -736,7 +736,7 @@ def filee():
     print(sort.line())
     for i in range(int(limit)):
         print(
-            " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@")
+            " [b] [chartreuse1]TYPE PASSWORD. EXAMPLE      [b deep_pink2]->[/b deep_pink2]  [chartreuse1] first123, First123, last123, last@@@, name, Name etc")
         passw = str(input(f" \x1b[38;1;198m  \x1b[38;5;155mPass No-{i + 1} Add Pass    \x1b[38;5;196m⟩ \x1b[1;97m   "))
         if passw not in pwx:
             pwx.append(passw)
@@ -827,6 +827,9 @@ def ran():
         for mbr in range(limit):
             nmp = ''.join(random.choice(string.digits) for _ in range(7))
             user.append(nmp)
+
+
+
     passlimit = input("Password Limit -> ")
     print(sort.line())
     for i in range(int(passlimit)):
@@ -862,7 +865,7 @@ def ran():
         sort.clear()
         sort.logo()
         print(" [b]    [red1]✗ [chartreuse1]Total Uid [orange3]▶  [chartreuse1]" + str(len(user)))
-        print(f" [b]    [red1]✗ [light_green]Method   [orange3]▶  [light_green] M" + meth)
+        print(f" [b]    [red1]✗ [light_green]Method    [orange3]▶ [light_green] M" + meth)
         print(sort.line())
         for xd in user:
             if ask in ["1", "01", "a", "A"]:
@@ -1050,6 +1053,7 @@ showkey = cm2.replace("'", "").replace("==", "")
 
 def approve():
     url = "https://github.com/Shadid21/Prince/blob/main/approval.txt"  # Your Link
+    
     try:
         buffer = BytesIO()
         curl = pycurl.Curl()
@@ -1066,15 +1070,13 @@ def approve():
         sort.clear()
         print("Checking Subscription")
         time.sleep(3)
-        os.system("xdg-open https://chat.whatsapp.com/EYxDWylkPRq63C5C2rWuJK")
         main()
     else:
-        os.system("xdg-open https://chat.whatsapp.com/EYxDWylkPRq63C5C2rWuJK")
         sort.logo()
 
         print("your Key ->   " + showkey)
         input("This is paid tool bro. If you want to buy press enter. ")
-        tks = (f'Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20 {showkey}')
+        tks = (f'Hello%20Sir%20!%20Please%20Approve%20My%20Token%20The%20Token%20Is%20:%20 {showkey}' )
         os.system('am start https://wa.me/+8801617687239?text=' + tks)
         sys.exit()
 
