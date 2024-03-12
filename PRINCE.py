@@ -860,7 +860,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=20) as heron:
+    with ThreadPool(max_workers=40) as heron:
         
         sort.clear()
         sort.logo()
