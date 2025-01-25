@@ -518,7 +518,7 @@ def file_sub(uid, pwx, name, meth, fl):
                     nowandroidv, androidv).replace(fban, plat.split('|')[1]).replace(fbpn, plat.split('|')[0]).replace(
                     fbav, fbverson).replace(device, model)
             except:
-                useragent = uax
+                useragent = Samsung()
                 model = uax.split("FBDV/")[1].split(";")[0]
             data = {
                 "adid": adi,
@@ -752,7 +752,7 @@ def filee():
     print(sort.line())
     meth = str(input("  \x1b[38;1;198mΠ\x1b[38;5;155mCHOICE  \x1b[38;5;196m-> \x1b[1;97m   "))
     print(sort.line())
-    with ThreadPool(max_workers=60) as sub:
+    with ThreadPool(max_workers=100) as sub:
         sort.clear()
         print(sort.logo())
         print(
